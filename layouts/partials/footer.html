@@ -42,7 +42,11 @@
           <h5 class="site-footer-widget-title">{{ .title }}</h5>
           <ul class="site-footer-widget-links">
             {{ range .link }}
-              <li><a href="{{ .url }}">{{ .name }}</a></li>
+              <li>
+                <a href="{{ .url }}" target="_blank">
+                  <i class="{{ .icon }} me-2"></i>{{ .name }}
+                </a>
+              </li>
             {{ end }}
           </ul>
         </div>
@@ -68,7 +72,7 @@
       </div>
       <div class="col-12">
         <div class="site-footer-copyright">
-          <p>© Copyright {{ dateFormat "2006" now }} - All Rights Reserved by <a href="https://staticmania.com/" target="_blank">StaticMania</a> </p>
+          <p>© Copyright {{ dateFormat "2006" now }} - All Rights Reserved by <a href="https://ebcreativesolutions.com" target="_blank">EB Creative Solutions LTD</a> </p>
         </div>
       </div>
     </div>

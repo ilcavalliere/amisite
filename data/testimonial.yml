@@ -1,0 +1,39 @@
+enable  : true
+title   : "Témoignages des Acteurs Clés"
+subtitle: "Les voix qui racontent notre histoire : Témoignages de nos ambassadeurs francophones."
+testimonial_item :
+  - thumb : "images/testimonial/user-thumb-one.png"
+    name  : "EL Caballero"
+    company_position: "PRÉSIDENT de L'AMICIF"
+    quote : > 
+            "Depuis 2013, je suis au cœur des Centres Internationaux Francophones, ayant participé à plus de 6 centres différents à travers la France. Mon parcours illustre l'engagement et la passion qui animent notre réseau."" 
+
+  - thumb : "images/testimonial/user-thumb-two.png"
+    name  : "Mathilde Heitz"
+    company_position: "Trésorière, de L'AMICIF"
+    quote : > 
+            "Depuis 2013, je suis engagée au sein de l'AMICIF, ayant contribué à plus de 6 projets différents à travers nos districts français. Mon rôle de trésorière illustre mon dévouement et ma passion pour notre réseau" 
+
+  - thumb : "images/testimonial/user-thumb-three.png"
+    name  : "Anna, Ostrovskaya"
+    company_position: "Secrétaire, de L'AMICIF"
+    quote : > 
+            "Depuis 2019, je suis profondément impliquée dans l'AMICIF, ayant représenté la francophonie dans toute l'Europe de l'Est grâce à mon école et mes projets internationaux. Mon engagement illustre ma passion pour la culture française et nos valeurs." 
+
+  - thumb : "images/testimonial/user-thumb-four.png"
+    name  : "Kayla Telhiard"
+    company_position: "ANCIENS, LINKEDIN"
+    quote : > 
+            "Depuis 2016, je suis l'ambassadeur de l'AMICIF en Louisiane, portant nos valeurs francophones à travers mes projets culturels et éducatifs. Mon engagement illustre notre connexion unique entre la France et l'Amérique francophone." 
+
+  - thumb : "images/testimonial/user-thumb-five.png"
+    name  : "Thanh Van"
+    company_position: "COMMUNICATION, DOCUMENTS"
+    quote : > 
+            "Depuis 2024, je contribue à l'AMICIF, apportant ma perspective unique du Vietnam et ma passion pour la francophonie à travers mes études en Bourgogne. Mon engagement illustre notre réseau interculturel et dynamique." 
+
+  - thumb : "images/testimonial/user-thumb-six.png"
+    name  : "Nino Lopez"
+    company_position: "ANCIENS, CENTRES"
+    quote : > 
+            "Depuis 2022, je suis le maître d'animation des Centres CIF, apportant ma passion cubaine et mon expertise de docteur à notre réseau international. Mon parcours illustre la richesse multiculturelle et académique de l'AMICIF." 

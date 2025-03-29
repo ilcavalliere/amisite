@@ -1,0 +1,186 @@
+baseURL       = "http://example.org/"
+languageCode  = "en-us"
+title         = "Roxo | Creative Design Agency"
+theme         = "roxo-hugo"
+summarylength = 25
+
+# Site Menus
+[menu]
+  # Navbar Menus
+  [[menu.nav]]
+    name    = "Accueil"
+    url     = ""
+    weight  = 1
+  [[menu.nav]]
+    name    = "À Propos"
+    url     = "about"
+    weight  = 2
+  [[menu.nav]]
+    name    = "Portfolio"
+    url     = "portfolio"
+    weight  = 3
+  [[menu.nav]]
+    name    = "Timeline"
+    url     = "/timeline"
+    weight  = 4
+  [[menu.nav]]
+    name    = "Blog"
+    url     = "blog"
+    weight  = 5
+  
+  [[menu.nav]]
+    name    = "Contactez-nous"
+    url     = "contact"
+    weight  = 6
+
+# Site Params
+[params]
+  logo = "images/logo.png"
+  logo_footer = "images/logo-footer.png"
+  favicon_icon = "images/favicon.ico"
+  favicon_shortcut_icon = "images/favicon.png"
+  custom_stylesheets = []   # [ "scss/my_1.scss", "scss/my_2.scss" ]
+  dateFormat = "26 FEB 1994"
+  # Meta data
+  description = "Roxo Hugo themes | Design Agency Template by StaticMania"
+  author = "StaticMania"
+  # Google Analitycs
+  googleAnalitycsID = "Your ID"
+  # We're using formspree.io for form handling, paste your formspree url below
+  fabform  = "https://fabform.io/f/USAg2Jl"
+
+  # Contact Form
+  [params.contactForm]
+    placeholder_first_name       = "Prénom"
+    placeholder_last_name         = "Nom de famille"
+    placeholder_email             = "Adresse e-mail"
+    placeholder_project_type      = "Type de projet"
+    placeholder_about_the_project = "Description du projet"
+    send_message                  = "Envoyer le message"
+
+    [[params.contactForm.projectType]]
+  value = "ec"
+  title  = "Échange Culturel"
+
+[[params.contactForm.projectType]]
+  value = "fp"
+  title  = "Formation Professionnelle"
+
+[[params.contactForm.projectType]]
+  value = "pf"
+  title  = "Projet Francophone"
+
+[[params.contactForm.projectType]]
+  value = "ci"
+  title  = "Coopération Internationale"
+
+[[params.contactForm.projectType]]
+  value = "je"
+  title  = "Jeunes Ambassadeurs"
+
+[[params.contactForm.projectType]]
+  value = "rs"
+  title  = "Recherche et Stage"
+
+[[params.contactForm.projectType]]
+  value = "ev"
+  title  = "Événementiel Francophone"
+  
+  # Navbar Action Button
+  [params.navAction]
+    status  = true
+    name    = "Contactez-nous"
+    url     = "contact"
+  
+
+  # Banner Section
+  [params.banner]
+    enable                = true
+    background_image      = "images/backgrounds/hero-background.jpg"
+    heading               = "On connecte les francophones, pour le partage culturelle."
+    tagline               = "CIF UN JOUR, AMICIF POUR TOUJOURS!  "
+    primary_button        = "Plus sur nos centres"
+    primary_button_url    = "portfolio"
+    secondary_button      = "Contactez-nous"
+    secondary_button_url  = "contact"
+
+  [params.blog]
+    read_more             = "encore plus"
+
+  [params.portfolio]
+    enable    = true
+    title     = "Nos Actions Récentes"
+    subtitle  = "L'avenir de la francophonie se construit aujourd'hui"
+    view_project = "Explorer le projet"
+    more_works = "MORE WORKS"
+    scroll_down = "défiler la page"
+
+  [params.call_to_action]
+    enable              = true
+    background_image    = "images/backgrounds/cta-background.jpg"
+    title               = "Rejoignez notre réseau francophone mondial !"
+    primary_button      = "Contactez-nous"
+    primary_button_url  = "contact"
+    secondary_button    = "Découvrir nos programmes"
+    secondary_button_url = "portfolio"
+
+  [params.footer]
+    params.footer.qr_print = false
+    # Footer Contact Info
+    [params.footer.contactInfo]
+      title   = "Contact Info"
+      address = "2 IMPASSE DE LA CHAUSSEE DU BOURG <br>44117 ST ANDRE DES EAUX."
+      phone   = "03 90 41 65 66"
+      email   = "contact@amicif.fr"
+      # Footer Sitemap
+      [params.footer.sitemap]
+        title   = "Sitemap"
+        [[params.footer.sitemap.link]]
+          name = "À Propos"
+          url  = "about"
+        [[params.footer.sitemap.link]]
+          name = "Actions"
+          url  = "portfolio"
+        [[params.footer.sitemap.link]]
+          name = "Blog"
+          url  = "blog"
+        [[params.footer.sitemap.link]]
+          name = "Contact"
+          url  = "contact"
+      # Footer Social Media
+[params.footer.social]
+  title   = "Réseaux Sociaux"
+  [[params.footer.social.link]]
+    name = "Facebook"
+    url  = "https://www.facebook.com/amicif1958/"
+    icon = "fab fa-facebook-f"
+  [[params.footer.social.link]]
+    name = "Instagram"
+    url  = "https://www.instagram.com/amicif/?hl=fr"
+    icon = "fab fa-instagram"
+  [[params.footer.social.link]]
+    name = "TikTok"
+    url  = "https://www.tiktok.com/@amicif"
+    icon = "fab fa-tiktok"
+  [[params.footer.social.link]]
+    name = "LinkedIn"
+    url  = "https://fr.linkedin.com/company/amicif"
+    icon = "fab fa-linkedin-in"
+  [[params.footer.social.link]]
+    name = "YouTube"
+    url  = "http://www.youtube.com/@amicifreseaufrancophone1943"
+    icon = "fab fa-youtube"
+  [[params.footer.social.link]]
+    name = "Telegram"
+    url  = "https://t.me/amicif1958"
+    icon = "fab fa-telegram"
+      # Footer Service
+      [params.footer.service]
+        title       = "Nous nous engageons à :"
+        description = "inspirer la jeunesse mondiale diffuser la culture française <br>favoriser le dialogue interculturel"
+      [params.footer.back_to_top]
+        description = "Encore <br> une fois"
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']

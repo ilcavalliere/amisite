@@ -1,0 +1,14 @@
+enable : true
+heading : "Les chiffres parlent d'eux-mêmes!"
+counter_item: 
+  - title: "Pays Représentés"
+    number: "125"
+
+  - title: "Stagiaires Accueillis"
+    number: "11000"
+
+  - title: "Années d'Existence"
+    number: "65"
+
+  - title: "Centres Organisés"
+    number: "15"

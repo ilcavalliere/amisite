@@ -24,7 +24,7 @@ summarylength = 25
     url     = "blog"
     weight  = 4
   [[menu.nav]]
-    name    = "Get in touch"
+    name    = "Contactez-nous"
     url     = "contact"
     weight  = 5
 
@@ -46,12 +46,12 @@ summarylength = 25
 
   # Contact Form
   [params.contactForm]
-    placeholder_first_name        = "First Name"
-    placeholder_last_name         = "Last Name"
-    placeholder_email             = "Email"
-    placeholder_project_type      = "Project Type"
-    placeholder_about_the_project = "About the Project"
-    send_message                  = "Send Message"
+    placeholder_first_name        = "Prénom"
+    placeholder_last_name         = "Nom de famille"
+    placeholder_email             = "Adresse e-mail"
+    placeholder_project_type      = "Type de projet"
+    placeholder_about_the_project = "Description du projet"
+    send_message                  = "Envoyer le message"
 
     [[params.contactForm.projectType]]
       value = "gd"
@@ -63,7 +63,7 @@ summarylength = 25
   # Navbar Action Button
   [params.navAction]
     status  = true
-    name    = "Get in touch"
+    name    = "Contactez-nous"
     url     = "contact"
   
 
@@ -75,7 +75,7 @@ summarylength = 25
     tagline               = "WE WORK HARD, WE PLAY HARD"
     primary_button        = "See Our Works"
     primary_button_url    = "portfolio"
-    secondary_button      = "Connect with Us"
+    secondary_button      = "Contactez-nous"
     secondary_button_url  = "contact"
 
   [params.blog]
@@ -83,9 +83,9 @@ summarylength = 25
 
   [params.portfolio]
     enable    = true
-    title     = "OUR RECENT WORKS"
-    subtitle  = "Crafting experiences and seeking to make the complex clear & beautiful."
-    view_project = "view project"
+    title     = "Nos Actions Récentes"
+    subtitle  = "L'avenir de la francophonie se construit aujourd'hui"
+    view_project = "Explorer le projet "
     more_works = "MORE WORKS"
     scroll_down = "scroll down"
 
@@ -105,12 +105,12 @@ summarylength = 25
       title   = "Contact Info"
       address = "713 Elmwood St.<br>Prior Lake, MN 55372"
       phone   = "409-896-1444"
-      email   = "info@roxo.co"
+      email   = "contact@amicif.fr"
       # Footer Sitemap
       [params.footer.sitemap]
         title   = "Sitemap"
         [[params.footer.sitemap.link]]
-          name = "About Company"
+          name = "À Proposy"
           url  = "about"
         [[params.footer.sitemap.link]]
           name = "Projects"
