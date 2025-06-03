@@ -41,7 +41,7 @@ sections:
   match: "**/*"
 - type: directory
   path: content/portfolio
-  label: Portfolio
+  label: portfolio
   create: all
   match: "**/*"
 upload_dir: static/images

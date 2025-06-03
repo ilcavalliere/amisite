@@ -1,6 +1,6 @@
-baseURL       = "http://example.org/"
+baseURL       = "https://amisite-cif-1958.firebaseapp.com/"
 languageCode  = "en-us"
-title         = "Roxo | Creative Design Agency"
+title         = "AMICIF Association Anciens CIF"
 theme         = "roxo-hugo"
 summarylength = 25
 
@@ -12,19 +12,19 @@ summarylength = 25
     url     = ""
     weight  = 1
   [[menu.nav]]
-    name    = "À Propos"
+    name    = "l’AMICIF"
     url     = "about"
     weight  = 2
   [[menu.nav]]
-    name    = "Portfolio"
+    name    = "Nos activités"
     url     = "portfolio"
     weight  = 3
   [[menu.nav]]
-    name    = "Timeline"
+    name    = "Notre histoire"
     url     = "/timeline"
     weight  = 4
   [[menu.nav]]
-    name    = "Blog"
+    name    = "AMIblog"
     url     = "blog"
     weight  = 5
   
@@ -42,7 +42,7 @@ summarylength = 25
   custom_stylesheets = []   # [ "scss/my_1.scss", "scss/my_2.scss" ]
   dateFormat = "26 FEB 1994"
   # Meta data
-  description = "Roxo Hugo themes | Design Agency Template by StaticMania"
+  description = "AMICIF Association Anciens CIF"
   author = "StaticMania"
   # Google Analitycs
   googleAnalitycsID = "Your ID"
@@ -100,7 +100,7 @@ summarylength = 25
     heading               = "On connecte les francophones, pour le partage culturelle."
     tagline               = "CIF UN JOUR, AMICIF POUR TOUJOURS!  "
     primary_button        = "Plus sur nos centres"
-    primary_button_url    = "portfolio"
+    primary_button_url    = "Nos activités"
     secondary_button      = "Contactez-nous"
     secondary_button_url  = "contact"
 
@@ -126,17 +126,17 @@ summarylength = 25
 
   [params.footer]
     params.footer.qr_print = false
-    # Footer Contact Info
+    # Footer Contact
     [params.footer.contactInfo]
-      title   = "Contact Info"
-      address = "2 IMPASSE DE LA CHAUSSEE DU BOURG <br>44117 ST ANDRE DES EAUX."
+      title   = "Contact"
+      address = "Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse DE LA CHAUSSEE DU BOURG <br>44117 ST ANDRE DES EAUX."
       phone   = "03 90 41 65 66"
       email   = "contact@amicif.fr"
       # Footer Sitemap
       [params.footer.sitemap]
         title   = "Sitemap"
         [[params.footer.sitemap.link]]
-          name = "À Propos"
+          name = "l’AMICIF"
           url  = "about"
         [[params.footer.sitemap.link]]
           name = "Actions"
@@ -176,10 +176,10 @@ summarylength = 25
     icon = "fab fa-telegram"
       # Footer Service
       [params.footer.service]
-        title       = "Nous nous engageons à :"
-        description = "inspirer la jeunesse mondiale diffuser la culture française <br>favoriser le dialogue interculturel"
+        title       = "L’AMICIF rassemble plus de :"
+        description = "11 000 anciens stagiaires des Centres Internationaux Francophones des Lions Club de France, <br>depuis 1958 et constitue une véritable chaîne d’amitié francophone"
       [params.footer.back_to_top]
-        description = "Encore <br> une fois"
+        description = "Haut <br> de page"
 [frontmatter]
   date = ['date', 'publishDate', 'lastmod']
   lastmod = [':git', 'lastmod', 'date', 'publishDate']
