@@ -46,12 +46,12 @@ summarylength = 25
 
   # Contact Form
   [params.contactForm]
-    placeholder_first_name        = "First Name"
-    placeholder_last_name         = "Last Name"
+    placeholder_first_name        = "Prenom"
+    placeholder_last_name         = "Nom"
     placeholder_email             = "Email"
-    placeholder_project_type      = "Project Type"
-    placeholder_about_the_project = "About the Project"
-    send_message                  = "Send Message"
+    placeholder_project_type      = "Projet"
+    placeholder_about_the_project = "Details"
+    send_message                  = "Envoyer Message"
 
     [[params.contactForm.projectType]]
       value = "gd"
