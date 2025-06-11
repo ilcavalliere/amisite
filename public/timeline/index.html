@@ -149,134 +149,142 @@
   </div>
 </section>
 
-<section class="timeline-section py-16" id="timeline_items">
-  <div class="container mx-auto px-4 relative">
-    
-    <div class="timeline-line absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 bg-blue-500 z-1"></div>
-    
-    
-<div class="timeline-item relative flex flex-col md:flex-row items-center mb-16 ">
-    
-    <div class="timeline-content w-full md:w-8/12 md:pr-4 z-2">
-        <h3 class="text-xl font-medium mb-2">Première Étape</h3>
-        <p class="text-sm text-muted-foreground mb-4">Description détaillée de notre première étape importante dans notre histoire.</p>
-    </div>
-      
-      
-      <div class="image-container w-full max-w-[30px] border rounded-md overflow-hidden shadow-sm">
-        <img src="/images/block/placeholder-1.svg" alt="Première Étape" class="w-full h-10 object-contain dark:invert"/>
+<div class="timeline-container" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 20px;">
+  <!-- Timeline vertical line - MOVED TO LEFT (50% instead of 60%) -->
+  <div class="timeline-line" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background-color: rgba(0, 0, 0, 0.1); transform: translateX(-50%); z-index: 1;"></div>
+  
+  <!-- Card 1 - Left side -->
+  <div class="timeline-item" style="position: relative; margin-bottom: 80px;">
+    <!-- Left side content container - adjusted for new timeline position -->
+    <div style="width: 45%; margin-right: 5%; float: left;">
+      <!-- Image container - TALLER (300px) -->
+      <div class="image-container" style="width: 100%; height: 300px; padding: 0; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: white; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/images/block/placeholder-1.svg" alt="Première Étape" style="max-width: 98%; max-height: 98%; object-fit: contain;"/>
       </div>
       
-      
-      
-      <div class="timeline-dot first-dot absolute left-1/2 transform -translate-x-1/2 z-10">
-        <div class="timeline-icon-container">
-            
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-list">
-                <rect width="7" height="7" x="3" y="3" rx="1"></rect>
-                <rect width="7" height="7" x="3" y="14" rx="1"></rect>
-                <path d="M14 4h7"></path>
-                <path d="M14 9h7"></path>
-                <path d="M14 15h7"></path>
-                <path d="M14 20h7"></path>
-            </svg>
-         
+      <!-- Text content below image -->
+      <div class="timeline-content" style="width: 100%; padding: 1rem; background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(0, 0, 0, 0.05); border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;">Première Étape</h3>
+        <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 16px;">Description détaillée de notre première étape importante dans notre histoire.</p>
+      </div>
     </div>
-</div>
     
-    
-    
-<div class="timeline-item relative flex flex-col md:flex-row items-center mb-16 md:flex-row-reverse">
-    
-    <div class="timeline-content w-full md:w-8/12 md:pl-4 z-2">
-        <h3 class="text-xl font-medium mb-2">Deuxième Étape</h3>
-        <p class="text-sm text-muted-foreground mb-4">Description détaillée de notre deuxième étape importante et de son impact.</p>
+    <!-- Timeline dot for Card 1 - MOVED TO 50% -->
+    <div class="timeline-dot" style="position: absolute; left: 50%; top: 150px; transform: translate(-50%, -50%); width: 40px; height: 40px; background-color: white; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); z-index: 100;">
+      <div class="timeline-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="7" height="7" x="3" y="3" rx="1"></rect>
+          <rect width="7" height="7" x="3" y="14" rx="1"></rect>
+          <path d="M14 4h7"></path>
+          <path d="M14 9h7"></path>
+          <path d="M14 15h7"></path>
+          <path d="M14 20h7"></path>
+        </svg>
+      </div>
     </div>
-      
-      
-      <div class="image-container w-full max-w-[30px] border rounded-md overflow-hidden shadow-sm">
-        <img src="/images/block/placeholder-2.svg" alt="Deuxième Étape" class="w-full h-10 object-contain dark:invert"/>
+    <div style="clear: both;"></div>
+  </div>
+  
+  <!-- Card 2 - Right side -->
+  <div class="timeline-item" style="position: relative; margin-bottom: 80px;">
+    <!-- Right side content container - adjusted for new timeline position -->
+    <div style="width: 45%; margin-left: 55%; float: left;">
+      <!-- Image container - TALLER (300px) -->
+      <div class="image-container" style="width: 100%; height: 300px; padding: 0; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: white; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/images/block/placeholder-2.svg" alt="Deuxième Étape" style="max-width: 98%; max-height: 98%; object-fit: contain;"/>
       </div>
       
-      
-      
-      <div class="timeline-dot  absolute left-1/2 transform -translate-x-1/2 z-10">
-        <div class="timeline-icon-container">
-            
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-locate-fixed">
-             <line x1="2" x2="5" y1="12" y2="12"></line>
-             <line x1="19" x2="22" y1="12" y2="12"></line>
-             <line x1="12" x2="12" y1="2" y2="5"></line>
-             <line x1="12" x2="12" y1="19" y2="22"></line>
-             <circle cx="12" cy="12" r="7"></circle>
-              <circle cx="12" cy="12" r="3"></circle>
-           </svg>
-         
+      <!-- Text content below image -->
+      <div class="timeline-content" style="width: 100%; padding: 1rem; background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(0, 0, 0, 0.05); border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;">Deuxième Étape</h3>
+        <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 16px;">Description détaillée de notre deuxième étape importante et de son impact.</p>
+      </div>
     </div>
-</div>
     
-    
-    
-<div class="timeline-item relative flex flex-col md:flex-row items-center mb-16 ">
-    
-    <div class="timeline-content w-full md:w-8/12 md:pr-4 z-2">
-        <h3 class="text-xl font-medium mb-2">Troisième Étape</h3>
-        <p class="text-sm text-muted-foreground mb-4">Un autre moment crucial de notre développement et de notre croissance.</p>
+    <!-- Timeline dot for Card 2 - MOVED TO 50% -->
+    <div class="timeline-dot" style="position: absolute; left: 50%; top: 150px; transform: translate(-50%, -50%); width: 40px; height: 40px; background-color: white; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); z-index: 100;">
+      <div class="timeline-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="2" x2="5" y1="12" y2="12"></line>
+          <line x1="19" x2="22" y1="12" y2="12"></line>
+          <line x1="12" x2="12" y1="2" y2="5"></line>
+          <line x1="12" x2="12" y1="19" y2="22"></line>
+          <circle cx="12" cy="12" r="7"></circle>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </div>
     </div>
-      
-      
-      <div class="image-container w-full max-w-[30px] border rounded-md overflow-hidden shadow-sm">
-        <img src="/images/block/placeholder-3.svg" alt="Troisième Étape" class="w-full h-10 object-contain dark:invert"/>
+    <div style="clear: both;"></div>
+  </div>
+  
+  <!-- Card 3 - Left side -->
+  <div class="timeline-item" style="position: relative; margin-bottom: 80px;">
+    <!-- Left side content container - adjusted for new timeline position -->
+    <div style="width: 45%; margin-right: 5%; float: left;">
+      <!-- Image container - TALLER (300px) -->
+      <div class="image-container" style="width: 100%; height: 300px; padding: 0; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: white; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/images/block/placeholder-3.svg" alt="Troisième Étape" style="max-width: 98%; max-height: 98%; object-fit: contain;"/>
       </div>
       
-      
-      
-      <div class="timeline-dot  absolute left-1/2 transform -translate-x-1/2 z-10">
-        <div class="timeline-icon-container">
-            
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
-             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-             <circle cx="9" cy="7" r="4"></circle>
-             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-         
+      <!-- Text content below image -->
+      <div class="timeline-content" style="width: 100%; padding: 1rem; background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(0, 0, 0, 0.05); border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;">Troisième Étape</h3>
+        <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 16px;">Un autre moment crucial de notre développement et de notre croissance.</p>
+      </div>
     </div>
-</div>
     
-    
-    
-<div class="timeline-item relative flex flex-col md:flex-row items-center mb-16 md:flex-row-reverse">
-    
-    <div class="timeline-content w-full md:w-8/12 md:pl-4 z-2">
-        <h3 class="text-xl font-medium mb-2">Dernière Étape</h3>
-        <p class="text-sm text-muted-foreground mb-4">Notre dernière étape qui marque un tournant significatif.</p>
+    <!-- Timeline dot for Card 3 - MOVED TO 50% -->
+    <div class="timeline-dot" style="position: absolute; left: 50%; top: 150px; transform: translate(-50%, -50%); width: 40px; height: 40px; background-color: white; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); z-index: 100;">
+      <div class="timeline-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </div>
     </div>
-      
-      
-      <div class="image-container w-full max-w-[30px] border rounded-md overflow-hidden shadow-sm">
-        <img src="/images/block/placeholder-4.svg" alt="Dernière Étape" class="w-full h-10 object-contain dark:invert"/>
+    <div style="clear: both;"></div>
+  </div>
+  
+  <!-- Card 4 - Right side -->
+  <div class="timeline-item" style="position: relative; margin-bottom: 80px;">
+    <!-- Right side content container - adjusted for new timeline position -->
+    <div style="width: 45%; margin-left: 55%; float: left;">
+      <!-- Image container - TALLER (300px) -->
+      <div class="image-container" style="width: 100%; height: 300px; padding: 0; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: white; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/images/block/placeholder-4.svg" alt="Dernière Étape" style="max-width: 98%; max-height: 98%; object-fit: contain;"/>
       </div>
       
-      
-      
-      <div class="timeline-dot  absolute left-1/2 transform -translate-x-1/2 z-10">
-        <div class="timeline-icon-container">
-            
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu">
-             <rect width="16" height="16" x="4" y="4" rx="2"></rect>
-              <rect width="6" height="6" x="9" y="9" rx="1"></rect>
-              <path d="M15 2v2"></path>
-             <path d="M15 20v2"></path>
-             <path d="M2 15h2"></path>
-              <path d="M2 9h2"></path>
-             <path d="M20 15h2"></path>
-             <path d="M20 9h2"></path>
-             <path d="M9 2v2"></path>
-             <path d="M9 20v2"></path>
-           </svg>
-       
+      <!-- Text content below image -->
+      <div class="timeline-content" style="width: 100%; padding: 1rem; background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(0, 0, 0, 0.05); border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h3 style="font-size: 1.25rem; font-weight: 500; margin-bottom: 8px;">Dernière Étape</h3>
+        <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 16px;">Notre dernière étape qui marque un tournant significatif.</p>
+      </div>
     </div>
+    
+    <!-- Timeline dot for Card 4 - MOVED TO 50% -->
+    <div class="timeline-dot" style="position: absolute; left: 50%; top: 150px; transform: translate(-50%, -50%); width: 40px; height: 40px; background-color: white; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); z-index: 100;">
+      <div class="timeline-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(0, 0, 0, 0.1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="16" height="16" x="4" y="4" rx="2"></rect>
+          <rect width="6" height="6" x="9" y="9" rx="1"></rect>
+          <path d="M15 2v2"></path>
+          <path d="M15 20v2"></path>
+          <path d="M2 15h2"></path>
+          <path d="M2 9h2"></path>
+          <path d="M20 15h2"></path>
+          <path d="M20 9h2"></path>
+          <path d="M9 2v2"></path>
+          <path d="M9 20v2"></path>
+        </svg>
+      </div>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <!-- Timeline bottom spacer -->
+  <div class="timeline-bottom-spacer" style="position: absolute; bottom: -4rem; left: 0; right: 0;"></div>
 </div>
     
     
@@ -285,117 +293,6 @@
   </div>
 </section>
 
-<style>
-    .site-project-single {
-        background-color: #F6F8FF;
-      
-      }
-      
-   
-  .timeline-section {
-    position: relative;
-  }
-  
-  .timeline-line {
-    position: absolute;
-    left: 60%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background-color:rgba(0, 0, 0, 0.1);
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  .timeline-bottom-spacer {
-     position: absolute;
-      bottom: -4rem;  
-     left: 0;
-     right: 0;
-    }
-  
-   
-  .timeline-dot {
-    position: absolute;
-    left: 60%;
-    
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-    z-index: 100;
-  }
-  
-  .timeline-icon-container .lucide-icon {
-    width: 20px;
-    height: 20px;
-    color: rgba(0, 0, 0, 0.1);
-  }
-  .first-dot {
-    top: 0;  
-    transform: translateX(-50%);  
-}
-  
-   
-  @media (max-width: 768px) {
-    .timeline-item {
-      flex-direction: column;
-    }
-    
- 
-    .timeline-image {
-      width: 50%;
-      text-align: right;
-      margin-bottom: 1rem;
-    }
-    
-    
-    .timeline-icon-container {
-        background-color: white;
-        border: 2px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        padding: 5px;
-        box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .timeline-icon-container svg {
-        width: 24px;
-        height: 24px;
-        color:rgba(0, 0, 0, 0.1);
-    }
-  }
-  
-   
-  .timeline-content {
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.1);  
-    border: 1px solid rgba(0, 0, 0, 0.05);  
-    border-radius: 10px;
-}
-  
-  .image-container {
-    max-width: 50%;  
-    margin-right: 16px;  
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .image-container img {
-    width: 100%;  
-    height: auto;  
-    object-fit: contain;  
-  }
-
-</style>
 <section class="site-project-single-section py-16">
     
   </section>
