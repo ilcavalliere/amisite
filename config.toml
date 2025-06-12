@@ -176,7 +176,7 @@ summarylength = 25
     icon = "fab fa-telegram"
       # Footer Service
       [params.footer.service]
-        title       = "L’AMICIF rassemble plus de :"
+        title       = "L’AMICIF rassemble plus de:"
         description = "11 000 anciens stagiaires des Centres Internationaux Francophones des Lions Club de France, <br>depuis 1958 et constitue une véritable chaîne d’amitié francophone"
       [params.footer.back_to_top]
         description = "Haut <br> de page"
