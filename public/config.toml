@@ -116,10 +116,10 @@ summarylength = 25
           name = "Projects"
           url  = "portfolio"
         [[params.footer.sitemap.link]]
-          name = "Blog"
+          name = "AMIBlog"
           url  = "blog"
         [[params.footer.sitemap.link]]
-          name = "Contact"
+          name = "Contactez Nous"
           url  = "contact"
       # Footer Social Media
       [params.footer.social]
