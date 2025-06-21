@@ -2,8 +2,8 @@ enable  : true
 title   : Une équipe qui fait la différence
 members  :
   - image       : images/team/team-member-one.jpg
-    name        : PABLO ESCOBAR
-    designation : Creative Director
+    name        : EL Caballero
+    designation : Président de L'AMICIF
     medium      : https://www.medium.com/
     linkedin    : https://www.linkedin.com/
     instagram   : https://www.instagram.com/
