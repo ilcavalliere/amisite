@@ -13,23 +13,23 @@
               <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
               <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0 5 0 5"></path>
             </svg>
-            {{ .Params.badge_text | default "Notre Histoire" }}
+            {{ .Params.badge_text }}
           </span>
           
           <!-- Title -->
           <h1 class="site-project-header-content">
-            {{ .Params.heading | default "Notre Voyage d'Innovation" | safeHTML }}
+            {{ .Params.heading | safeHTML }}
           </h1>
           
           <!-- Description -->
           <p class="site-project-header-content">
-            {{ .Params.description | default "Explorez les moments clés qui définissent notre parcours" }}
+            {{ .Params.description }}
           </p>
         </div>
       </div>
       <div class="col-lg-4">
         <a href="#timeline_items" class="site-project-header-action scroll-to">
-          <span>{{ .Site.Params.portfolio.scroll_down | default "défiler la page" }}</span>
+          <span>{{ .Site.Params.portfolio.scroll_down }}</span>
           <img src="{{ "images/arrow-down.svg" | absURL }}" alt="arrow-down">
         </a>
       </div>
@@ -50,7 +50,7 @@
     <div style="width: 45%; {{ if $isLeft }}margin-right: 5%; float: left;{{ else }}margin-left: 55%; float: left;{{ end }}">
       <!-- Image container - 300px tall -->
       <div class="image-container" style="width: 100%; height: 300px; padding: 0; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: white; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="{{ $item.image }}" alt="{{ $item.title }}" style="max-width: 98%; max-height: 98%; object-fit: contain;"/>
+        <img src="{{ $item.image | absURL }}" alt="{{ $item.title }}" style="max-width: 98%; max-height: 98%; object-fit: contain;"/>
       </div>
       
       <!-- Text content below image -->
@@ -111,8 +111,6 @@
   <!-- Timeline bottom spacer -->
   <div class="timeline-bottom-spacer" style="position: absolute; bottom: -4rem; left: 0; right: 0;"></div>
 </div>
-
-<div class="timeline-bottom-spacer h-16"></div>
 
 <section class="site-project-single-section py-16">
   <!-- Your existing content here -->
