@@ -110,13 +110,13 @@ summarylength = 25
       [params.footer.sitemap]
         title   = "Sitemap"
         [[params.footer.sitemap.link]]
-          name = "l’AMICIFy"
+          name = "L’AMICIF"
           url  = "about"
         [[params.footer.sitemap.link]]
           name = "Projects"
           url  = "portfolio"
         [[params.footer.sitemap.link]]
-          name = "AMIBlog"
+          name = "AMI Blog"
           url  = "blog"
         [[params.footer.sitemap.link]]
           name = "Contactez Nous"
