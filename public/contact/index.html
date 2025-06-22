@@ -9,7 +9,7 @@
   
   <meta name="author" content="StaticMania">
   
-  <meta name="generator" content="Hugo 0.145.0">
+  <meta name="generator" content="Hugo 0.147.8">
 
   <!-- Bootstrap -->
   
@@ -62,7 +62,7 @@
           
           <li class="nav-item">
             <a class="nav-link" href="https://amisite-cif-1958.firebaseapp.com/about"
-              >l’AMICIF</a
+              >L’AMICIF</a
             >
           </li>
            
@@ -123,10 +123,10 @@
         <div class="site-contact-form">
           <h4>Ensemble, construisons des ponts culturels.</h4>
           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Clé d'accès Web3Forms -->
+            
             <input type="hidden" name="access_key" value="16aab1d4-43e4-4209-996a-1d1449122dac">
             
-            <!-- Champs cachés optionnels pour Web3Forms -->
+            
             <input type="hidden" name="subject" value="Nouveau message depuis AMICIF">
             <input type="hidden" name="from_name" value="Formulaire AMICIF">
             
@@ -158,7 +158,7 @@
               <textarea class="form-control" id="aboutProject" name="message" rows="6" placeholder="Description du projet" required></textarea>
               </div>
               
-              <!-- Protection anti-bot (honeypot) -->
+              
               <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
               
               <div class="col-12">
@@ -171,7 +171,7 @@
                 </button>
               </div>
               
-              <!-- Message de statut -->
+              
               <div class="col-12">
                 <div id="contact-form-status" class="mt-3"></div>
               </div>
@@ -190,7 +190,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     const statusDiv = document.getElementById('contact-form-status');
     const submitButton = document.getElementById('contact-form-button');
     
-    // Désactiver le bouton pendant l'envoi
+    
     submitButton.disabled = true;
     submitButton.innerHTML = '<span class="btn-area"><span>Envoi en cours...</span></span>';
     
@@ -212,12 +212,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         statusDiv.innerHTML = '<div class="alert alert-danger">Erreur de connexion. Veuillez réessayer.</div>';
     }
     
-    // Réactiver le bouton
+    
     submitButton.disabled = false;
     submitButton.innerHTML = '<span class="btn-area"><span data-text="Envoyer le message">Envoyer le message</span></span>';
 });
 </script>
-
 
         </main><footer class="site-footer">
   <div class="container">
@@ -251,13 +250,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
           <h5 class="site-footer-widget-title">Sitemap</h5>
           <ul class="site-footer-widget-links">
             
-            <li><a href="https://amisite-cif-1958.firebaseapp.com/about">l’AMICIF</a></li>
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/about">L’AMICIF</a></li>
             
             <li><a href="https://amisite-cif-1958.firebaseapp.com/portfolio">Actions</a></li>
             
-            <li><a href="https://amisite-cif-1958.firebaseapp.com/blog">Blog</a></li>
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/blog">AMI Blog</a></li>
             
-            <li><a href="https://amisite-cif-1958.firebaseapp.com/contact">Contact</a></li>
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/contact">Contactez Nous</a></li>
             
           </ul>
         </div>

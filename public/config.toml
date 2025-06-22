@@ -8,25 +8,30 @@ summarylength = 25
 [menu]
   # Navbar Menus
   [[menu.nav]]
-    name    = "Home"
+    name    = "Accueil"
     url     = ""
     weight  = 1
   [[menu.nav]]
-    name    = "About"
+    name    = "L’AMICIF"
     url     = "about"
     weight  = 2
   [[menu.nav]]
-    name    = "portfolio"
+    name    = "Nos activités"
     url     = "portfolio"
     weight  = 3
   [[menu.nav]]
-    name    = "Blog"
-    url     = "blog"
+    name    = "Notre histoire"
+    url     = "/timeline"
     weight  = 4
+  [[menu.nav]]
+    name    = "AMI Blog"
+    url     = "blog"
+    weight  = 5
+  
   [[menu.nav]]
     name    = "Contactez-nous"
     url     = "contact"
-    weight  = 5
+    weight  = 6
 
 # Site Params
 [params]
@@ -45,20 +50,61 @@ summarylength = 25
   fabform  = "https://fabform.io/f/USAg2Jl"
 
   # Contact Form
-  [params.contactForm]
-    placeholder_first_name        = "Prenom"
-    placeholder_last_name         = "Nom"
-    placeholder_email             = "Email"
-    placeholder_project_type      = "Projet"
-    placeholder_about_the_project = "Details"
-    send_message                  = "Envoyer Message"
+      params
+      ]
+      fabform = "https://fabform.io/f/USAg2Jl"
 
-    [[params.contactForm.projectType]]
-      value = "gd"
-      title  = "Graphics Design"
-    [[params.contactForm.projectType]]
-      value = "wd"
-      title  = "Web Design"
+      [
+      params.contactForm
+      ]
+      placeholder_first_name = "Prénom"
+      placeholder_last_name = "Nom de famille"
+      placeholder_email = "Adresse e-mail"
+      placeholder_project_type = "Type de projet"
+      placeholder_about_the_project = "Description du projet"
+      send_message = "Envoyer le message"
+
+      [[
+      params.contactForm.projectType
+      ]]
+      title = "Échange Culturel"
+      value = "ec"
+
+      [[
+      params.contactForm.projectType
+      ]]
+      title = "Formation Professionnelle"
+      value = "fp"
+
+      [[
+      params.contactForm.projectType
+      ]]
+      title = "Projet Francophone"
+      value = "pf"
+
+      [[
+      params.contactForm.projectType
+      ]]
+      title = "Coopération Internationale"
+      value = "ci"
+
+      [[
+      params.contactForm.projectType
+      ]]
+      title = "Jeunes Ambassadeurs"
+      value = "je"
+
+      [[
+      params.contactForm.projectType
+      ]]
+      title = "Recherche et Stage"
+      value = "rs"
+
+      [[
+      params.contactForm.projectType
+      ]]
+      title = "Événementiel Francophone"
+      value = "ev"
   
   # Navbar Action Button
   [params.navAction]
@@ -110,13 +156,13 @@ summarylength = 25
       [params.footer.sitemap]
         title   = "Sitemap"
         [[params.footer.sitemap.link]]
-          name = "l’AMICIFy"
+          name = "L’AMICIF"
           url  = "about"
         [[params.footer.sitemap.link]]
           name = "Projects"
           url  = "portfolio"
         [[params.footer.sitemap.link]]
-          name = "AMIBlog"
+          name = "AMI Blog"
           url  = "blog"
         [[params.footer.sitemap.link]]
           name = "Contactez Nous"

@@ -29,6 +29,323 @@
   <link rel="shortcut icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.png" type="image/x-icon" />
   <link rel="icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.ico" type="image/x-icon" />
   
+<style> 
+/* Enhanced CSS for the Cool Tab Design */
+  
+
+.payment-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, rgba(233, 164, 169, 0.1) 100%);
+}
+
+.tab-pane.active {
+  /* Remove any Bootstrap default styling */
+}
+
+
+
+
+
+.info-box {
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  border-top: 3px solid #AED6D2;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  border-top-color: #E9A4A9;
+}
+
+.info-box i {
+  color: #E9A4A9;
+}
+
+/* Enhanced Tab Navigation */
+.payment-tabs-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.payment-tabs {
+  border: none;
+  margin-bottom: 50px;
+}
+
+.payment-tabs .nav-item {
+  margin: 0 15px;
+}
+
+.payment-tabs .nav-link {
+  background: white;
+  border: 2px solid #AED6D2;
+  border-radius: 20px;
+  padding: 30px 40px;
+  text-align: center;
+  transition: all 0.4s ease;
+  min-width: 250px;
+  position: relative;
+  overflow: hidden;
+  color: #2c3e50;
+}
+
+.payment-tabs .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(45deg, #E9A4A9 0%, #AED6D2 100%);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.payment-tabs .nav-link.active::before {
+  width: 100%;
+}
+
+.payment-tabs .nav-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(233, 164, 169, 0.3);
+  border-color: #E9A4A9;
+}
+
+.payment-tabs .nav-link.active {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.tab-content .tab-pane.active {
+  background-color: transparent;
+}
+
+.payment-tabs .nav-link.active .fa-paypal {
+  color: white;
+}
+
+/* Fix for HelloAsso SVG in active state */
+.payment-tabs .nav-link.active svg path {
+  fill: white !important;
+}
+
+.payment-tabs .nav-link:not(.active) svg {
+  /* Preserve original gradients when not active */
+}
+
+.tab-icon {
+  margin-bottom: 15px;
+}
+
+.tab-icon i {
+  color: #E9A4A9;
+}
+
+.payment-tabs .nav-link.active .tab-icon i {
+  color: white;
+}
+
+.tab-label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.tab-subtitle {
+  display: block;
+  font-size: 0.875rem;
+  opacity: 0.8;
+  color: black;
+}
+
+/* Enhanced Payment Cards */
+.payment-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  height: 100%;
+  position: relative;
+}
+
+.payment-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(233, 164, 169, 0.25);
+}
+
+.payment-card .card-header {
+  padding: 40px;
+  text-align: center;
+  color: white !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link,
+.nav-tabs .nav-link.active,
+
+.nav-tabs .show > .nav-link {
+  background-color: transparent !important;
+  color: inherit;
+}
+
+.cotisation-card .card-header {
+  background: linear-gradient(135deg, #AED6D2 0%, #98c5bf 100%);
+}
+
+.donation-card .card-header {
+  background: linear-gradient(135deg, #E9A4A9 0%, #df8a90 100%);
+}
+
+.payment-card .card-body {
+  padding: 40px;
+}
+
+.payment-card h4 {
+  font-size: 1.75rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.price-tag {
+  background: linear-gradient(135deg, rgba(233, 164, 169, 0.05) 0%, rgba(174, 214, 210, 0.05) 100%);
+  border: 1px solid rgba(233, 164, 169, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+/* FIXED: Removed blue color from price amount */
+.price-tag .amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #E9A4A9; /* Changed from blue to your pink color */
+}
+
+.price-tag .period {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.benefits li {
+  padding: 10px 0;
+  color: #495057;
+}
+
+.benefits i {
+  color: #AED6D2;
+  margin-right: 10px;
+}
+
+/* Button Styles */
+.btn-paypal {
+  background: linear-gradient(135deg, #0070ba 0%, #003087 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-paypal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 112, 186, 0.3);
+  color: white;
+}
+
+.btn-paypal-secondary {
+  background: linear-gradient(135deg, #E9A4A9 0%, #df8a90 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-paypal-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(233, 164, 169, 0.4);
+  color: white;
+}
+
+.btn-helloasso {
+  background: linear-gradient(135deg, #AED6D2 0%, #98c5bf 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-helloasso:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(174, 214, 210, 0.4);
+  color: white;
+}
+
+.btn-helloasso-secondary {
+  background: linear-gradient(135deg, #E9A4A9 0%, #df8a90 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-helloasso-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(233, 164, 169, 0.4);
+  color: white;
+}
+
+/* Trust Badges */
+.trust-badges {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(233, 164, 169, 0.2);
+}
+
+.trust-badges i {
+  color: #AED6D2;
+  transition: color 0.3s ease;
+}
+
+.trust-badges .col-md-4:hover i {
+  color: #E9A4A9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .payment-tabs .nav-item {
+    margin: 10px 0;
+    width: 100%;
+  }
+  
+  .payment-tabs .nav-link {
+    min-width: 100%;
+    padding: 20px 30px;
+  }
+  
+  
+  .payment-card .card-body {
+    padding: 25px;
+  }
+}
+</style>
+
+
 </head>
 <body><nav class="navbar navbar-expand-lg site-navigation">
   <div class="container">
@@ -62,7 +379,7 @@
           
           <li class="nav-item">
             <a class="nav-link" href="https://amisite-cif-1958.firebaseapp.com/about"
-              >l’AMICIF</a
+              >L’AMICIF</a
             >
           </li>
            
@@ -156,54 +473,214 @@
 
 
   
-  <section class="site-client">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title">
-            <h2>Gardons la Flamme de l&#39;AMICIF Vivante</h2>
-          </div>
-           <div class="site-client-wrapper"></div>
-         <div class="cotisation-content">
-          <div class="cotisation-text">
-            <h3>Chers membres de l'AMICIF,</h3>
-            <p>Votre association a besoin de vous ! Pour assurer la pérennité de notre belle organisation et maintenir la flamme de l'AMICIF allumée pour les années à venir, nous faisons appel à votre générosité et à votre engagement.</p>
-            
-            <div class="cotisation-actions">
-              <div class="cotisation-item">
-                <h4>💳 Cotisation Annuelle</h4>
-                <p>Réglez votre cotisation annuelle dans les meilleurs délais pour maintenir votre adhésion active.</p>
+<section class="payment-section">
+  <div class="container">
+    <!-- Header with context -->
+    <div class="section-title text-center mb-5">
+      <h2 class="section-title">Soutenez l'AMICIF</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <p class="lead">
+            Votre soutien est essentiel pour maintenir et développer nos actions en faveur de la francophonie. 
+            En devenant membre ou en faisant un don, vous contribuez directement à nos programmes d'échanges culturels, 
+            de formation et de coopération internationale.
+          </p>
+          <div class="support-info mt-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="fas fa-users fa-2x mb-2"></i>
+                  <h5>Adhésion Annuelle</h5>
+                  <p>10€ par an pour rejoindre notre réseau de plus de 11 000 membres</p>
+                </div>
               </div>
-              
-              <div class="cotisation-item">
-                <h4>💝 Don Supplémentaire</h4>
-                <p>Considérez un don supplémentaire selon vos moyens pour renforcer nos actions et nos projets.</p>
-              </div>
-              
-              <div class="cotisation-item">
-                <h4>🤝 Soutien Continu</h4>
-                <p>Aidez l'AMICIF à continuer d'opérer et à créer des liens durables entre anciens.</p>
-              </div>
-          <div class="cotisation-footer">
-              <p><strong>Votre soutien financier est essentiel pour :</strong></p>
-              <ul>
-                <li>Organiser nos événements et rencontres</li>
-                <li>Maintenir nos services aux membres</li>
-                <li>Développer de nouveaux projets</li>
-                <li>Créer un réseau solide d'anciens</li>
-              </ul>
-              
-              <div class="cotisation-cta">
-                <a href="#cotisation" class="btn btn-primary btn-lg">💳 Régler ma Cotisation</a>
-                <a href="#don-extra" class="btn btn-secondary">💝 Faire un Don Extra</a>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="fas fa-hand-holding-heart fa-2x mb-2"></i>
+                  <h5>Don Libre</h5>
+                  <p>Soutenez nos actions avec le montant de votre choix</p>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Enhanced Payment Tabs -->
+    <div class="payment-tabs-wrapper">
+      <!-- Tab Navigation -->
+      <ul class="nav nav-pills payment-tabs justify-content-center mb-5" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="#paypal" role="tab">
+            <div class="tab-icon">
+              <i class="fab fa-paypal fa-2x"></i>
+            </div>
+            <span class="tab-label">PayPal</span>
+            <small class="tab-subtitle">Paiement international sécurisé</small>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" href="#helloasso" role="tab">
+            <div class="tab-icon">
+              <svg width="40" height="40" viewBox="0 0 995 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0)">
+                <path d="M298.48 803C145.24 627.95 247.48 185.43 312.48 185.43C187 182.85 -25 265.84 3.57998 561.9C34 803 234.91 992.62 483.74 999.8C602.45 1003.19 712.58 964.21 800.17 896.85C559.86 1069.85 397.08 915.6 298.48 803V803Z" fill="url(#paint0_linear)"/>
+                <path d="M859.58 505.57C732.51 761.53 342.83 869.32 298.48 803C374.64 914.38 563.59 1070.25 801.67 895.81C992 747.5 1052 477.81 932.3 259C875.15 154.58 786.4 78.78 684.64 37.1C953.75 157.44 926.48 370.81 859.58 505.57V505.57Z" fill="url(#paint1_linear)"/>
+                <path d="M312.5 185.38C587.38 155.67 899.11 439.48 859.58 505.57C937 373.35 954.78 157.44 685.72 37.07C551.68 -17.84 395.1 -13.6 258.51 62.2C73.25 165 -22.56 369.81 4.51999 569C-14.95 274.52 209.77 196.48 312.5 185.38Z" fill="url(#paint2_linear)"/>
+                </g>
+                <defs>
+                <linearGradient id="paint0_linear" x1="104.115" y1="252.944" x2="559.085" y2="1041.11" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#498A63"/>
+                <stop offset="0.25" stop-color="#61B984"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear" x1="463.743" y1="949.153" x2="935.568" y2="184.101" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#89356D"/>
+                <stop offset="0.21" stop-color="#B94794"/>
+                </linearGradient>
+                <linearGradient id="paint2_linear" x1="75.9077" y1="204.831" x2="870.343" y2="494.052" gradientUnits="userSpaceOnUse">
+                <stop offset="0.6" stop-color="#F59C1C"/>
+                <stop offset="1" stop-color="#C7702B"/>
+                </linearGradient>
+                <clipPath id="clip0">
+                <rect width="994.07" height="1000" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <span class="tab-label">HelloAsso</span>
+            <small class="tab-subtitle">Plateforme française pour associations</small>
+          </a>
+        </li>
+      </ul>
+      
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- PayPal Tab -->
+        <div class="tab-pane fade show active" id="paypal" role="tabpanel">
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 mb-4">
+              <div class="payment-card cotisation-card">
+                <div class="card-header">
+                  <i class="fas fa-id-card fa-3x"></i>
+                </div>
+                <div class="card-body">
+                  <h4>Cotisation Annuelle</h4>
+                  <p class="description">Devenez membre actif de l'AMICIF et accédez à tous nos programmes</p>
+                  <div class="price-tag">
+                    <span class="amount">10€</span>
+                    <span class="period">/an</span>
+                  </div>
+                  <ul class="benefits">
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Accès au réseau francophone</li>
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Participation aux événements</li>
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Newsletter exclusive</li>
+                  </ul>
+                  <a href="https://www.paypal.com/ncp/payment/LBCU9CVN6PVVJ" class="btn btn-paypal btn-lg btn-block" target="_blank">
+                    <i class="fab fa-paypal"></i> Adhérer via PayPal
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-5 col-md-6 mb-4">
+              <div class="payment-card donation-card">
+                <div class="card-header">
+                  <i class="fas fa-heart fa-3x"></i>
+                </div>
+                <div class="card-body">
+                  <h4>Faire un Don</h4>
+                  <p class="description">Soutenez nos actions et projets en faveur de la francophonie</p>
+                  <div class="price-tag">
+                    <span class="amount">Libre</span>
+                  </div>
+                  <ul class="benefits">
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Déductible des impôts</li>
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Reçu fiscal automatique</li>
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Impact direct sur nos actions</li>
+                  </ul>
+                  <a href="https://www.paypal.com/donate/?hosted_button_id=4XF2CKYY4HSH6" class="btn btn-paypal-secondary btn-lg btn-block" target="_blank">
+                    <i class="fab fa-paypal"></i> Faire un don via PayPal
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- HelloAsso Tab -->
+        <div class="tab-pane fade" id="helloasso" role="tabpanel">
+          <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 mb-4">
+              <div class="payment-card cotisation-card">
+                <div class="card-header">
+                  <i class="fas fa-id-card fa-3x"></i>
+                </div>
+                <div class="card-body">
+                  <h4>Cotisation Annuelle</h4>
+                  <p class="description">Devenez membre actif de l'AMICIF et accédez à tous nos programmes</p>
+                  <div class="price-tag">
+                    <span class="amount">10€</span>
+                    <span class="period">/an</span>
+                  </div>
+                  <ul class="benefits">
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Accès au réseau francophone</li>
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Participation aux événements</li>
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Newsletter exclusive</li>
+                  </ul>
+                  <a href="https://www.helloasso.com/associations/amicif-amicale-des-anciens-des-centres-internationaux-francophones/adhesions/cotisation-2025" class="btn btn-helloasso btn-lg btn-block" target="_blank">
+                    Adhérer via HelloAsso
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-5 col-md-6 mb-4">
+              <div class="payment-card donation-card">
+                <div class="card-header">
+                  <i class="fas fa-heart fa-3x"></i>
+                </div>
+                <div class="card-body">
+                  <h4>Faire un Don</h4>
+                  <p class="description">Soutenez nos actions et projets en faveur de la francophonie</p>
+                  <div class="price-tag">
+                    <span class="amount">Libre</span>
+                  </div>
+                  <ul class="benefits">
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Déductible des impôts</li>
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Reçu fiscal automatique</li>
+                    <li><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-checks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 12l5 5l10 -10" /><path d="M2 12l5 5m5 -5l5 -5" /></svg></i> Impact direct sur nos actions</li>
+                  </ul>
+                  <a href="https://www.helloasso.com/associations/amicif-amicale-des-anciens-des-centres-internationaux-francophones/formulaires/1" class="btn btn-helloasso-secondary btn-lg btn-block" target="_blank">
+                    Faire un don via HelloAsso
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Security & Trust Badges -->
+    <div class="trust-badges text-center mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <i class="fas fa-shield-alt fa-2x mb-2"></i>
+          <p>Paiements 100% sécurisés</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-lock fa-2x mb-2"></i>
+          <p>Données personnelles protégées</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-certificate fa-2x mb-2"></i>
+          <p>Association reconnue d'intérêt général</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   
 
 
@@ -216,7 +693,7 @@
         <div class="col-12">
           <div class="section-title">
             <h2>
-              Une équipe qui fait la différence
+              Une équipe francophone bénévole
             </h2>
           </div>
         </div>
@@ -227,12 +704,11 @@
               <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-one.jpg" alt="team-member">
             </div>
             <div class="site-team-member-content">
-              <h3>PABLO ESCOBAR</h3>
-              <p>Creative Director</p>
+              <h3>EL Caballero</h3>
+              <p>Président</p>
               <ul class="site-team-member-social">
-                <li><a href="https://www.medium.com/"><i class="fa fa-medium"></i></a></li>
-                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/enzo-lopez-caballero/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
               </ul>
             </div>
           </div>
@@ -244,12 +720,11 @@
               <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-two.jpg" alt="team-member">
             </div>
             <div class="site-team-member-content">
-              <h3>MONTINO RIAU</h3>
-              <p>Product Manager</p>
+              <h3>Mathilde Heitz</h3>
+              <p>Trésorière</p>
               <ul class="site-team-member-social">
-                <li><a href="https://www.medium.com/"><i class="fa fa-medium"></i></a></li>
-                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
               </ul>
             </div>
           </div>
@@ -261,12 +736,11 @@
               <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-three.jpg" alt="team-member">
             </div>
             <div class="site-team-member-content">
-              <h3>ALEX NAASRI</h3>
-              <p>Chief Design Officer</p>
+              <h3>Anna Ostrovskaya</h3>
+              <p>Secrétaire</p>
               <ul class="site-team-member-social">
-                <li><a href="https://www.medium.com/"><i class="fa fa-medium"></i></a></li>
-                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
               </ul>
             </div>
           </div>
@@ -278,12 +752,11 @@
               <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-four.jpg" alt="team-member">
             </div>
             <div class="site-team-member-content">
-              <h3>HONGMAN CHIOA</h3>
-              <p>UX Researcher</p>
+              <h3>Serena Tenea</h3>
+              <p>Membre du Bureau</p>
               <ul class="site-team-member-social">
-                <li><a href="https://www.medium.com/"><i class="fa fa-medium"></i></a></li>
-                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
               </ul>
             </div>
           </div>
@@ -295,12 +768,11 @@
               <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-five.jpg" alt="team-member">
             </div>
             <div class="site-team-member-content">
-              <h3>SANTIO ANDRESS</h3>
-              <p>Content Researcher</p>
+              <h3>Omar Rahmounii</h3>
+              <p>Membre du Bureau</p>
               <ul class="site-team-member-social">
-                <li><a href="https://www.medium.com/"><i class="fa fa-medium"></i></a></li>
-                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
               </ul>
             </div>
           </div>
@@ -312,12 +784,75 @@
               <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-six.jpg" alt="team-member">
             </div>
             <div class="site-team-member-content">
-              <h3>RAMESH PAUL</h3>
-              <p>Creative Designer</p>
+              <h3>Ricky Arias</h3>
+              <p>Membre du Bureau</p>
               <ul class="site-team-member-social">
-                <li><a href="https://www.medium.com/"><i class="fa fa-medium"></i></a></li>
-                <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="site-team-member">
+            <div class="site-team-member-image">
+              <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-seven.jpg" alt="team-member">
+            </div>
+            <div class="site-team-member-content">
+              <h3>Lucie Bonsergent</h3>
+              <p>Membre du Bureau</p>
+              <ul class="site-team-member-social">
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="site-team-member">
+            <div class="site-team-member-image">
+              <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-eight.jpg" alt="team-member">
+            </div>
+            <div class="site-team-member-content">
+              <h3>Kayla Telhiard</h3>
+              <p>Membre du Bureau</p>
+              <ul class="site-team-member-social">
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="site-team-member">
+            <div class="site-team-member-image">
+              <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-nine.jpg" alt="team-member">
+            </div>
+            <div class="site-team-member-content">
+              <h3>Nino Lopez</h3>
+              <p>Membre du Bureau</p>
+              <ul class="site-team-member-social">
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="site-team-member">
+            <div class="site-team-member-image">
+              <img src="https://amisite-cif-1958.firebaseapp.com/images/team/team-member-ten.jpg" alt="team-member">
+            </div>
+            <div class="site-team-member-content">
+              <h3>Thanh Van</h3>
+              <p>Membre du Bureau</p>
+              <ul class="site-team-member-social">
+                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
+                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
               </ul>
             </div>
           </div>
@@ -396,13 +931,13 @@
           <h5 class="site-footer-widget-title">Sitemap</h5>
           <ul class="site-footer-widget-links">
             
-            <li><a href="https://amisite-cif-1958.firebaseapp.com/about">l’AMICIF</a></li>
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/about">L’AMICIF</a></li>
             
             <li><a href="https://amisite-cif-1958.firebaseapp.com/portfolio">Actions</a></li>
             
-            <li><a href="https://amisite-cif-1958.firebaseapp.com/blog">Blog</a></li>
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/blog">AMI Blog</a></li>
             
-            <li><a href="https://amisite-cif-1958.firebaseapp.com/contact">Contact</a></li>
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/contact">Contactez Nous</a></li>
             
           </ul>
         </div>

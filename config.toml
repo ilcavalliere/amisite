@@ -12,7 +12,7 @@ summarylength = 25
     url     = ""
     weight  = 1
   [[menu.nav]]
-    name    = "l’AMICIF"
+    name    = "L’AMICIF"
     url     = "about"
     weight  = 2
   [[menu.nav]]
@@ -24,7 +24,7 @@ summarylength = 25
     url     = "/timeline"
     weight  = 4
   [[menu.nav]]
-    name    = "AMIblog"
+    name    = "AMI Blog"
     url     = "blog"
     weight  = 5
   
@@ -136,13 +136,13 @@ summarylength = 25
       [params.footer.sitemap]
         title   = "Sitemap"
         [[params.footer.sitemap.link]]
-          name = "l’AMICIF"
+          name = "L’AMICIF"
           url  = "about"
         [[params.footer.sitemap.link]]
           name = "Actions"
           url  = "portfolio"
         [[params.footer.sitemap.link]]
-          name = "AMIBlog"
+          name = "AMI Blog"
           url  = "blog"
         [[params.footer.sitemap.link]]
           name = "Contactez Nous"
