@@ -3,42 +3,57 @@ title   : Une équipe qui fait la différence
 members  :
   - image       : images/team/team-member-one.jpg
     name        : EL Caballero
-    designation : Président de L'AMICIF
-    medium      : https://www.medium.com/
-    linkedin    : https://www.linkedin.com/
+    designation : Président
+    linkedin    : https://www.linkedin.com/in/enzo-lopez-caballero/
     instagram   : https://www.instagram.com/
 
   - image       : images/team/team-member-two.jpg
-    name        : MONTINO RIAU
-    designation : Product Manager
-    medium      : https://www.medium.com/
+    name        : Mathilde Heitz
+    designation : Trésorière
     linkedin    : https://www.linkedin.com/
     instagram   : https://www.instagram.com/
 
   - image       : images/team/team-member-three.jpg
-    name        : ALEX NAASRI
-    designation : Chief Design Officer
-    medium      : https://www.medium.com/
+    name        : Anna Ostrovskaya
+    designation : Secrétaire
     linkedin    : https://www.linkedin.com/
     instagram   : https://www.instagram.com/
 
   - image       : images/team/team-member-four.jpg
-    name        : HONGMAN CHIOA
-    designation : UX Researcher
-    medium      : https://www.medium.com/
+    name        : Serena Tenea
+    designation : Membre du Bureau
     linkedin    : https://www.linkedin.com/
     instagram   : https://www.instagram.com/
 
   - image       : images/team/team-member-five.jpg
-    name        : SANTIO ANDRESS
-    designation : Content Researcher
-    medium      : https://www.medium.com/
+    name        : Omar Rahmounii
+    designation : Membre du Bureau
     linkedin    : https://www.linkedin.com/
     instagram   : https://www.instagram.com/
 
   - image       : images/team/team-member-six.jpg
-    name        : RAMESH PAUL
-    designation : Creative Designer
-    medium      : https://www.medium.com/
+    name        : Ricky Arias
+    designation : Membre du Bureau
+    linkedin    : https://www.linkedin.com/
+    instagram   : https://www.instagram.com/
+
+  - image       : images/team/team-member-seven.jpg
+    name        : Lucie Bonsergent
+    designation : Membre du Bureau
+    linkedin    : https://www.linkedin.com/
+    instagram   : https://www.instagram.com/
+  - image       : images/team/team-member-eight.jpg
+    name        : Kayla Telhiard
+    designation : Membre du Bureau
+    linkedin    : https://www.linkedin.com/
+    instagram   : https://www.instagram.com/
+  - image       : images/team/team-member-nine.jpg
+    name        : Nino Lopez
+    designation : Membre du Bureau
+    linkedin    : https://www.linkedin.com/
+    instagram   : https://www.instagram.com/
+  - image       : images/team/team-member-ten.jpg
+    name        : Thanh Van
+    designation : Membre du Bureau
     linkedin    : https://www.linkedin.com/
     instagram   : https://www.instagram.com/
