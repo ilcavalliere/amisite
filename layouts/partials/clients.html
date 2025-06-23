@@ -324,23 +324,23 @@
             <div class="container">
               <!-- Header with context -->
               <div class="section-title text-center mb-5">
-                <h2 class="section-title">{{ .payment_title | default "Soutenez l'AMICIF" }}</h2>
+                <h2 class="section-title">{{ .payment_title | default "Comment nous soutenir" }}</h2>
                 <div class="row justify-content-center">
                   <div class="col-lg-8">
-                    <p class="lead">{{ .payment_description | default "Votre soutien est essentiel pour maintenir et développer nos actions en faveur de la francophonie. En devenant membre ou en faisant un don, vous contribuez directement à nos programmes d'échanges culturels, de formation et de coopération internationale." }}</p>
+                    <p class="lead">{{ .payment_description | default "Votre soutien est essentiel pour maintenir et développer nos actions en faveur de la francophonie. En tant qu’ancien stagiaire des CIF, vous pouvez adhérer à l’association en versant votre cotisation annuelle. Vous pouvez aussi faire un don à l’association ( sans être nécessairement un ancien stagiaire des CIF !), pour soutenir notre action." }}</p>
                     <div class="support-info mt-4">
                       <div class="row">
                         <div class="col-md-6">
                           <div class="info-box">
                             <i class="fas fa-users fa-2x mb-2"></i>
-                            <h5>{{ .adhesion_title | default "Adhésion Annuelle" }}</h5>
+                            <h5>{{ .adhesion_title | default "Cotisation Annuelle" }}</h5>
                             <p>{{ .adhesion_description | default "10€ par an pour rejoindre notre réseau de plus de 11 000 membres" }}</p>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="info-box">
                             <i class="fas fa-hand-holding-heart fa-2x mb-2"></i>
-                            <h5>{{ .donation_title | default "Don Libre" }}</h5>
+                            <h5>{{ .donation_title | default "Don libre" }}</h5>
                             <p>{{ .donation_description | default "Soutenez nos actions avec le montant de votre choix" }}</p>
                           </div>
                         </div>
@@ -376,57 +376,7 @@
                 
                 <!-- Tab Content -->
                 <div class="tab-content">
-                  <!-- PayPal Tab -->
-                  <div class="tab-pane fade show active" id="paypal" role="tabpanel">
-                    <div class="row justify-content-center">
-                      <div class="col-lg-5 col-md-6 mb-4">
-                        <div class="payment-card cotisation-card">
-                          <div class="card-header">
-                            <i class="fas fa-id-card fa-3x"></i>
-                          </div>
-                          <div class="card-body">
-                            <h4>{{ .cotisation_card_title | default "Cotisation Annuelle" }}</h4>
-                            <p class="description">{{ .cotisation_card_description | default "Devenez membre actif de l'AMICIF et accédez à tous nos programmes" }}</p>
-                            <div class="price-tag">
-                              <span class="amount">{{ .cotisation_amount | default "10€" }}</span>
-                              <span class="period">{{ .cotisation_period | default "/an" }}</span>
-                            </div>
-                            <ul class="benefits">
-                              {{ range .cotisation_benefits }}
-                              <li>{{ .icon | safeHTML }} {{ .text }}</li>
-                              {{ end }}
-                            </ul>
-                            <a href="{{ .paypal_cotisation_link }}" class="btn btn-paypal btn-lg btn-block" target="_blank">
-                              <i class="fab fa-paypal"></i> {{ .paypal_cotisation_button | default "Adhérer via PayPal" }}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="col-lg-5 col-md-6 mb-4">
-                        <div class="payment-card donation-card">
-                          <div class="card-header">
-                            <i class="fas fa-heart fa-3x"></i>
-                          </div>
-                          <div class="card-body">
-                            <h4>{{ .donation_card_title | default "Faire un Don" }}</h4>
-                            <p class="description">{{ .donation_card_description | default "Soutenez nos actions et projets en faveur de la francophonie" }}</p>
-                            <div class="price-tag">
-                              <span class="amount">{{ .donation_amount | default "Libre" }}</span>
-                            </div>
-                            <ul class="benefits">
-                              {{ range .donation_benefits }}
-                              <li>{{ .icon | safeHTML }} {{ .text }}</li>
-                              {{ end }}
-                            </ul>
-                            <a href="{{ .paypal_donation_link }}" class="btn btn-paypal-secondary btn-lg btn-block" target="_blank">
-                              <i class="fab fa-paypal"></i> {{ .paypal_donation_button | default "Faire un don via PayPal" }}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                 
                   
                   <!-- HelloAsso Tab -->
                   <div class="tab-pane fade" id="helloasso" role="tabpanel">
@@ -479,8 +429,65 @@
                       </div>
                     </div>
                   </div>
+
+                   <!-- PayPal Tab -->
+                  <div class="tab-pane fade show active" id="paypal" role="tabpanel">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-5 col-md-6 mb-4">
+                        <div class="payment-card cotisation-card">
+                          <div class="card-header">
+                            <i class="fas fa-id-card fa-3x"></i>
+                          </div>
+                          <div class="card-body">
+                            <h4>{{ .cotisation_card_title | default "Cotisation Annuelle" }}</h4>
+                            <p class="description">{{ .cotisation_card_description | default "Devenez membre actif de l'AMICIF et accédez à tous nos programmes" }}</p>
+                            <div class="price-tag">
+                              <span class="amount">{{ .cotisation_amount | default "10€" }}</span>
+                              <span class="period">{{ .cotisation_period | default "/an" }}</span>
+                            </div>
+                            <ul class="benefits">
+                              {{ range .cotisation_benefits }}
+                              <li>{{ .icon | safeHTML }} {{ .text }}</li>
+                              {{ end }}
+                            </ul>
+                            <a href="{{ .paypal_cotisation_link }}" class="btn btn-paypal btn-lg btn-block" target="_blank">
+                              <i class="fab fa-paypal"></i> {{ .paypal_cotisation_button | default "Adhérer via PayPal" }}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-5 col-md-6 mb-4">
+                        <div class="payment-card donation-card">
+                          <div class="card-header">
+                            <i class="fas fa-heart fa-3x"></i>
+                          </div>
+                          <div class="card-body">
+                            <h4>{{ .donation_card_title | default "Faire un Don" }}</h4>
+                            <p class="description">{{ .donation_card_description | default "Soutenez nos actions et projets en faveur de la francophonie" }}</p>
+                            <div class="price-tag">
+                              <span class="amount">{{ .donation_amount | default "Libre" }}</span>
+                            </div>
+                            <ul class="benefits">
+                              {{ range .donation_benefits }}
+                              <li>{{ .icon | safeHTML }} {{ .text }}</li>
+                              {{ end }}
+                            </ul>
+                            <a href="{{ .paypal_donation_link }}" class="btn btn-paypal-secondary btn-lg btn-block" target="_blank">
+                              <i class="fab fa-paypal"></i> {{ .paypal_donation_button | default "Faire un don via PayPal" }}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
+
+
+
               </div>
+
               
               <!-- Security & Trust Badges -->
               <div class="trust-badges text-center mt-5">

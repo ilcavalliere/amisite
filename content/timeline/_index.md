@@ -1,7 +1,7 @@
 ---
-title: "Explorez les moments clés qui définissent notre parcours"
-heading: "Notre Voyage d'Amitié"
-description: "De simples retrouvailles entre anciens à une association structurée et reconnue, découvrez comment l'AMICIF s'est construite au fil des décennies. Chaque étape de notre histoire témoigne de l'engagement indéfectible de nos membres et de leur volonté de perpétuer les valeurs du lionisme au-delà de leur passage aux CIF."
+title: "Découvrez les moments-clés qui témoignent de notre parcours"
+heading: "Notre histoire amicale et francophone"
+description: "De simples retrouvailles entre anciens à une association structurée et reconnue, découvrez comment l'AMICIF s'est construite depuis 1958. Chaque étape de notre histoire témoigne de l'engagement indéfectible des anciens stagiaires, et de leur volonté de perpétuer les valeurs du lionisme au-delà de leur passage aux CIF."
 badge_text: "Notre Histoire"
 
 timeline_items:
@@ -17,12 +17,11 @@ Après la soixantième promotion, une étape symbolique se franchit. Nous adopto
   
   - title: "2018 - La Structuration"
     description: "Le Bureau des Anciens:
-Une nouvelle ère s'ouvre avec la création du Bureau des Anciens. Cette structure organisationnelle nous permet d'orchestrer plus efficacement les activités de l'amicale des CIF et d'intensifier notre participation active aux côtés des Lions dans les centres. Le Bureau des Anciens devient le moteur de notre engagement renouvelé."
+Lors du 60ème anniversaire des CIF, une nouvelle ère s’ouvre avec la création d’un bureau des anciens, structure organisationnelle, qui nous permet d'orchestrer plus efficacement les activités de l'amicale des CIF et d'intensifier notre participation active aux côtés des Lions dans les centres. Le Bureau des Anciens devient le moteur de notre engagement renouvelé."
     image: "/images/block/placeholder-3.svg"
   
-  - title: "2024 - L'Officialisation"
-    description: "Vers une Association Reconnue:
-L'aboutissement de six décennies d'engagement : nous entamons la création de l'association officielle de l'AMICIF. Cette démarche consacre notre évolution d'un groupe informel vers une structure juridiquement reconnue, garantissant la pérennité de notre mission et l'amplification de notre impact au service des CIF."
+  - title: "2024 - L'officialisation"
+    description: "Paris, automne 2024, une quinzaine d’anciens se réunit pour signer la création officielle de l’association loi 1901 AMICIF. Pour les porteurs de cette démarche, c’est l’aboutissement de six décennies d'engagement. Cette démarche consacre notre évolution d'un groupe informel vers une structure juridiquement reconnue, garantissant la pérennité de notre mission au service des anciens stagiaires ainsi que l'amplification de notre impact au service des Centres Internationaux Francophones des Lions Clubs de France."
     image: "/images/block/placeholder-4.svg"
 
 ---
