@@ -111,7 +111,7 @@ summarylength = 25
     enable    = true
     title     = "Nos Actions Récentes"
     subtitle  = "L'avenir de la francophonie se construit aujourd'hui"
-    view_project = "Explorer le projet"
+    view_project = "Lire plus"
     more_works = "MORE WORKS"
     scroll_down = "défiler la page"
 
