@@ -1,36 +1,47 @@
 ---
-title: "Design Inspiration: The Best Projects From December"
-date: 2019-12-24T13:45:06+06:00
-image: images/blog/blog-post-04.jpg
-feature_image: images/blog/blog-details-image.jpg
-author: Alexender Schoitiz
+title: "Les Retrouvailles à Toulouse"
+date: 2024-01-15T14:30:00+01:00
+image: images/blog/toulouse-meetup.jpg
+feature_image: images/blog/toulouse-details.jpg
+author: AMICIF Team
 ---
-### Black Lines brand identity, by & Smith
 
-Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.
+Sous le soleil doré de la *Ville Rose*, les membres du comité AMICIF se sont retrouvés pour un moment suspendu : un week-end d'échanges, de rires et d'inspiration aux côtés de Priyanka Talim, l'une des fondatrices historiques de notre aventure CIF.
 
-1. ROFL means Rolling on floor laughing.
-2. STFU means Shut the *freak* up.
-3. LMK means Let me know.
-4. ILY means I love you.
-5. YOLO means You only live once.
-6. SMH means Shaking my head.
+### Le cœur battant de nos ambitions
 
-The company was previously known as Hingston + Co. but has been given a complete rebrand — including a new logo, tap badges, website and branded material — by London-based design studio & Smith. The new identity is based on the Kandinsky abstract painting, Black Lines, and true to its name, is mostly black and white with a few flashes of colour. According to & Smith, the identity brings together “art and science” and has been brought to life through collaborations with nine illustrators.
+Toulouse n'était pas qu'un décor : c'était le cœur battant de nos souvenirs partagés et de nos ambitions futures. Entre briques roses et accent chantant, la magie opérait à chaque coin de rue.
 
-1. ROFL means Rolling on floor laughing.
-2. STFU means Shut the *freak* up.
-3. LMK means Let me know.
-4. ILY means I love you.
-5. YOLO means You only live once.
-6. SMH means Shaking my head.
+#### Les chiffres de nos retrouvailles
 
-![blog-details-image-02](https://user-images.githubusercontent.com/16266381/71399826-2009b380-264f-11ea-9bc3-59d7fa9a9994.jpg)
+1. **6 membres** réunis sous le soleil toulousain
+2. **4 heures** de brainstorming créatif intense
+3. **3 projets** lancés pour l'avenir
+4. **1 Ville Rose** qui nous a inspirés
 
-Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.
+Entre deux cafés sur la place du Capitole, nous avons esquissé l'avenir : accueillir davantage d'étudiants francophones, tisser un réseau d'alumni encore plus solide et préparer une édition 2025 qui fera rayonner la culture française bien au-delà de nos frontières.
 
-> "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring."
+### Nos moments forts
 
+- Flânerie matinale au marché Victor-Hugo
+- Atelier « Design & Impact » chez les Halles de la Transition  
+- Dégustation de tapas sur les quais de la Garonne
+- Session nocturne de cartes postales pour nos CIFs aux quatre coins du monde
 
-> Paul Rand, graphic designer
+Ce rendez-vous, simple et puissant, nous rappelle pourquoi nous existons : créer des **ponts humains** et cultiver la francophonie moderne, inclusive et audacieuse.
 
+> "Revenir à Toulouse, c'est retrouver la source de notre énergie. Ensemble, nous allons plus loin."
+> 
+> — Priyanka Talim
+
+![toulouse-retrouvailles](images/blog/toulouse-team-photo.jpg)
+
+Les batteries rechargées, nous repartons chacun vers nos horizons avec une seule idée en tête : se donner rendez-vous très vite… et pourquoi pas à Paris en 2025 ?
+
+### L'esprit AMICIF continue
+
+Cette rencontre toulousaine confirme notre mission : rassembler, inspirer et faire rayonner la francophonie à travers le monde. Chaque retrouvaille renforce notre réseau et nourrit notre passion commune.
+
+> "L'amitié se nourrit de communication, de vérité, de franchise, de témoignage et de services mutuels."
+> 
+> — Proverbe CIF

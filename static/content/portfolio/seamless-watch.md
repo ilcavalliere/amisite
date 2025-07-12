@@ -1,28 +1,30 @@
 ---
-title: "SEAMLESS WATCH"
-date: 2019-12-23T15:55:44+06:00
+title: "ACCUEIL PARIS 2025 - CIF"
+date: 2025-07-12 T15:55:44+06:00
 type: portfolio
 image: "images/projects/project-thumb-three.jpg"
-category: ["REBRAND"]
+category: ["Centres"]
 project_images: ["images/projects/project-details-image-one.jpg", "images/projects/project-details-image-two.jpg"]
 ---
 
-The “Seamless Watch” watch has all the features that users expect in a digital watch, and some unusual features.
+L'AMICIF (Amicale des CIF) a eu l'honneur d'accompagner l'édition 2025 de l'Accueil Paris des Centres Internationaux Francophones, qui s'est déroulé les 3 et 4 juillet 2025. Un événement exceptionnel qui a rassemblé 140 jeunes venus de plus de 50 pays représentant tous les continents.
+Un hébergement au cœur de Paris
+Les participants ont été accueillis à l'auberge de jeunesse BVJ Paris, idéalement située au cœur du quartier Saint-Lazare, l'un des quartiers les plus chics de la capitale. Cette localisation privilégiée, à proximité de l'Opéra et des grands boulevards parisiens, a offert aux jeunes francophones une immersion totale dans l'élégance parisienne.
+Découverte culturelle de Montmartre
+Le programme culturel a inclus une visite mémorable de Montmartre, permettant aux participants de découvrir l'âme artistique de Paris. Cette escapade sur la butte sacrée a été l'occasion pour les jeunes de tous horizons de partager leurs impressions et de créer des liens durables dans l'esprit de la francophonie.
+Une équipe AMICIF mobilisée
+L'association AMICIF a déployé une équipe exceptionnelle de 11 membres bénévoles sur place, qui ont soutenu l'ensemble des activités proposées. Cette mobilisation a permis d'assurer la qualité et la convivialité de chaque moment partagé.
+Des activités inoubliables
+Le programme d'animation a été particulièrement riche et varié :
 
+Danse Latino : Découverte des rythmes sud-américains dans une ambiance festive
+Speed Dating : Rencontres express pour briser la glace entre participants
+Karaoké : Moments musicaux partagés célébrant la diversité francophone
+Ties Up : Activités de cohésion et de team building
+Quizz Francophone : Jeu-concours sur la culture francophone mondiale
 
-The watch has the following features:
-
-Time and date displayed on the screen. Current time is in large numbers, date is in small numbers above it.
-
-Light: Pressing the light button on the side of the watch activates a light while the button is pressed. Pressing and holding that button for 3 seconds turns on the light and keeps it on, until the button is held again for 3 seconds or up to 2 hours. After 2 hours, it will automatically turn off.
-
-Alarm. A daily alarm may be set for a given time. The alarm may be enabled or disabled. When the alarm is enabled and the alarm time is reached, the watch will beep fast for 5 seconds, then slowly for 30 seconds, then fast for another 5 seconds. Pressing any button stops the alarm sound (in addition to performing its normal function).
-
-Timer. Timer mode shows a count-up timer that starts at 00:00. When the timer is started, it counts up. Pressing the start/stop button will pause the timer, pressing it again continues counting up. Pressing and holding the button for 3 seconds resets the timer to 00:00 and stops counting.
-
-Mystery answer. After entering this mode, the screen initially displays “ask now”. The user may ask a yes-or-no question aloud and press the start/stop button, this will display a randomly selected answer that is one of the following: “yeah”, “yeah right”, “no”, “no doubt”, “keep trying”, “keep dreaming”. Whenever the display has more than one word, only one word is displayed for 2 seconds, then the other word is displayed for 2 seconds, alternately. The answer is displayed until the user leaves this mode, or he/she presses start/stop again for a new answer. 
-
-
-Note: these strings are for the English version of the watch, we will need to use completely different strings in other countries without reprogramming the logic of the watch.
-
-The user may cycle among all modes (date/time, timer, mystery answer) by pressing the mode button.
+Moments mémorables
+L'événement s'est conclu par une promenade en bateau-mouche sur la Seine, offrant une perspective unique sur les monuments parisiens. Cette croisière a été l'occasion de captures photographiques mémorables, immortalisant ces retrouvailles internationales.
+Vers les centres d'accueil
+Suite à ces deux journées parisiennes enrichissantes, les 140 participants se sont dirigés vers 6 centres d'accueil différents pour poursuivre leur expérience des Centres Internationaux Francophones, emportant avec eux les souvenirs de ces moments partagés dans l'esprit de fraternité francophone.
+Cette édition 2025 de l'Accueil Paris confirme une fois de plus la vitalité du réseau des CIF et l'engagement de l'AMICIF dans la promotion des échanges interculturels francophones.
