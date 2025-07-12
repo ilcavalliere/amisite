@@ -1,9 +1,9 @@
 ---
 title: "Week-end de retrouvailles post-accueil Paris des CIF"
 date: 2025-07-06 T15:56:43+06:00
-type: Weekends Amicif
+type: Weekends AMICIF
 image: "images/projects/project-thumb-two.jpg"
-category: ["Weekends Amicif"]
+category: ["Weekends AMICIF"]
 project_images: ["images/projects/project-details-image-one.jpg", "images/projects/project-details-image-two.jpg"]
 ---
 

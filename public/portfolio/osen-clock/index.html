@@ -29,66 +29,166 @@
   <link rel="shortcut icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.png" type="image/x-icon" />
   <link rel="icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.ico" type="image/x-icon" />
   <style>
-        body {
-            background: #f8f9fa;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    body {
+        background: #f8f9fa;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .site-project-single-description {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        line-height: 1.7;
+        color: #2a2a2a;
+    }
+    
+    .site-project-single-description h3 {
+        color: #1a1a1a;
+        font-size: 1.3em;
+        font-weight: 600;
+        margin-top: 30px;
+        margin-bottom: 18px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #e9ecef;
+    }
+    
+    .site-project-single-description ul {
+        margin: 20px 0;
+        padding-left: 0;
+        list-style: none;
+    }
+    
+    .site-project-single-description li {
+        margin-bottom: 10px;
+        padding: 12px 18px;
+        background: #f8f9fa;
+        border-radius: 6px;
+        border-left: 3px solid #6c757d;
+        position: relative;
+        padding-left: 35px;
+    }
+    
+    .site-project-single-description li::before {
+        content: '•';
+        position: absolute;
+        left: 15px;
+        color: #6c757d;
+        font-weight: bold;
+    }
+    
+    .site-project-single-description p {
+        margin-bottom: 18px;
+        text-align: justify;
+        font-size: 1.05em;
+        color: #4a4a4a;
+    }
+
+    /* New styles for the image layout */
+    .site-project-single-image {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .featured-image {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .featured-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .featured-image img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-collage {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .collage-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .collage-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .collage-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    /* Special styling for the portrait image */
+    .collage-item:first-child img {
+        object-position: center top;
+        height: 320px;
+    }
+
+    .collage-item:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Special arrangement for 3 items */
+    .image-collage.three-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .image-collage.three-items .collage-item:first-child {
+        grid-column: span 2;
+    }
+
+    .image-collage.three-items .collage-item:first-child img {
+        height: 200px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .image-collage.three-items {
+            grid-template-columns: 1fr;
         }
         
-        .site-project-single-description {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            line-height: 1.7;
-            color: #2a2a2a;
+        .image-collage.three-items .collage-item:first-child {
+            grid-column: span 1;
         }
         
-        .site-project-single-description h3 {
-            color: #1a1a1a;
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-top: 30px;
-            margin-bottom: 18px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e9ecef;
+        .image-collage.three-items .collage-item:first-child img {
+            height: 250px;
         }
-        
-        .site-project-single-description ul {
-            margin: 20px 0;
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .site-project-single-description li {
-            margin-bottom: 10px;
-            padding: 12px 18px;
-            background: #f8f9fa;
-            border-radius: 6px;
-            border-left: 3px solid #6c757d;
-            position: relative;
-            padding-left: 35px;
-        }
-        
-        .site-project-single-description li::before {
-            content: '•';
-            position: absolute;
-            left: 15px;
-            color: #6c757d;
-            font-weight: bold;
-        }
-        
-        .site-project-single-description p {
-            margin-bottom: 18px;
-            text-align: justify;
-            font-size: 1.05em;
-            color: #4a4a4a;
-        }
-    </style>
+    }
+
+    /* Container and navigation styles */
+   
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+  </style>
 </head>
 <body><nav class="navbar navbar-expand-lg site-navigation">
   <div class="container">
@@ -203,13 +303,29 @@
         <p>Cette initiative illustre parfaitement la mission de l'AMICIF en tant qu'association de maintien du lien social et culturel entre les anciens des CIF. Elle témoigne de la vitalité du réseau et de l'engagement bénévole des membres dans la préservation des valeurs de solidarité et d'échange interculturel qui caractérisent les Centres Internationaux Francophones.</p>
         <p>L'événement constitue un modèle reproductible pour d'autres initiatives similaires et renforce la position de l'AMICIF comme acteur central du maintien des liens au sein de la communauté des anciens CIF.</p>
     </div>
-          <div class="site-project-single-image">
+         <div class="site-project-single-image">
+            <!-- Featured main image -->
+            <div class="featured-image">
+              <img src="https://amisite-cif-1958.firebaseapp.com/images/projects/weekedn-amicif-2025-paris.jpg" alt="Week-end AMICIF 2025 Paris - Photo principale du groupe">
+            </div>
             
-            <img src="https://amisite-cif-1958.firebaseapp.com/images/projects/weekedn-amicif-2025-paris.jpg" alt="project image">
-            
-            <img src="https://amisite-cif-1958.firebaseapp.com/images/projects/weekend-amicif-details-enzo-serena-stag.jpg" alt="project image">
-            
+            <!-- Collage of remaining images -->
+            <div class="image-collage three-items">
+              <div class="collage-item">
+                <img src="https://amisite-cif-1958.firebaseapp.com/images/projects/weekend-amicif-details-enzo-serena-stag-2.jpg" alt="Détails du week-end - Enzo et Serena">
+              </div>
+              <div class="collage-item">
+                <img src="https://amisite-cif-1958.firebaseapp.com/images/projects/weekend amicif-photo-urug-khazak-bresil.jpg" alt="Participants Uruguay, Kazakhstan, Brésil">
+              </div>
+              <div class="collage-item">
+                <img src="https://amisite-cif-1958.firebaseapp.com/images/projects/junior-mathi-weekend-amicifpairis.jpg" alt="Junior et Mathi - Week-end AMICIF Paris">
+              </div>
+              <div class="collage-item">
+                <img src="https://amisite-cif-1958.firebaseapp.com/images/projects/hanna-serena-enzo-bass.jpg" alt="hanna-serena-enzo-bass- Week-end AMICIF Paris">
+              </div>
+            </div>
           </div>
+        </div>s
           
           <div class="site-project-single-action">
             <a href="https://amisite-cif-1958.firebaseapp.com/portfolio/use-less-brand/">
