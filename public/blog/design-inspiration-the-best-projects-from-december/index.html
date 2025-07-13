@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8" />
-  <title>Design Inspiration: The Best Projects From December</title>
+  <title>Les Retrouvailles à Toulouse</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,7 +28,546 @@
   
   <link rel="shortcut icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.png" type="image/x-icon" />
   <link rel="icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.ico" type="image/x-icon" />
-  
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sage-green: #BADFD8;
+            --dusty-rose: #EAA4A3;
+            --cream: #FDF8F5;
+            --charcoal: #2D3748;
+            --warm-white: #FEFCFA;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--charcoal);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Artistic Background Elements */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--sage-green);
+            top: 10%;
+            left: 80%;
+            animation-delay: -2s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--dusty-rose);
+            top: 60%;
+            left: 5%;
+            animation-delay: -8s;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background: var(--sage-green);
+            top: 80%;
+            left: 70%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--sage-green), var(--dusty-rose));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 Q50,30 100,0 L100,100 L0,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 200px 100px;
+            animation: wave 10s infinite linear;
+        }
+
+        @keyframes wave {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 0; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            color: var(--warm-white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
+        }
+
+        .blog-subtitle {
+            font-size: 1.2rem;
+            color: var(--warm-white);
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            background: var(--warm-white);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, var(--dusty-rose), transparent);
+            opacity: 0.1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-lead {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            background: var(--sage-green);
+            color: var(--charcoal);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--sage-green), var(--dusty-rose));
+            opacity: 0.8;
+        }
+
+        .visual-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            z-index: 2;
+        }
+
+        /* Article Content */
+        .article {
+            padding: 4rem 0;
+            background: var(--warm-white);
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+        }
+
+        .content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .dropcap {
+            float: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            line-height: 3rem;
+            padding-right: 0.5rem;
+            padding-top: 0.2rem;
+            font-weight: 900;
+            color: var(--dusty-rose);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--charcoal);
+            margin: 3rem 0 1.5rem 0;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sage-green), var(--dusty-rose));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--sage-green), var(--dusty-rose));
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--warm-white);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--warm-white);
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--cream);
+            padding: 4rem 3rem;
+            margin: 3rem 0;
+            border-radius: 30px;
+            position: relative;
+            text-align: center;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            color: var(--sage-green);
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dusty-rose);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Moments Grid */
+        .moments-container {
+            margin: 3rem 0;
+        }
+
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .moment-card {
+            background: linear-gradient(135deg, var(--sage-green), var(--dusty-rose));
+            padding: 2rem;
+            border-radius: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .moment-card:hover {
+            transform: scale(1.05);
+        }
+
+        .moment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
+        }
+
+        .moment-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .moment-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(186, 223, 216, 0.3);
+        }
+
+        .sidebar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .sidebar-highlight {
+            background: linear-gradient(135deg, var(--sage-green), var(--dusty-rose));
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            background: linear-gradient(135deg, var(--sage-green), var(--dusty-rose));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid,
+            .article-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-visual {
+                height: 250px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .moments-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body><nav class="navbar navbar-expand-lg site-navigation">
   <div class="container">
@@ -115,39 +654,109 @@
 <section class="site-blog details">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <article class="site-blog-details">
-          <p><span>December 24, 2019</span> by <span>Alexender Schoitiz</span></p>
-          <h2 class="blog-title">Design Inspiration: The Best Projects From December</h2>
-          <img class="feature-image" src="https://amisite-cif-1958.firebaseapp.com/images/blog/blog-details-image.jpg" alt="blog-feature-image">
-          <h3 id="black-lines-brand-identity-by--smith">Black Lines brand identity, by &amp; Smith</h3>
-<p>Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.</p>
-<ol>
-<li>ROFL means Rolling on floor laughing.</li>
-<li>STFU means Shut the <em>freak</em> up.</li>
-<li>LMK means Let me know.</li>
-<li>ILY means I love you.</li>
-<li>YOLO means You only live once.</li>
-<li>SMH means Shaking my head.</li>
-</ol>
-<p>The company was previously known as Hingston + Co. but has been given a complete rebrand — including a new logo, tap badges, website and branded material — by London-based design studio &amp; Smith. The new identity is based on the Kandinsky abstract painting, Black Lines, and true to its name, is mostly black and white with a few flashes of colour. According to &amp; Smith, the identity brings together “art and science” and has been brought to life through collaborations with nine illustrators.</p>
-<ol>
-<li>ROFL means Rolling on floor laughing.</li>
-<li>STFU means Shut the <em>freak</em> up.</li>
-<li>LMK means Let me know.</li>
-<li>ILY means I love you.</li>
-<li>YOLO means You only live once.</li>
-<li>SMH means Shaking my head.</li>
-</ol>
-<p><img src="https://user-images.githubusercontent.com/16266381/71399826-2009b380-264f-11ea-9bc3-59d7fa9a9994.jpg" alt="blog-details-image-02"></p>
-<p>Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.</p>
-<blockquote>
-<p>&ldquo;The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring.&rdquo;</p></blockquote>
-<blockquote>
-<p>Paul Rand, graphic designer</p></blockquote>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
 
-        </article>
-      </div>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="blog-title">Les Retrouvailles à Toulouse</h1>
+                <p class="blog-subtitle">Une histoire de connexions humaines et d'inspiration partagée</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <p class="hero-lead">Sous le soleil doré de la Ville Rose, les membres du comité AMICIF se sont retrouvés pour un moment suspendu : une matinée d'échanges, de rires et d'inspiration.</p>
+                    <div class="hero-meta">
+                        <span class="meta-item">30 Juin 2025</span>
+                        <span class="meta-item">Équipe AMICIF</span>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-text">Toulouse<br>2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <article class="article">
+        <div class="container">
+            <div class="article-grid">
+                <div class="content">
+                    <p><span class="dropcap">T</span>oulouse n'était pas qu'un décor : c'était le cœur battant de nos souvenirs partagés et de nos ambitions futures. Entre briques roses et accent chantant, la magie opérait à chaque coin de rue, aux côtés de Priyanka Talim, l'une des fondatrices historiques de notre aventure CIF.</p>
+
+
+                    <p>Entre deux cafés sur la place du Capitole, nous avons esquissé l'avenir : accueillir davantage d'étudiants francophones, tisser un réseau d'alumni encore plus solide et préparer une édition 2025 qui fera rayonner la culture française bien au-delà de nos frontières.</p>
+
+                    <h2>Nos Moments Forts</h2>
+
+                    <div class="moments-container">
+                        <div class="moments-grid">
+                            <div class="moment-card">
+                                <div class="moment-title">Marché Victor-Hugo</div>
+                                <div class="moment-desc">Flânerie matinale découvrant la richesse des terroirs français dans toute leur authenticité</div>
+                            </div>
+                            <div class="moment-card">
+                                <div class="moment-title">Design & Impact</div>
+                                <div class="moment-desc">Interview exclusive avec Prianka notre precendente Vice-Presidente de l'AMICIF</div>
+                            </div>
+        
+                        </div>
+                    </div>
+
+                    <p>Ce rendez-vous, simple et puissant, nous rappelle pourquoi nous existons : créer des <strong>ponts humains</strong> et cultiver la francophonie moderne, inclusive et audacieuse.</p>
+
+                    <div class="quote-section">
+                      <div class="quote-text">
+                          « Je suis contente de voir que l'AMICIF s'évolue et continue à grandir pour devenir encore plus forte et unie. »
+                      </div>
+                      <div class="quote-author">— Priyanka Talim</div>
+                  </div>
+
+                    <h2>L'Impact de nos Retrouvailles</h2>
+
+                    <p>Cette rencontre toulousaine dépasse le cadre du simple week-end entre amis. Elle s'inscrit dans une démarche stratégique de renforcement de notre réseau et de consolidation de notre vision commune.</p>
+
+                    <p>Les échanges ont permis de cristalliser nos objectifs pour 2025 et de définir les axes prioritaires de notre développement. Les batteries rechargées, nous repartons chacun vers nos horizons avec une seule idée en tête : se donner rendez-vous très vite… et pourquoi pas à Paris en 2025 ?</p>
+
+                    <h2>L'Esprit AMICIF Continue</h2>
+
+                    <p>Cette rencontre toulousaine confirme notre mission : rassembler, inspirer et faire rayonner la francophonie à travers le monde. Chaque retrouvaille renforce notre réseau et nourrit notre passion commune pour les valeurs qui nous unissent.</p>
+
+                    <p>L'aventure AMICIF se poursuit, portée par cette énergie collective qui nous anime et cette volonté partagée de construire ensemble un avenir francophone dynamique et ouvert sur le monde.</p>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">À Retenir</h3>
+                        <div class="sidebar-content">
+                            <p>Un week-end de retrouvailles qui a marqué un tournant dans l'histoire d'AMICIF, renforçant les liens entre fondateurs et nouvelle génération.</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-highlight">
+                        <h3 class="sidebar-title">Prochaine Étape</h3>
+                        <p>Paris 2025 - Restez connectés pour notre prochain chapitre !</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Citation</h3>
+                        <div class="sidebar-content">
+                            <p><em>"L'amitié se nourrit de communication, de vérité, de franchise, de témoignage et de services mutuels."</em></p>
+                            <p><strong>— Proverbe CIF</strong></p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </article>
     </div>
   </div>
 </section>
