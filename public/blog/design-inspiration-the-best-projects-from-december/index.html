@@ -517,6 +517,81 @@
             margin-bottom: 2rem;
         }
 
+         .site-project-single-image {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .featured-image {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .featured-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .featured-image img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-collage {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .collage-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .collage-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .collage-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    /* Special styling for the portrait image */
+    .collage-item:first-child img {
+        object-position: center top;
+        height: 320px;
+    }
+
+    .collage-item:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Special arrangement for 3 items */
+    .image-collage.three-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .image-collage.three-items .collage-item:first-child {
+        grid-column: span 2;
+    }
+
+    .image-collage.three-items .collage-item:first-child img {
+        height: 200px;
+    }
+
+
         .footer-links {
             display: flex;
             justify-content: center;
@@ -757,6 +832,12 @@
             </div>
         </div>
     </article>
+
+      <div class="site-project-single-image">
+            <!-- Featured main image -->
+            <div class="featured-image">
+              <img src="https://amisite-cif-1958.firebaseapp.com/images/blog/project-thumb-three.jpg" alt="Week-end AMICIF 2025 Paris - Photo principale du groupe">
+      </div>
     </div>
   </div>
 </section>
