@@ -129,8 +129,7 @@ summarylength = 25
     # Footer Contact
     [params.footer.contactInfo]
       title   = "Contact"
-      address = "Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse DE LA CHAUSSEE DU BOURG <br>44117 ST ANDRE DES EAUX."
-      phone   = "03 90 41 65 66"
+      address = "Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse La chaussée du bourg <br>44117 SAINT ANDRE DES EAUX"
       email   = "contact@amicif.fr"
       # Footer Sitemap
       [params.footer.sitemap]
