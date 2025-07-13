@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8" />
-  <title>Design Inspiration: The Best Projects From November</title>
+  <title>Week-ends AMICIF : L'Art de Voyager en Français</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,7 +28,294 @@
   
   <link rel="shortcut icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.png" type="image/x-icon" />
   <link rel="icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.ico" type="image/x-icon" />
-  
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #EAA4A3 0%, #BADFD8 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+            50% { transform: translateX(-50%) scale(1.2); opacity: 0.1; }
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            animation: slideInDown 1s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .article-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #EAA4A3, #BADFD8);
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .article-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #EAA4A3, #BADFD8);
+            border-radius: 2px;
+        }
+
+        .content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .city-card {
+            background: linear-gradient(135deg, rgba(234, 164, 163, 0.8), rgba(186, 223, 216, 0.8));
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transform: translateY(0);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .city-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.6s ease;
+        }
+
+        .city-card:hover::before {
+            transform: scale(1);
+        }
+
+        .city-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .city-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .city-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .city-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #EAA4A3, #BADFD8);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .floating-element:nth-child(1) { top: 10%; left: 10%; width: 80px; height: 80px; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 20%; right: 10%; width: 60px; height: 60px; animation-delay: 1s; }
+        .floating-element:nth-child(3) { bottom: 20%; left: 20%; width: 100px; height: 100px; animation-delay: 2s; }
+        .floating-element:nth-child(4) { bottom: 10%; right: 20%; width: 70px; height: 70px; animation-delay: 3s; }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .article-card { padding: 2rem; }
+            .logo { font-size: 2rem; }
+            .article-title { font-size: 2rem; }
+            .cities-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body><nav class="navbar navbar-expand-lg site-navigation">
   <div class="container">
@@ -113,45 +400,107 @@
 <main>
 
 <section class="site-blog details">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <article class="site-blog-details">
-          <p><span>December 24, 2019</span> by <span>Alexender Schoitiz</span></p>
-          <h2 class="blog-title">Design Inspiration: The Best Projects From November</h2>
-          <img class="feature-image" src="https://amisite-cif-1958.firebaseapp.com/images/blog/blog-details-image.jpg" alt="blog-feature-image">
-          <h3 id="black-lines-brand-identity-by--smith">Black Lines brand identity, by &amp; Smith</h3>
-<p>Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.</p>
-<ol>
-<li>ROFL means Rolling on floor laughing.</li>
-<li>STFU means Shut the <em>freak</em> up.</li>
-<li>LMK means Let me know.</li>
-<li>ILY means I love you.</li>
-<li>YOLO means You only live once.</li>
-<li>SMH means Shaking my head.</li>
-</ol>
-<p>The company was previously known as Hingston + Co. but has been given a complete rebrand — including a new logo, tap badges, website and branded material — by London-based design studio &amp; Smith. The new identity is based on the Kandinsky abstract painting, Black Lines, and true to its name, is mostly black and white with a few flashes of colour. According to &amp; Smith, the identity brings together “art and science” and has been brought to life through collaborations with nine illustrators.</p>
-<ol>
-<li>ROFL means Rolling on floor laughing.</li>
-<li>STFU means Shut the <em>freak</em> up.</li>
-<li>LMK means Let me know.</li>
-<li>ILY means I love you.</li>
-<li>YOLO means You only live once.</li>
-<li>SMH means Shaking my head.</li>
-</ol>
-<p><img src="https://user-images.githubusercontent.com/16266381/71399826-2009b380-264f-11ea-9bc3-59d7fa9a9994.jpg" alt="blog-details-image-02"></p>
-<p>Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.</p>
-<blockquote>
-<p>&ldquo;The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring.&rdquo;</p></blockquote>
-<blockquote>
-<p>Paul Rand, graphic designer</p></blockquote>
-
-        </article>
-      </div>
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
     </div>
-  </div>
-</section>
 
+    <div class="container">
+
+        <article class="article-card">
+            <h2 class="article-title">Week-ends AMICIF : L'Art de Voyager en Français</h2>
+            
+            <div class="content">
+                <p>Après avoir participé aux Centres Internationaux Francophones (CIF), les anciens ont la possibilité de prendre part au week-end AMICIF. Mais qu'est-ce exactement qu'un week-end AMICIF ?</p>
+                
+                <p>C'est un court séjour d'un week-end où l'on se réunit quelque part afin de raviver l'amitié créée lors de nos stages en France. Pendant ce week-end, on visite des sites culturels, on découvre de nouvelles villes, tout en partageant notre belle langue commune : le français.</p>
+                
+                <p>Cette rencontre est une occasion privilégiée pour les anciens de revoir d'anciens amis et d'en rencontrer de nouveaux, tous ayant participé à un centre francophone.</p>
+            </div>
+
+            <div class="cities-grid">
+                <div class="city-card">
+                    <span class="city-emoji">🏰</span>
+                    <h3 class="city-name">Prague</h3>
+                    <p class="city-description">La ville aux cent clochers nous a accueillis pour une découverte magique de l'Europe centrale</p>
+                </div>
+                
+                <div class="city-card">
+                    <span class="city-emoji">🍝</span>
+                    <h3 class="city-name">Turin</h3>
+                    <p class="city-description">L'élégance italienne et la richesse culturelle du Piémont ont enchanté notre groupe</p>
+                </div>
+                
+                <div class="city-card">
+                    <span class="city-emoji">🪆</span>
+                    <h3 class="city-name">Moscou</h3>
+                    <p class="city-description">La capitale russe nous a offert un voyage fascinant entre tradition et modernité</p>
+                </div>
+                
+                <div class="city-card">
+                    <span class="city-emoji">🍫</span>
+                    <h3 class="city-name">Bruxelles</h3>
+                    <p class="city-description">Au cœur de l'Europe, nous avons exploré les trésors de la capitale belge</p>
+                </div>
+                
+                <div class="city-card">
+                    <span class="city-emoji">🌹</span>
+                    <h3 class="city-name">Toulouse</h3>
+                    <p class="city-description">Dans la Ville Rose, nous avons découvert l'art de vivre du Sud-Ouest français</p>
+                </div>
+                
+                <div class="city-card">
+                    <span class="city-emoji">🗼</span>
+                    <h3 class="city-name">Paris</h3>
+                    <p class="city-description">Le prochain rendez-vous dans la Ville Lumière promet d'être inoubliable</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <p>Au cours des années, nous avons organisé des week-ends AMICIF à Prague, Turin, Moscou, Bruxelles et bientôt à Paris. Chaque destination a apporté sa propre magie, ses découvertes culturelles uniques et ses moments de partage authentiques.</p>
+            </div>
+        </article>
+        <section class="cta-section">
+            <h2 class="cta-title">Prêt pour l'Aventure ?</h2>
+            <p class="cta-text">Vous allez nous rejoindre pour le prochain week-end AMICIF ?</p>
+            <a href="https://amisite-cif-1958.firebaseapp.com/contact" class="cta-button" style="display: inline-block; text-decoration: none;">Rejoignez-nous !</a>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.querySelectorAll('.city-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-10px) scale(1)';
+                }, 200);
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        });
+
+        document.querySelectorAll('.city-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            document.querySelector('.floating-elements').style.transform = `translateY(${rate}px)`;
+        });
+    </script>
+ </section>
 
   
   <section class="site-cta" style='background-image: url("https://amisite-cif-1958.firebaseapp.com/images/backgrounds/cta-background.jpg");'>
