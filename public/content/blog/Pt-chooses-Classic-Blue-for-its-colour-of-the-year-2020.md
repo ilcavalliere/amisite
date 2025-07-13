@@ -1,33 +1,65 @@
 ---
-title: "Pt Chooses Classic Blue for Its Colour of the Year 2020"
-date: 2019-12-24T13:32:54+06:00
+title: "ROADTRIP AMICIF Du Sud de l'Espagne à Paris "
+date: 2025-07-05 T13:32:54+06:00
 image: images/blog/blog-post-03.jpg
 feature_image: images/blog/blog-details-image.jpg
-author: Alexender Schoitiz
+author: Enzo
 ---
-### Black Lines brand identity, by & Smith
 
-Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.
 
-1. ROFL means Rolling on floor laughing.
-2. STFU means Shut the *freak* up.
-3. LMK means Let me know.
-4. ILY means I love you.
-5. YOLO means You only live once.
-6. SMH means Shaking my head.
+## L'Aventure de nos Vies
 
-The company was previously known as Hingston + Co. but has been given a complete rebrand — including a new logo, tap badges, website and branded material — by London-based design studio & Smith. The new identity is based on the Kandinsky abstract painting, Black Lines, and true to its name, is mostly black and white with a few flashes of colour. According to & Smith, the identity brings together “art and science” and has been brought to life through collaborations with nine illustrators.
+L'équipe d'encadrement et l'AMICIF ont organisé un super roadtrip inoubliable !  
+Depuis le sud de l'Espagne jusqu'à Paris, nous avons créé des souvenirs extraordinaires  
+en traversant des villes emblématiques et en rassemblant des membres venus du monde entier.
 
-1. ROFL means Rolling on floor laughing.
-2. STFU means Shut the *freak* up.
-3. LMK means Let me know.
-4. ILY means I love you.
-5. YOLO means You only live once.
-6. SMH means Shaking my head.
+---
+
+### 🏛️ Séville 🇪🇸
+
+### 🏖️ Barcelone 🇪🇸
+
+### 🏰 Saragosse 🇪🇸
+
+### 🌹 Toulouse 🇫🇷
+
+### 🍇 Agen 🇫🇷
+
+### 🗼 Paris 🇫🇷
+
+---
+
+## Étape Spéciale : Agen
+
+Un moment particulièrement mémorable fut notre passage chez le président des CIF à Agen !  
+Une journée absolument fantastique avec un dîner d'exception, parfait pour recruter encore  
+plus de membres pour notre belle famille AMICIF. L'accueil chaleureux et les échanges  
+enrichissants ont marqué tous les participants.
+
+---
+
+## Une Équipe Internationale
+
+Ce roadtrip extraordinaire a rassemblé des membres AMICIF venus des quatre coins du monde.  
+Tous unis par notre passion commune pour la langue française et l'esprit des CIF !
+
+- 🇺🇸 Louisiane  
+- 🇬🇧 Londres  
+- 🇧🇾 Minsk  
+- 🇪🇸 Grenade  
+
+---
+
+## Prêt pour la Prochaine Aventure ?
+
+Ce roadtrip était absolument incroyable ! Rejoignez-nous pour les prochaines aventures AMICIF  
+et découvrez par vous-même la magie de voyager en français avec des amis du monde entier.
+
+[Rejoignez l'Aventure !](https://amisite-cif-1958.firebaseapp.com/contact)
+
 
 ![blog-details-image-02](https://user-images.githubusercontent.com/16266381/71399826-2009b380-264f-11ea-9bc3-59d7fa9a9994.jpg)
 
-Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.
 
 > "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring."
 

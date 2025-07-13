@@ -28,7 +28,434 @@
   
   <link rel="shortcut icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.png" type="image/x-icon" />
   <link rel="icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.ico" type="image/x-icon" />
-  
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #EAA4A3 0%, #BADFD8 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .road-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .road-line {
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: white;
+            animation: roadMove 3s linear infinite;
+        }
+
+        @keyframes roadMove {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100vw); }
+        }
+
+        .road-line:nth-child(1) { top: 20%; animation-delay: 0s; }
+        .road-line:nth-child(2) { top: 40%; animation-delay: 1s; }
+        .road-line:nth-child(3) { top: 60%; animation-delay: 2s; }
+        .road-line:nth-child(4) { top: 80%; animation-delay: 0.5s; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .header::before {
+            content: '🚗';
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            animation: carBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes carBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+            animation: slideInLeft 1s ease-out;
+            margin-top: 2rem;
+            letter-spacing: 4px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.85);
+            animation: fadeIn 1s ease-out 0.5s both;
+            font-weight: 200;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .main-article {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            transform: translateY(20px);
+            animation: slideUp 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+
+        .main-article::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #EAA4A3, #BADFD8, #EAA4A3);
+            background-size: 200% 100%;
+            animation: gradientMove 3s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .article-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, #EAA4A3, #BADFD8);
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .roadtrip-path {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .path-line {
+            position: absolute;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(90deg, #EAA4A3, #BADFD8);
+            border-radius: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .city-stop {
+            background: linear-gradient(135deg, rgba(234, 164, 163, 0.9), rgba(186, 223, 216, 0.9));
+            border-radius: 25px;
+            padding: 1.5rem;
+            margin: 1rem;
+            text-align: center;
+            transform: translateY(0);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            border: 4px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            min-width: 150px;
+        }
+
+        .city-stop:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .city-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .city-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .city-flag {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .team-section {
+            background: linear-gradient(135deg, rgba(234, 164, 163, 0.15), rgba(186, 223, 216, 0.15));
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 3rem 0;
+            color: #333;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .team-title {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            font-weight: 200;
+            color: #2c3e50;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .team-description {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .participant-card {
+            background: linear-gradient(135deg, rgba(234, 164, 163, 0.3), rgba(186, 223, 216, 0.3));
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .participant-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: linear-gradient(135deg, rgba(234, 164, 163, 0.5), rgba(186, 223, 216, 0.5));
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .participant-flag {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .participant-location {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2c3e50;
+            letter-spacing: 1px;
+        }
+
+        .highlight-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-section::before {
+            content: '🎉';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .highlight-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .highlight-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #EAA4A3, #BADFD8);
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            color: white;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '🚀';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 3rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .cta-text {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .main-article { padding: 2rem; }
+            .logo { font-size: 2.5rem; }
+            .article-title { font-size: 2rem; }
+            .roadtrip-path { flex-direction: column; }
+            .path-line { display: none; }
+            .participants-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body><nav class="navbar navbar-expand-lg site-navigation">
   <div class="container">
@@ -113,43 +540,150 @@
 <main>
 
 <section class="site-blog details">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <article class="site-blog-details">
-          <p><span>December 24, 2019</span> by <span>Alexender Schoitiz</span></p>
-          <h2 class="blog-title">The 10 Biggest Product Stories of 2019</h2>
-          <img class="feature-image" src="https://amisite-cif-1958.firebaseapp.com/images/blog/blog-details-image.jpg" alt="blog-feature-image">
-          <h3 id="black-lines-brand-identity-by--smith">Black Lines brand identity, by &amp; Smith</h3>
-<p>Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.</p>
-<ol>
-<li>ROFL means Rolling on floor laughing.</li>
-<li>STFU means Shut the <em>freak</em> up.</li>
-<li>LMK means Let me know.</li>
-<li>ILY means I love you.</li>
-<li>YOLO means You only live once.</li>
-<li>SMH means Shaking my head.</li>
-</ol>
-<p>The company was previously known as Hingston + Co. but has been given a complete rebrand — including a new logo, tap badges, website and branded material — by London-based design studio &amp; Smith. The new identity is based on the Kandinsky abstract painting, Black Lines, and true to its name, is mostly black and white with a few flashes of colour. According to &amp; Smith, the identity brings together “art and science” and has been brought to life through collaborations with nine illustrators.</p>
-<ol>
-<li>ROFL means Rolling on floor laughing.</li>
-<li>STFU means Shut the <em>freak</em> up.</li>
-<li>LMK means Let me know.</li>
-<li>ILY means I love you.</li>
-<li>YOLO means You only live once.</li>
-<li>SMH means Shaking my head.</li>
-</ol>
-<p><img src="https://user-images.githubusercontent.com/16266381/71399826-2009b380-264f-11ea-9bc3-59d7fa9a9994.jpg" alt="blog-details-image-02"></p>
-<p>Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.</p>
-<blockquote>
-<p>&ldquo;The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring.&rdquo;</p></blockquote>
-<blockquote>
-<p>Paul Rand, graphic designer</p></blockquote>
-
-        </article>
-      </div>
+   <div class="road-animation">
+        <div class="road-line"></div>
+        <div class="road-line"></div>
+        <div class="road-line"></div>
+        <div class="road-line"></div>
     </div>
-  </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">ROADTRIP AMICIF</h1>
+            <p class="subtitle">Du Sud de l'Espagne à Paris</p>
+        </header>
+
+        <article class="main-article">
+            <h2 class="article-title">L'Aventure de nos Vies</h2>
+            
+            <p class="intro-text">
+                L'équipe d'encadrement et l'AMICIF ont organisé un super roadtrip inoubliable ! 
+                Depuis le sud de l'Espagne jusqu'à Paris, nous avons créé des souvenirs extraordinaires 
+                en traversant des villes emblématiques et en rassemblant des membres venus du monde entier.
+            </p>
+
+            <div class="roadtrip-path">
+                <div class="path-line"></div>
+                
+                <div class="city-stop">
+                    <span class="city-emoji">🏛️</span>
+                    <h3 class="city-name">Séville</h3>
+                    <div class="city-flag">🇪🇸</div>
+                </div>
+                
+                <div class="city-stop">
+                    <span class="city-emoji">🏖️</span>
+                    <h3 class="city-name">Barcelone</h3>
+                    <div class="city-flag">🇪🇸</div>
+                </div>
+                
+                <div class="city-stop">
+                    <span class="city-emoji">🏰</span>
+                    <h3 class="city-name">Saragosse</h3>
+                    <div class="city-flag">🇪🇸</div>
+                </div>
+                
+                <div class="city-stop">
+                    <span class="city-emoji">🌹</span>
+                    <h3 class="city-name">Toulouse</h3>
+                    <div class="city-flag">🇫🇷</div>
+                </div>
+                
+                <div class="city-stop">
+                    <span class="city-emoji">🍇</span>
+                    <h3 class="city-name">Agen</h3>
+                    <div class="city-flag">🇫🇷</div>
+                </div>
+                
+                <div class="city-stop">
+                    <span class="city-emoji">🗼</span>
+                    <h3 class="city-name">Paris</h3>
+                    <div class="city-flag">🇫🇷</div>
+                </div>
+            </div>
+        </article>
+
+        <section class="highlight-section">
+            <h2 class="highlight-title">Étape Spéciale : Agen</h2>
+            <p class="highlight-text">
+                Un moment particulièrement mémorable fut notre passage chez le président des CIF à Agen ! 
+                Une journée absolument fantastique avec un dîner d'exception, parfait pour recruter encore 
+                plus de membres pour notre belle famille AMICIF. L'accueil chaleureux et les échanges 
+                enrichissants ont marqué tous les participants.
+            </p>
+        </section>
+
+        <section class="team-section">
+            <h2 class="team-title">Une Équipe Internationale</h2>
+            <p class="team-description">
+                Ce roadtrip extraordinaire a rassemblé des membres AMICIF venus des quatre coins du monde. 
+                Tous unis par notre passion commune pour la langue française et l'esprit des CIF !
+            </p>
+            
+            <div class="participants-grid">
+                <div class="participant-card">
+                    <div class="participant-flag">🇺🇸</div>
+                    <p class="participant-location">Louisiane</p>
+                </div>
+                
+                <div class="participant-card">
+                    <div class="participant-flag">🇬🇧</div>
+                    <p class="participant-location">Londres</p>
+                </div>
+                
+                <div class="participant-card">
+                    <div class="participant-flag">🇧🇾</div>
+                    <p class="participant-location">Minsk</p>
+                </div>
+                
+                <div class="participant-card">
+                    <div class="participant-flag">🇪🇸</div>
+                    <p class="participant-location">Grenade</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 class="cta-title">Prêt pour la Prochaine Aventure ?</h2>
+            <p class="cta-text">
+                Ce roadtrip était absolument incroyable ! Rejoignez-nous pour les prochaines aventures AMICIF 
+                et découvrez par vous-même la magie de voyager en français avec des amis du monde entier.
+            </p>
+            <a href="https://amisite-cif-1958.firebaseapp.com/contact" class="cta-button">Rejoignez l'Aventure !</a>
+        </section>
+    </div>
+
+    <script>
+        // Add interactive effects
+        document.querySelectorAll('.city-stop').forEach(stop => {
+            stop.addEventListener('click', function() {
+                this.style.transform = 'translateY(-15px) scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-15px) scale(1.05)';
+                }, 200);
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        });
+
+        document.querySelectorAll('.city-stop, .participant-card').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Add parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.3;
+            document.querySelector('.road-animation').style.transform = `translateY(${rate}px)`;
+        });
+    </script>
 </section>
 
 
