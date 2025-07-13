@@ -130,7 +130,7 @@ summarylength = 25
   [params.portfolio]
     enable    = true
     title     = "Nos Actions Récentes"
-    subtitle  = "L'avenir de la francophonie se construit aujourd'hui"
+    subtitle  = "Un réseau francophone actif et engagé"
     view_project = "Lire plus "
     more_works = "MORE WORKS"
     scroll_down = "scroll down"
@@ -152,19 +152,19 @@ summarylength = 25
       address = "713 Elmwood St.<br>Prior Lake, MN 55372"
       phone   = "409-896-1444"
       email   = "contact@amicif.fr"
-      # Footer Sitemap
-      [params.footer.sitemap]
-        title   = "Sitemap"
-        [[params.footer.sitemap.link]]
+      # Footer Plan du site
+      [params.footer.Plan du site]
+        title   = "Plan du site"
+        [[params.footer.Plan du site.link]]
           name = "L’AMICIF"
           url  = "about"
-        [[params.footer.sitemap.link]]
+        [[params.footer.Plan du site.link]]
           name = "Projects"
           url  = "portfolio"
-        [[params.footer.sitemap.link]]
+        [[params.footer.Plan du site.link]]
           name = "AMI Blog"
           url  = "blog"
-        [[params.footer.sitemap.link]]
+        [[params.footer.Plan du site.link]]
           name = "Contactez Nous"
           url  = "contact"
       # Footer Social Media

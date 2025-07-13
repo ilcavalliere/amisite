@@ -97,7 +97,7 @@ summarylength = 25
   [params.banner]
     enable                = true
     background_image      = "images/backgrounds/hero-background.jpg"
-    heading               = "On connecte les francophones, pour le partage culturelle."
+    heading               = "Un réseau francophone unique autour du partage culturel!"
     tagline               = "CIF UN JOUR, AMICIF POUR TOUJOURS!  "
     primary_button        = "Plus sur nos centres"
     primary_button_url    = "Nos activités"
@@ -110,7 +110,7 @@ summarylength = 25
   [params.portfolio]
     enable    = true
     title     = "Nos Actions Récentes"
-    subtitle  = "L'avenir de la francophonie se construit aujourd'hui"
+    subtitle  = "Un réseau francophone actif et engagé"
     view_project = "Lire plus"
     more_works = "MORE WORKS"
     scroll_down = "défiler la page"
@@ -131,24 +131,24 @@ summarylength = 25
       title   = "Contact"
       address = "Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse La chaussée du bourg <br>44117 SAINT ANDRE DES EAUX"
       email   = "contact@amicif.fr"
-      # Footer Sitemap
-      [params.footer.sitemap]
-        title   = "Sitemap"
-        [[params.footer.sitemap.link]]
+      # Footer Plan du site
+      [params.footer.Plan du site]
+        title   = "Plan du site"
+        [[params.footer.Plan du site.link]]
           name = "L’AMICIF"
           url  = "about"
-        [[params.footer.sitemap.link]]
+        [[params.footer.Plan du site.link]]
           name = "Actions"
           url  = "portfolio"
-        [[params.footer.sitemap.link]]
+        [[params.footer.Plan du site.link]]
           name = "AMI Blog"
           url  = "blog"
-        [[params.footer.sitemap.link]]
+        [[params.footer.Plan du site.link]]
           name = "Contactez Nous"
           url  = "contact"
       # Footer Social Media
 [params.footer.social]
-  title   = "Réseaux Sociaux"
+  title   = "Suivez-nous"
   [[params.footer.social.link]]
     name = "Facebook"
     url  = "https://www.facebook.com/amicif1958/"
@@ -175,7 +175,7 @@ summarylength = 25
     icon = "fab fa-telegram"
       # Footer Service
       [params.footer.service]
-        title       = "L’AMICIF regroupe plus de:"
+        title       = "En bref"
         description = "11 000 anciens stagiaires des Centres Internationaux Francophones des Lions Club de France, <br>depuis 1958 et constitue une véritable chaîne d’amitié francophone"
       [params.footer.back_to_top]
         description = "Haut <br> de page"

@@ -15,7 +15,7 @@ Du côté des CIF et de l'AMICIF, on a déjà plein d'idées et de projets en t�
 
 On a hâte de vous retrouver très bientôt pour partager de nouvelles expériences, créer des souvenirs ensemble et continuer à construire des ponts entre les cultures. Parce que c'est ça la magie des CIF et de l'AMICIF : une grande famille internationale unie par l'amour de la francophonie et l'envie de faire bouger les choses. 
 
-Alors, qu'est-ce que vous attendez ? Rejoignez l'aventure et faites partie du mouvement ! Restez connectés sur nos réseaux sociaux et notre site web pour ne rien manquer des actualités, des événements et des opportunités à venir. On vous promet une année 2025 riche en émotions, en découvertes et en amitié ! 
+Alors, qu'est-ce que vous attendez ? Rejoignez l'aventure et faites partie du mouvement ! Restez connectés sur nos Suivez-nous et notre site web pour ne rien manquer des actualités, des événements et des opportunités à venir. On vous promet une année 2025 riche en émotions, en découvertes et en amitié ! 
 
 En attendant, on vous souhaite une année pleine de bonheur, de santé, de réussite et de fous rires ! À très vite pour de nouvelles aventures francophones ! 
 
