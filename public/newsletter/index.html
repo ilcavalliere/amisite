@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  <title>Newsletter</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  <meta name="author" content="StaticMania">
+  
+  <meta name="generator" content="Hugo 0.147.8">
+
+  <!-- Bootstrap -->
+  
+  <link rel="stylesheet" href="https://amisite-cif-1958.firebaseapp.com/css/bootstrap.min.css" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+2      integrity="sha512-..." 
+3      crossorigin="anonymous" 
+4      referrerpolicy="no-referrer" />
+  <!-- Main Stylesheets -->
+  
+  <link href="https://amisite-cif-1958.firebaseapp.com/scss/style.min.css" rel="stylesheet" />
+
+  
+
+  
+  <link rel="shortcut icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="https://amisite-cif-1958.firebaseapp.com/images/favicon.ico" type="image/x-icon" />
+  
+</head>
+<body><nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="https://amisite-cif-1958.firebaseapp.com/">
+      <img src="https://amisite-cif-1958.firebaseapp.com/images/logo.png" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sitenavbar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+         
+         
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amisite-cif-1958.firebaseapp.com/"
+              >Accueil</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amisite-cif-1958.firebaseapp.com/about"
+              >L’AMICIF</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amisite-cif-1958.firebaseapp.com/portfolio"
+              >Nos activités</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amisite-cif-1958.firebaseapp.com/timeline"
+              >Notre histoire</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amisite-cif-1958.firebaseapp.com/blog"
+              >AMI Blog</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-sm btn-primary btn-sm-rounded"
+              href="https://amisite-cif-1958.firebaseapp.com/contact"
+            >
+              <span class="btn-area">
+                <span data-text="Contactez-nous">
+                  Contactez-nous
+                </span>
+              </span>
+            </a>
+          </li>
+           
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+<section class="site-contact">
+  <div class="container">
+    <div class="row align-items-start">
+     <div class="col-lg-5">
+    <h1 class="site-contact-title">
+      Abonnez-vous à notre <span>newsletter francophone.</span>
+    </h1>
+  </div>
+      </div>
+     <div class="col-lg-6 ml-auto">
+    <div class="site-contact-form">
+      <h4>Recevez des nouvelles, des événements et des inspirations culturelles.</h4>
+
+
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            
+            <input type="hidden" name="access_key" value="c96b7c50-c44d-485b-bf4a-bb1980bdb861">
+            
+            
+            <input type="hidden" name="subject" value="Nouveau message depuis AMICIF">
+            <input type="hidden" name="from_name" value="Formulaire AMICIF">
+            
+            <div class="row">
+              <div class="col-lg-6">
+                <input type="text" class="form-control" name="first-name" id="first-name" placeholder="Prénom" required>
+              </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Nom de famille" required>
+              </div>
+              <div class="col-lg-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Adresse e-mail" required>
+              </div>
+             
+              <div class="col-12">
+              <textarea class="form-control" id="aboutProject" name="message" rows="6" placeholder="Messgae pour l'equipe" required></textarea>
+              </div>
+              
+               <!-- Consent checkbox -->
+              <div class="form-group form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="consent"
+            name="consent"
+            value="yes"
+            required
+          />
+          <label class="form-check-label" for="consent">
+            J’accepte que mes informations soient utilisées pour recevoir des communications par e-mail.
+          </label>
+        </div>
+
+              
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary" id="contact-form-button">
+                  <span class="btn-area">
+                    <span data-text="S’abonner">
+                      S’abonner
+                    </span>
+                  </span>
+                </button>
+              </div>
+              
+              
+              <div class="col-12">
+                <div id="contact-form-status" class="mt-3"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const statusDiv = document.getElementById('contact-form-status');
+    const submitButton = document.getElementById('contact-form-button');
+    
+    
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<span class="btn-area"><span>Envoi en cours...</span></span>';
+    
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            statusDiv.innerHTML = '<div class="alert alert-success">Message envoyé avec succès!</div>';
+            this.reset();
+        } else {
+            statusDiv.innerHTML = '<div class="alert alert-danger">Erreur lors de l\'envoi: ' + result.message + '</div>';
+        }
+    } catch (error) {
+        statusDiv.innerHTML = '<div class="alert alert-danger">Erreur de connexion. Veuillez réessayer.</div>';
+    }
+    
+    
+    submitButton.disabled = false;
+    submitButton.innerHTML = '<span class="btn-area"><span data-text="Envoyer le message">Envoyer le message</span></span>';
+});
+</script>
+
+        </main><footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer-logo"><a href="https://amisite-cif-1958.firebaseapp.com/"><img src="https://amisite-cif-1958.firebaseapp.com/images/logo-footer.png" alt="logo-footer"></a></div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Contact</h5>
+          <p class="site-footer-widget-description">
+	    
+              Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse La chaussée du bourg <br>44117 SAINT ANDRE DES EAUX
+	     <br>
+	    
+	    
+              <a href="mailto:contact@amicif.fr">contact@amicif.fr</a>
+	    
+          </p>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Plan du site</h5>
+          <ul class="site-footer-widget-links">
+            
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/about">L’AMICIF</a></li>
+            
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/portfolio">Nos activités</a></li>
+
+            <li><a href=" https://amisite-cif-1958.firebaseapp.com/timeline">Notre histoire</a></li>
+            
+            <li><a href="https://amisite-cif-1958.firebaseapp.com/blog">AMI Blog</a></li>
+            
+           <li><a href="https://amisite-cif-1958.firebaseapp.com/contact">Contactez Nous</a></li>
+
+ <li><a href="https://amisite-cif-1958.firebaseapp.com/newsletter">Newsletter</a></li>
+ 
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Suivez-nous</h5>
+          <ul class="site-footer-widget-links">
+            
+              <li>
+                <a href="https://www.facebook.com/amicif1958/" target="_blank">
+                  <i class="fab fa-facebook-f "></i>&nbsp;Facebook
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/amicif/?hl=fr" target="_blank">
+                  <i class="fab fa-instagram "></i>&nbsp;Instagram
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.tiktok.com/@amicif" target="_blank">
+                  <i class="fab fa-tiktok "></i>&nbsp;TikTok
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://fr.linkedin.com/company/amicif" target="_blank">
+                  <i class="fab fa-linkedin-in "></i>&nbsp;LinkedIn
+                </a>
+              </li>
+            
+              <li>
+                <a href="http://www.youtube.com/@amicifreseaufrancophone1943" target="_blank">
+                  <i class="fab fa-youtube "></i>&nbsp;YouTube
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://t.me/amicif1958" target="_blank">
+                  <i class="fab fa-telegram "></i>&nbsp;Telegram
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">En bref</h5>
+          <p class="site-footer-widget-description">
+            11 000 anciens stagiaires des Centres Internationaux Francophones des Lions Club de France, <br>depuis 1958 et constitue une véritable chaîne d’amitié francophone
+          </p>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-12">
+        <a href="#top" class="site-footer-widget-top">
+          <img src="https://amisite-cif-1958.firebaseapp.com/images/to-top.svg" alt="back-to-top">
+          <p>
+	    Haut <br> de page
+          </p>
+        </a>
+      </div>
+      <div class="col-12">
+        <div class="site-footer-copyright">
+          <p>© Copyright 2025 - All Rights Reserved by <a href="https://ebcreativesolutions.com" target="_blank">EB Creative Solutions LTD</a> </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+<script src="https://amisite-cif-1958.firebaseapp.com/js/vendor.min.js"></script>
+
+<script src="https://amisite-cif-1958.firebaseapp.com/js/script.min.js"></script>
+</body>
+</html>
