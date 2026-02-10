@@ -35,7 +35,7 @@ Au cours des années, nous avons organisé des week-ends AMICIF à Prague, Turin
 ## Prêt pour l'Aventure ?
 
 Vous allez nous rejoindre pour le prochain week-end AMICIF ?  
-[Rejoignez-nous !](https://amisite-cif-1958.firebaseapp.com/contact)
+[Rejoignez-nous !](https://amicif.fr/contact)
 
 
 ![blog-details-image-02](https://user-images.githubusercontent.com/16266381/71399826-2009b380-264f-11ea-9bc3-59d7fa9a9994.jpg)

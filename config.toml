@@ -1,4 +1,4 @@
-baseURL       = "https://amisite-cif-1958.firebaseapp.com/"
+baseURL       = "https://amicif.fr/"
 languageCode  = "en-us"
 title         = "AMICIF Association Anciens CIF"
 theme         = "roxo-hugo"

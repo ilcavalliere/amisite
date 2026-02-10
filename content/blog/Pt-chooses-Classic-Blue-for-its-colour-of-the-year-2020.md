@@ -55,7 +55,7 @@ Tous unis par notre passion commune pour la langue française et l'esprit des CI
 Ce roadtrip était absolument incroyable ! Rejoignez-nous pour les prochaines aventures AMICIF  
 et découvrez par vous-même la magie de voyager en français avec des amis du monde entier.
 
-[Rejoignez l'Aventure !](https://amisite-cif-1958.firebaseapp.com/contact)
+[Rejoignez l'Aventure !](https://amicif.fr/contact)
 
 
 ![blog-details-image-02](https://user-images.githubusercontent.com/16266381/71399826-2009b380-264f-11ea-9bc3-59d7fa9a9994.jpg)

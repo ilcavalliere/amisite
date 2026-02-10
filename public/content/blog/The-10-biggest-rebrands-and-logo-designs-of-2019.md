@@ -36,12 +36,12 @@ Temple légendaire du cabaret parisien, symbole de la Belle Époque. Ses ailes r
 ### Souvenirs en Images  
 *Découvrez leurs aventures à travers ces magnifiques photographies...*
 
-![Croisière sur la Seine](https://amisite-cif-1958.firebaseapp.com/images/blog/saine-Bateaux-Mouches.jpg)  
-![La Tour Eiffel et la stagiaire](https://amisite-cif-1958.firebaseapp.com/images/blog/contempler-tour-eiffel.jpg)  
-![La Tour Eiffel et le groupe](https://amisite-cif-1958.firebaseapp.com/images/blog/toureiffel.jpg)  
-![Les Brésiliens](https://amisite-cif-1958.firebaseapp.com/images/blog/bresil.jpg)  
-![Inspiration Montmartre](https://amisite-cif-1958.firebaseapp.com/images/blog/montmantre-visite.jpg)  
-![La Joie](https://amisite-cif-1958.firebaseapp.com/images/blog/le-visages.jpg)
+![Croisière sur la Seine](https://amicif.fr/images/blog/saine-Bateaux-Mouches.jpg)  
+![La Tour Eiffel et la stagiaire](https://amicif.fr/images/blog/contempler-tour-eiffel.jpg)  
+![La Tour Eiffel et le groupe](https://amicif.fr/images/blog/toureiffel.jpg)  
+![Les Brésiliens](https://amicif.fr/images/blog/bresil.jpg)  
+![Inspiration Montmartre](https://amicif.fr/images/blog/montmantre-visite.jpg)  
+![La Joie](https://amicif.fr/images/blog/le-visages.jpg)
 
 ---
 
