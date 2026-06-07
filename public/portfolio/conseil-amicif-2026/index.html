@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+  <meta charset="utf-8" />
+  <title>BIENVENUE — Conseil d’Administration Association AMICIF</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="author" content="StaticMania">
+  <meta name="generator" content="Hugo 0.145.0">
+
+  <link rel="stylesheet" href="https://amicif.fr/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://amicif.fr/scss/style.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="https://amicif.fr/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="https://amicif.fr/images/favicon.ico" type="image/x-icon" />
+
+  <style>
+    body {
+      background: #f6f7fb;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2a2a2a;
+    }
+
+    .site-project-single-section {
+      padding: 60px 0 40px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .site-project-single {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 18px 60px rgba(30, 45, 80, 0.08);
+      overflow: hidden;
+      padding: 40px 35px;
+    }
+
+    .site-project-single h1 {
+      font-size: 2.8rem;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      color: #0b1630;
+    }
+
+    .site-project-single p,
+    .site-project-single li,
+    .site-project-single .highlight-text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #444;
+    }
+
+    .site-project-single h2,
+    .site-project-single h3 {
+      color: #0f2142;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    .site-project-single h2 {
+      font-size: 1.65rem;
+      letter-spacing: -0.02em;
+    }
+
+    .site-project-single h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 30px;
+      align-items: start;
+      margin-top: 28px;
+    }
+
+    .content-card {
+      background: #f8f9ff;
+      border-radius: 16px;
+      border: 1px solid #e4e7f0;
+      padding: 26px;
+    }
+
+    .content-card strong {
+      color: #162147;
+    }
+
+    .agenda-list,
+    .need-list,
+    .highlights-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .agenda-list li,
+    .need-list li,
+    .highlights-list li {
+      position: relative;
+      padding-left: 34px;
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    .agenda-list li::before,
+    .need-list li::before,
+    .highlights-list li::before {
+      content: '\2022';
+      position: absolute;
+      left: 0;
+      top: 1px;
+      color: #3b6bf0;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .finance-table,
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .finance-table th,
+    .finance-table td,
+    .budget-table th,
+    .budget-table td {
+      padding: 12px 14px;
+      border: 1px solid #e7eaf3;
+      text-align: left;
+    }
+
+    .finance-table th,
+    .budget-table th {
+      background: #f2f4fb;
+      color: #162147;
+      font-weight: 600;
+    }
+
+    .finance-table td.amount,
+    .budget-table td.amount {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: #1d2b4f;
+    }
+
+    .finance-table tr.total td,
+    .budget-table tr.total td {
+      font-weight: 700;
+      background: #eef2ff;
+      color: #11224b;
+    }
+
+    .callout {
+      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+      border-left: 4px solid #3b6bf0;
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin: 30px 0;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 1rem;
+      color: #1d2848;
+    }
+
+    .featured-thumbnail {
+      margin: 32px 0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(24, 45, 90, 0.12);
+    }
+
+    .featured-thumbnail img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .site-project-single-action {
+      margin-top: 32px;
+      text-align: right;
+    }
+
+    .site-project-single-action a {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 22px;
+      background: #3b6bf0;
+      color: #fff;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .site-project-single-action a:hover {
+      background: #1f49d1;
+    }
+
+    .site-project-single-action img {
+      width: 18px;
+      height: auto;
+    }
+
+    @media (max-width: 992px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-project-single {
+        padding: 28px 22px;
+      }
+
+      .site-project-single h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="https://amicif.fr/">
+      <img src="https://amicif.fr/images/logo.png" alt="logo" />
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#sitenavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/about">L’AMICIF</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/portfolio">Nos activités</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/timeline">Notre histoire</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/blog">AMI Blog</a></li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href="https://amicif.fr/contact">
+            <span class="btn-area"><span data-text="Contactez-nous">Contactez-nous</span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+<section class="site-project-single-section">
+  <div class="container">
+    <div class="site-project-single">
+      <h1>BIENVENUE</h1>
+      <p class="highlight-text">Conseil d’Administration Association AMICIF — ordre du jour et point de vie associative pour 2025 / 2026.</p>
+      <div class="featured-thumbnail">
+        <img src="https://amicif.fr/images/projects/thumb-conseil-2026.png" alt="Conseil AMICIF 2026 thumbnail">
+      </div>
+
+      <div class="content-grid">
+        <div>
+          <h2>Ordre du jour / Vie de l’association</h2>
+          <p>Nous partageons ici les principaux sujets du Conseil d’Administration, ainsi que les éléments clés à suivre pour la vie associative, la situation financière et l’organisation des prochains événements.</p>
+
+          <div class="content-card">
+            <h3>Ordre du jour</h3>
+            <ul class="agenda-list">
+              <li>Conseil d’Administration Association AMICIF</li>
+              <li>Ordre du Jour : Vie de l’association</li>
+              <li>Situation financière</li>
+              <li>CIF 2026 à venir - Vie de l’association</li>
+              <li>Ambassadeurs AMICIF : 39 ambassadeurs de 33 pays</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h3>Ambassadeurs AMICIF</h3>
+            <p>La force du réseau AMICIF repose sur 39 ambassadeurs répartis dans 33 pays. Ce réseau est un soutien essentiel pour faciliter les inscriptions, assurer la communication locale et encourager la participation francophone.</p>
+          </div>
+
+          <div class="content-card">
+            <h3>Appel au soutien pour l’accueil Paris</h3>
+            <p>Pour l’organisation de l’accueil à Paris au CREPS, comme en 2018, 2019 et 2022, nous avons besoin de volontaires et de référents AMICIF.</p>
+            <ul class="need-list">
+              <li>Spectacle d’ouverture</li>
+              <li>Besoins d’anciens stagiaires pour aider l’équipe AMICIF : PPT, spectacle, accueil...</li>
+              <li>Préparation du point d’étape financier et des comptes 2025</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <p><strong>Subvention à demander :</strong> une subvention CIF est à solliciter et à valider ensemble. Les recettes doivent continuer à s’appuyer sur les adhésions et cotisations pour assurer la vie de l’association.</p>
+          </div>
+
+          <div class="content-card">
+            <h3>Rappel cotisation</h3>
+            <p>Le site AMICIF permet de payer sa cotisation annuelle et de faire un don via PayPal &amp; HelloAsso. Avez-vous déjà versé votre cotisation pour 2026 ?</p>
+            <p>Point d’étape : relevons le défi d’avoir tous les paiements d’adhésion reçus d’ici lundi.</p>
+          </div>
+        </div>
+
+        <aside>
+          <div class="content-card">
+            <h3>Points clefs</h3>
+            <ul class="highlights-list">
+              <li>39 ambassadeurs mobilisés dans 33 pays</li>
+              <li>Accueil Paris prévu au CREPS</li>
+              <li>Subvention CIF à demander rapidement</li>
+              <li>Campagne cotisations 2026 à renforcer</li>
+            </ul>
+          </div>
+
+          <div class="content-card">
+            <h3>Action prioritaire</h3>
+            <p>Besoin d’un référent AMICIF pour ce projet, afin d’accompagner l’accueil, la communication et la coordination des bénévoles.</p>
+          </div>
+        </aside>
+      </div>
+
+      <h2>Point d’étape financier - Comptes 2025</h2>
+      <p>Voici l’état des comptes 2025 avec les principaux postes de recette et dépense.</p>
+      <table class="finance-table">
+        <thead>
+          <tr>
+            <th>Poste</th>
+            <th class="amount">Montant</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Dotation</td><td class="amount">7 200,00€</td></tr>
+          <tr><td>Cotisations et dons</td><td class="amount">774,20€</td></tr>
+          <tr><td>Frais bancaires remb.</td><td class="amount">116,10€</td></tr>
+          <tr><td>Transit enzo mailjet</td><td class="amount">14,67€</td></tr>
+          <tr><td>Divers (vérif PayPal)</td><td class="amount">0,01€</td></tr>
+          <tr><td>Fournitures</td><td class="amount">-5,34€</td></tr>
+          <tr><td>Mailjet</td><td class="amount">-19,18€</td></tr>
+          <tr><td>Don autre association</td><td class="amount">-50,00€</td></tr>
+          <tr><td>Communication</td><td class="amount">-55,00€</td></tr>
+          <tr><td>Assurance</td><td class="amount">-106,06€</td></tr>
+          <tr><td>Frais bancaires</td><td class="amount">-204,01€</td></tr>
+          <tr><td>Restauration</td><td class="amount">-350,00€</td></tr>
+          <tr><td>Déplacements et restauration</td><td class="amount">-394,40€</td></tr>
+          <tr><td>Déplacements et matériels</td><td class="amount">-624,90€</td></tr>
+          <tr><td>Événement</td><td class="amount">-1 040,00€</td></tr>
+          <tr><td>Déplacements</td><td class="amount">-3 680,34€</td></tr>
+          <tr class="total"><td>Total</td><td class="amount">1 575,75€</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Budget approuvé 2026</h2>
+      <p>Vers le budget 2026 : les besoins à couvrir pour assurer les actions et la vie de l’association.</p>
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>Poste</th>
+            <th class="amount">Prévision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Mailjet</td><td class="amount">240,00€</td></tr>
+          <tr><td>Fournitures</td><td class="amount">50,00€</td></tr>
+          <tr><td>Communication</td><td class="amount">550,00€</td></tr>
+          <tr><td>Assurance</td><td class="amount">135,00€</td></tr>
+          <tr><td>Frais bancaire</td><td class="amount">250,00€</td></tr>
+          <tr><td>Restauration</td><td class="amount">400,00€</td></tr>
+          <tr><td>Déplacements</td><td class="amount">5 000,00€</td></tr>
+          <tr><td>Événement</td><td class="amount">1 000,00€</td></tr>
+          <tr class="total"><td>Total besoin</td><td class="amount">7 625,00€</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p>Les cotisations restent un levier essentiel : 400€ seulement collectés en 2025. La mobilisation de tous est requise pour dynamiser les appels et améliorer les recettes de l’association.</p>
+      </div>
+
+      <h2>Stratégie cotisation</h2>
+      <p>Les cotisations sont très faibles par rapport aux attentes. Une campagne de mailing personnalisée vers les responsables des CIF a déjà été lancée et les retours sont positifs.</p>
+      <p>Prochaine étape : renforcer la campagne mailing de cotisation et lancer une collaboration influence avec Shreya pour élargir la visibilité.</p>
+
+      <div class="site-project-single-action">
+        <a href="https://amicif.fr/portfolio/">
+          <span class="link-area"><span data-text="Retour au portfolio">Retour au portfolio</span></span>
+          <img src="https://amicif.fr/images/to-top.svg" alt="Retour au portfolio">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer-logo"><a href="https://amicif.fr/"><img src="https://amicif.fr/images/logo-footer.png" alt="logo-footer"></a></div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Contact</h5>
+          <p class="site-footer-widget-description">Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse La chaussée du bourg<br>44117 SAINT ANDRE DES EAUX<br><a href="mailto:contact@amicif.fr">contact@amicif.fr</a></p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Plan du site</h5>
+          <ul class="site-footer-widget-links">
+            <li><a href="https://amicif.fr/about">L’AMICIF</a></li>
+            <li><a href="https://amicif.fr/portfolio">Actions</a></li>
+            <li><a href="https://amicif.fr/blog">AMI Blog</a></li>
+            <li><a href="https://amicif.fr/contact">Contactez Nous</a></li>
+            <li><a href="https://amicif.fr/newsletter">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Suivez-nous</h5>
+          <ul class="site-footer-widget-links">
+            <li><a href="https://www.facebook.com/amicif1958/" target="_blank"><i class="fab fa-facebook-f"></i>&nbsp;Facebook</a></li>
+            <li><a href="https://www.instagram.com/amicif/?hl=fr" target="_blank"><i class="fab fa-instagram"></i>&nbsp;Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@amicif" target="_blank"><i class="fab fa-tiktok"></i>&nbsp;TikTok</a></li>
+            <li><a href="https://fr.linkedin.com/company/amicif" target="_blank"><i class="fab fa-linkedin-in"></i>&nbsp;LinkedIn</a></li>
+            <li><a href="http://www.youtube.com/@amicifreseaufrancophone1943" target="_blank"><i class="fab fa-youtube"></i>&nbsp;YouTube</a></li>
+            <li><a href="https://t.me/amicif1958" target="_blank"><i class="fab fa-telegram"></i>&nbsp;Telegram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">En bref</h5>
+          <p class="site-footer-widget-description">11 000 anciens stagiaires des Centres Internationaux Francophones des Lions Club de France, depuis 1958 et constitue une véritable chaîne d’amitié francophone.</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-12">
+        <a href="#top" class="site-footer-widget-top"><img src="https://amicif.fr/images/to-top.svg" alt="back-to-top"><p>Haut<br>de page</p></a>
+      </div>
+      <div class="col-12">
+        <div class="site-footer-copyright"><p>© Copyright 2026 - All Rights Reserved by <a href="https://ebcreativesolutions.com" target="_blank">EB Creative Solutions LTD</a></p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://amicif.fr/js/vendor.min.js"></script>
+<script src="https://amicif.fr/js/script.min.js"></script>
+</body>
+</html>

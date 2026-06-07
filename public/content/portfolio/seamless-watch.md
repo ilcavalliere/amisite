@@ -2,7 +2,7 @@
 title: "ACCUEIL PARIS 2025 - CIF"
 date: 2025-07-12 T15:55:44+06:00
 type: portfolio
-image: "images/projects/project-thumb-three.jpg"
+image: "images/projects/thumb-accueil-paris.png"
 category: ["Centres"]
 project_images: ["images/projects/project-details-image-one.jpg", "images/projects/project-details-image-two.jpg"]
 ---
