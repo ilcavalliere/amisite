@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  <title>Concours Influenceur AMICIF</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <meta name="author" content="StaticMania">
+  
+  <meta name="generator" content="Hugo 0.147.8">
+
+  <!-- Bootstrap -->
+  
+  <link rel="stylesheet" href="https://amicif.fr/css/bootstrap.min.css" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Main Stylesheets -->
+  
+  <link href="https://amicif.fr/scss/style.min.css" rel="stylesheet" />
+
+  
+
+  
+  <link rel="shortcut icon" href="https://amicif.fr/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="https://amicif.fr/images/favicon.ico" type="image/x-icon" />
+</head>
+<body><nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="https://amicif.fr/">
+      <img src="https://amicif.fr/images/logo.png" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sitenavbar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+         
+         
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/"
+              >Accueil</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/about"
+              >L’AMICIF</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/portfolio"
+              >Nos activités</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/timeline"
+              >Notre histoire</a
+            >
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/blog"
+              >AMI Blog</a
+            >
+          </li>
+          
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-sm btn-primary btn-sm-rounded"
+              href="https://amicif.fr/contact"
+            >
+              <span class="btn-area">
+                <span data-text="Contactez-nous">
+                  Contactez-nous
+                </span>
+              </span>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<main>
+
+<style>
+  .amicif-post{
+    --ink:#141414;
+    --paper:#f2f2f2;
+    --paper-warm:#f8f8f8;
+    --rose:#F5B6B4;
+    --teal:#B3DBD5;
+    --muted:#6b6b6b;
+    --line: rgba(20,20,20,0.16);
+    font-family:'Work Sans', -apple-system, sans-serif;
+    color:var(--ink);
+    background:var(--paper-warm);
+    border-radius:6px;
+    padding:0;
+    overflow:hidden;
+    position:relative;
+    border:1px solid var(--line);
+  }
+  .amicif-post *{ box-sizing:border-box; }
+  .amicif-post .ap-inner{ padding:clamp(40px,6vw,88px) clamp(28px,7vw,110px) clamp(56px,7vw,96px); position:relative; }
+
+  /* faint envelope-liner texture via layered diagonal lines, very quiet */
+  .amicif-post .ap-inner::before{
+    content:''; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background:
+      repeating-linear-gradient(135deg, rgba(179,219,213,0.10) 0px, rgba(179,219,213,0.10) 1px, transparent 1px, transparent 34px);
+  }
+
+  /* -------- masthead: letterhead line -------- */
+  .ap-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:24px; position:relative; }
+  .ap-head-left .ap-kicker{
+    font-family:'Fraunces', Georgia, serif; font-style:italic; font-size:14px;
+    color:#8a8a8a; letter-spacing:.03em; margin:0 0 4px;
+  }
+  .ap-head-left .ap-place{
+    font-family:'Work Sans', sans-serif; font-weight:600; font-size:13px;
+    text-transform:uppercase; letter-spacing:.14em; color:var(--ink);
+  }
+
+  /* -------- postmark stamp, top right -------- */
+  .ap-postmark{ flex-shrink:0; width:104px; height:104px; position:relative; }
+  .ap-postmark svg{ width:100%; height:100%; }
+  .ap-postmark .ring-text{ font-family:'Work Sans', sans-serif; font-size:8.6px; font-weight:600; letter-spacing:.12em; fill:var(--ink); }
+  .ap-postmark .ring-num{ font-family:'Fraunces', Georgia, serif; font-weight:600; font-size:26px; fill:var(--ink); }
+
+  /* -------- salutation / masthead title -------- */
+  .ap-salut{
+    margin-top:46px; font-family:'Fraunces', Georgia, serif; font-style:italic; font-weight:500;
+    font-size:clamp(15px,1.8vw,17px); color:var(--muted); position:relative;
+  }
+  .amicif-post h1{
+    font-family:'Fraunces', Georgia, serif; font-weight:600; font-style:normal;
+    font-size:clamp(34px,6vw,64px); line-height:1.0; margin:10px 0 28px; letter-spacing:-0.015em;
+    max-width:14ch; position:relative;
+  }
+  .amicif-post h1 em{ font-style:italic; color:var(--rose); font-weight:500; }
+
+  .ap-lead{ font-size:17.5px; line-height:1.72; max-width:600px; color:#2c2c2c; margin:0; position:relative; }
+  .ap-lead + .ap-lead{ margin-top:16px; }
+  .ap-lead strong{ color:var(--ink); }
+
+  /* -------- passport stamps row -------- */
+  .ap-stamps{
+    display:flex; flex-wrap:wrap; gap:28px; margin:52px 0 8px; position:relative;
+    justify-content:flex-start;
+  }
+  .ap-stamp{
+    width:132px; height:132px; border-radius:50%; flex-shrink:0;
+    border:1.5px dashed rgba(20,20,20,0.4);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; background:var(--paper); position:relative;
+  }
+  .ap-stamp:nth-child(1){ transform:rotate(-6deg); }
+  .ap-stamp:nth-child(2){ transform:rotate(4deg); background:var(--rose); border-color:rgba(20,20,20,0.25); }
+  .ap-stamp:nth-child(3){ transform:rotate(-3deg); }
+  .ap-stamp::after{
+    content:''; position:absolute; inset:9px; border-radius:50%; border:1px solid rgba(20,20,20,0.22);
+  }
+  .ap-stamp .n{ font-family:'Fraunces', Georgia, serif; font-weight:600; font-size:34px; line-height:1; }
+  .ap-stamp .l{ font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; margin-top:6px; max-width:80px; line-height:1.3; }
+  .ap-stamp:nth-child(2) .n, .ap-stamp:nth-child(2) .l{ color:var(--ink); }
+
+  /* -------- divider with torn-edge feel -------- */
+  .ap-tear{
+    margin:56px 0 40px; height:1px; position:relative;
+    background:repeating-linear-gradient(90deg, rgba(20,20,20,0.28) 0 6px, transparent 6px 12px);
+  }
+
+  /* -------- margin timeline (letter-style, not numbered steps) -------- */
+  .ap-entries{ position:relative; }
+  .ap-entry{
+    display:grid; grid-template-columns:96px 1fr; gap:24px; padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .ap-entry:last-child{ border-bottom:1px solid var(--line); }
+  .ap-entry .time{
+    font-family:'Fraunces', Georgia, serif; font-style:italic; font-size:14.5px; color:var(--muted); padding-top:2px;
+  }
+  .ap-entry .what strong{ display:block; font-size:16.5px; font-weight:600; margin-bottom:4px; }
+  .ap-entry .what span{ font-size:15px; line-height:1.6; color:#4a4a4a; }
+
+  /* -------- ticket-style ateliers list -------- */
+  .ap-ticket{
+    margin-top:52px; background:var(--ink); color:var(--paper-warm); border-radius:14px;
+    padding:34px clamp(24px,4vw,42px); position:relative;
+  }
+  .ap-ticket .ap-kicker2{
+    font-family:'Fraunces', Georgia, serif; font-style:italic; font-size:14px; color:var(--teal); margin-bottom:6px;
+  }
+  .ap-ticket h3{ font-family:'Fraunces', Georgia, serif; font-weight:500; font-size:24px; margin:0 0 22px; color:#fff; }
+  .ap-ticket-row{
+    display:flex; align-items:center; gap:16px; padding:14px 0;
+    border-top:1px dashed rgba(255,255,255,0.22);
+  }
+  .ap-ticket-row:last-child{ border-bottom:1px dashed rgba(255,255,255,0.22); }
+  .ap-ticket-row .dot{ width:8px; height:8px; border-radius:50%; background:var(--rose); flex-shrink:0; }
+  .ap-ticket-row span{ font-size:15.5px; color:#e8e8e8; }
+  .ap-ticket-row .stub{
+    margin-left:auto; font-family:'Fraunces', Georgia, serif; font-style:italic; font-size:13px; color:#9a9a9a;
+    flex-shrink:0;
+  }
+
+  /* -------- sign-off -------- */
+  .ap-signoff{ margin-top:60px; max-width:560px; }
+  .ap-signoff p{ font-size:17px; line-height:1.7; color:#2c2c2c; margin:0 0 22px; }
+  .ap-signature{
+    font-family:'Fraunces', Georgia, serif; font-style:italic; font-weight:500; font-size:26px; color:var(--ink);
+  }
+  .ap-signature small{ display:block; font-family:'Work Sans',sans-serif; font-style:normal; font-weight:500;
+    font-size:12.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-top:8px; }
+
+  /* -------- footer / wax-seal instagram cta -------- */
+  .ap-footer{ margin-top:56px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px; }
+  .ap-seal{
+    display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink);
+    font-weight:600; font-size:14.5px; padding:0;
+  }
+  .ap-seal .seal-circle{
+    width:46px; height:46px; border-radius:50%; background:var(--rose); display:flex; align-items:center; justify-content:center;
+    transition:transform .2s ease;
+  }
+  .ap-seal:hover .seal-circle{ transform:scale(1.06) rotate(-4deg); }
+  .ap-footer .ap-loc{ font-size:12.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
+
+  .site-project-single-section { padding: 140px 0 100px; }
+  @media (min-width: 992px) {
+    .site-project-single-section { padding-top: 110px; padding-bottom: 100px; }
+  }
+  @media (max-width:640px){
+    .site-project-single-section { padding: 90px 0 70px; }
+    .ap-inner{ padding:36px 20px 56px; }
+    .ap-head{ flex-direction:column-reverse; }
+    .ap-postmark{ align-self:flex-end; }
+    .ap-entry{ grid-template-columns:1fr; gap:6px; }
+    .ap-stamps{ gap:18px; }
+    .ap-stamp{ width:110px; height:110px; }
+  }
+
+  .site-project-single-image {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .featured-image {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .featured-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .featured-image img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-collage {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .collage-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .collage-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .collage-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    /* Special styling for the portrait image */
+    .collage-item:first-child img {
+        object-position: center top;
+        height: 320px;
+    }
+
+    .collage-item:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Special arrangement for 3 items */
+    .image-collage.three-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .image-collage.three-items .collage-item:first-child {
+        grid-column: span 2;
+    }
+
+    .image-collage.three-items .collage-item:first-child img {
+        height: 200px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .image-collage.three-items {
+            grid-template-columns: 1fr;
+        }
+        
+        .image-collage.three-items .collage-item:first-child {
+            grid-column: span 1;
+        }
+        
+        .image-collage.three-items .collage-item:first-child img {
+            height: 250px;
+        }
+    }
+
+    /* Container and navigation styles */
+   
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Cible uniquement l'image des filles équipe 2026, sans affecter les autres */
+.collage-item img[src*="les-filles-equipe-2026.jpg"] {
+    height: 400px !important; /* 250px de base + 50% */
+}
+.collage-item img[src*="hanna-kayla-paris-2026.jpg"] {
+    height:400px !important; /* 250px de base + 50% */
+}
+.collage-item img[src*="les-filles-2026.jpg"] {
+    height: 450px !important; /* 250px de base + 50% */
+}
+.collage-item img[src*="presentation-amicif-2026.jpg"] {
+    height: 450px !important; /* 250px de base + 50% */
+}
+.collage-item img[src*="dejuner-en-equipe-2026.jpg"] {
+    height: 450px !important; 
+    width: 450px !important; 
+}
+
+/* Cible uniquement cette image, sans toucher aux autres .featured-image */
+.featured-image img[src*="hanna-et-groupe.png"] {
+    width: 70% !important;
+    display: block;
+    margin: 0 auto; /* pour la centrer, sinon elle colle à gauche */
+}
+
+
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<section class="site-project-single-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 mx-auto">
+        <div class="site-project-single">
+
+          <div class="amicif-post">
+            <div class="ap-inner">
+
+              <div class="ap-head">
+                <div class="ap-head-left">
+                  <p class="ap-kicker">Une lettre de l'équipe AMICIF</p>
+                  <p class="ap-place">Paris, France</p>
+                </div>
+                <div class="ap-postmark">
+                  <svg viewBox="0 0 104 104">
+                    <defs>
+                      <path id="ringPath" d="M 52,10 A 42,42 0 1 1 51.9,10" fill="none"/>
+                    </defs>
+                    <circle cx="52" cy="52" r="50" fill="none" stroke="#141414" stroke-width="1.2"/>
+                    <circle cx="52" cy="52" r="40" fill="none" stroke="#141414" stroke-width="1"/>
+                    <text class="ring-text">
+                      <textPath href="#ringPath" startOffset="2%">CENTRES INTERNATIONAUX FRANCOPHONES · CIF 2026 ·</textPath>
+                    </text>
+                    <text x="52" y="60" text-anchor="middle" class="ring-num">J1</text>
+                  </svg>
+                </div>
+              </div>
+
+              <p class="ap-salut">Chers stagiaires, chère famille francophone,</p>
+              <h1>Bienvenue à <em>Paris.</em></h1>
+
+              <p class="ap-lead"><strong>Vous êtes arrivés hier, et déjà, tout a commencé.</strong> Nos 110 stagiaires ont posé leurs valises, venus de 43 pays différents, pour se retrouver au cœur des Centres Internationaux Francophones 2026.</p>
+              <p class="ap-lead">Ils ont rencontré les équipes d'animation et les responsables des 5 centres de l'année, accueillis avec la même énergie par les anciens stagiaires de l'AMICIF, toujours fidèles au poste pour transmettre l'esprit de la maison.</p>
+
+              <!-- passport stamps -->
+              <div class="ap-stamps">
+                <div class="ap-stamp"><span class="n">110</span><span class="l">Stagiaires arrivés</span></div>
+                <div class="ap-stamp"><span class="n">43</span><span class="l">Pays représentés</span></div>
+                <div class="ap-stamp"><span class="n">5</span><span class="l">Centres 2026</span></div>
+              </div>
+
+              <div class="ap-tear"></div>
+
+              <!-- journal entries -->
+              <div class="ap-entries">
+                <div class="ap-entry">
+                  <span class="time">Hier, à l'arrivée</span>
+                  <div class="what"><strong>110 valises, 43 pays, un seul mois</strong><span>Nos stagiaires 2026 sont arrivés à Paris, prêts à vivre ensemble un mois francophone hors du commun.</span></div>
+                </div>
+                <div class="ap-entry">
+                  <span class="time">En soirée</span>
+                  <div class="what"><strong>Les présentations</strong><span>Rencontre avec les équipes d'animation et les responsables des 5 centres 2026, épaulés par les anciens stagiaires de l'AMICIF.</span></div>
+                </div>
+                <div class="ap-entry">
+                  <span class="time">Jusqu'à tard</span>
+                  <div class="what"><strong>Les premières amitiés</strong><span>Entre deux pas de danse et une carte Time's Up, les premiers liens francophones se sont déjà noués.</span></div>
+                </div>
+              </div>
+
+              <!-- ateliers ticket -->
+              <div class="ap-ticket">
+                <p class="ap-kicker2">Au programme du jour 1</p>
+                <h3>Trois ateliers pour briser la glace</h3>
+                <div class="ap-ticket-row"><span class="dot"></span><span>Initiation à la danse latine</span><span class="stub">Atelier 01</span></div>
+                <div class="ap-ticket-row"><span class="dot"></span><span>Time's Up en français</span><span class="stub">Atelier 02</span></div>
+                <div class="ap-ticket-row"><span class="dot"></span><span>Speed dating francophone</span><span class="stub">Atelier 03</span></div>
+              </div>
+
+              <!-- sign off -->
+              <div class="ap-signoff">
+                <p>C'est parti pour un mois francophone inoubliable. Bienvenue à tous, chers stagiaires 2026 on est ravis de vous avoir enfin parmi nous.</p>
+                <p class="ap-signature">Avec toute notre amitié francophone,
+                  <small>L'équipe AMICIF</small>
+                </p>
+              </div>
+
+              <!-- footer -->
+              <div class="ap-footer">
+                <a href="https://www.instagram.com/amicif/?hl=fr" class="ap-seal" target="_blank" rel="noopener">
+                  <span class="seal-circle">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="#141414"/></svg>
+                  </span>
+                  Suivre @amicif
+                </a>
+                <span class="ap-loc">Jour 1 · CIF 2026 · Paris</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+<style>
+  .ap-thanks{
+    --ink:#141414;
+    --paper-warm:#f8f8f8;
+    --rose:#F5B6B4;
+    --teal:#B3DBD5;
+    --muted:#6b6b6b;
+    --line: rgba(20,20,20,0.16);
+    font-family:'Work Sans', -apple-system, sans-serif;
+    color:var(--ink);
+    background:var(--ink);
+    border-radius:20px;
+    padding:clamp(40px,6vw,80px) clamp(28px,6vw,72px);
+    position:relative;
+    overflow:hidden;
+    margin-top:56px;
+  }
+  .ap-thanks *{ box-sizing:border-box; }
+  .ap-thanks::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(circle at 92% 0%, rgba(245,182,180,0.16), transparent 55%),
+      radial-gradient(circle at 4% 100%, rgba(179,219,213,0.12), transparent 50%);
+  }
+
+  .ap-thanks .kicker{
+    font-family:'Fraunces', Georgia, serif; font-style:italic; font-size:15px;
+    color:var(--teal); letter-spacing:.02em; margin:0 0 14px; position:relative;
+  }
+  .ap-thanks h2{
+    font-family:'Fraunces', Georgia, serif; font-weight:600; font-size:clamp(30px,4.6vw,46px);
+    line-height:1.06; margin:0 0 22px; color:#fff; max-width:16ch; position:relative;
+  }
+  .ap-thanks h2 em{ font-style:italic; color:var(--rose); font-weight:500; }
+
+  .ap-thanks p.lead{
+    font-size:16.5px; line-height:1.75; color:#d8d8d8; max-width:600px; margin:0 0 44px; position:relative;
+  }
+  .ap-thanks p.lead strong{ color:#fff; }
+
+  /* -------- luggage-tag cloud -------- */
+  .ap-tags{
+    display:flex; flex-wrap:wrap; gap:16px 14px; position:relative; padding-top:6px;
+  }
+  .ap-tag{
+    display:inline-flex; align-items:center; gap:9px;
+    background:var(--paper-warm); color:var(--ink);
+    border-radius:8px 8px 8px 2px;
+    padding:9px 16px 9px 14px;
+    font-size:14px; font-weight:500;
+    position:relative;
+    box-shadow:0 6px 16px -8px rgba(0,0,0,0.5);
+  }
+  .ap-tag .flag{
+    font-size:16px; line-height:1; flex-shrink:0;
+  }
+  .ap-tag:nth-child(3n+1){ transform:rotate(-2.5deg); }
+  .ap-tag:nth-child(3n+2){ transform:rotate(1.5deg); background:var(--rose); }
+  .ap-tag:nth-child(3n){ transform:rotate(-1deg); background:var(--teal); }
+  .ap-tag:nth-child(4n){ transform:rotate(2deg); }
+
+  .ap-thanks .signoff{
+    margin-top:48px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.14);
+    display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    position:relative;
+  }
+  .ap-thanks .signoff p{
+    font-family:'Fraunces', Georgia, serif; font-style:italic; font-size:19px; color:#fff; margin:0; max-width:480px;
+  }
+  .ap-thanks .signoff span{
+    font-size:12.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); flex-shrink:0;
+  }
+
+  @media (max-width:560px){
+    .ap-thanks{ padding:40px 20px; }
+    .ap-thanks .signoff{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+
+<div class="ap-thanks">
+  <p class="kicker">Un immense merci</p>
+  <h2>Merci à nos <em>anciens</em>, venus du monde entier.</h2>
+  <p class="lead"><strong>Rien de tout cela n'aurait été possible sans eux.</strong> Pour accueillir nos 110 stagiaires dès le premier jour, notre équipe d'anciens stagiaires de l'AMICIF a fait le déplacement depuis les quatre coins du monde; parfois plusieurs milliers de kilomètres, simplement pour transmettre l'esprit francophone qu'ils ont eux-mêmes reçu.</p>
+  <p class="lead">Ils étaient fantastiques, et cerise sur le gâteau : c'est aussi à cette occasion que nous avons dévoilé notre tout nouveau merchandising AMICIF. Une fierté pour toute l'équipe, qui montre à quel point notre association gagne en maturité et en unité, édition après édition.</p>
+
+  <div class="ap-tags">
+    <span class="ap-tag"><span class="flag">🇺🇸</span>Louisiane</span>
+    <span class="ap-tag"><span class="flag">🇨🇺</span>Cuba</span>
+    <span class="ap-tag"><span class="flag">🇪🇸</span>Espagne</span>
+    <span class="ap-tag"><span class="flag">🇬🇧</span>Londres</span>
+    <span class="ap-tag"><span class="flag">🇧🇾</span>Biélorussie</span>
+    <span class="ap-tag"><span class="flag">🇫🇷</span>Strasbourg</span>
+    <span class="ap-tag"><span class="flag">🇫🇷</span>Agen</span>
+    <span class="ap-tag"><span class="flag">🇵🇱</span>Pologne</span>
+    <span class="ap-tag"><span class="flag">🇹🇯</span>Tadjikistan</span>
+    <span class="ap-tag"><span class="flag">🇺🇿</span>Ouzbékistan</span>
+    <span class="ap-tag"><span class="flag">🇧🇪</span>Bruxelles</span>
+    <span class="ap-tag"><span class="flag">🇦🇲</span>Arménie</span>
+    <span class="ap-tag"><span class="flag">🇮🇳</span>Inde</span>
+    <span class="ap-tag"><span class="flag">🇨🇴</span>Colombie</span>
+    <span class="ap-tag"><span class="flag">🇷🇺</span>Russie</span>
+    <span class="ap-tag"><span class="flag">🇹🇳</span>Tunisie</span>
+    <span class="ap-tag"><span class="flag">🇲🇦</span>Maroc</span>
+    <span class="ap-tag"><span class="flag">🇻🇳</span>Vietnam</span>
+  </div>
+
+  <div class="signoff">
+    <p>Merci d'avoir fait de cet accueil un moment aussi chaleureux que francophone.</p>
+    <span>L'équipe AMICIF · Anciens 2026</span>
+  </div>
+</div>
+
+
+         <div class="site-project-single-image">
+            <!-- Featured main image -->
+            <div class="featured-image">
+              <img src="https://amicif.fr/images/projects/accueil-paris-2026/accueil-paris-equipe-amicif-2026.jpg" alt="Week-end AMICIF 2025 Paris - Photo principale du groupe">
+            </div>
+            
+            <!-- Collage of remaining images -->
+            <div class="image-collage three-items">
+              <div class="collage-item">
+                <img src="https://amicif.fr/images/projects/accueil-paris-2026/hanna-kayla-paris-2026.jpg" alt="Détails du week-end - Enzo et Serena">
+              </div>
+              <div class="collage-item">
+                <img src="https://amicif.fr/images/projects/accueil-paris-2026/les-filles-equipe-2026.jpg" alt="Participants Uruguay, Kazakhstan, Brésil">
+              </div>
+              <div class="collage-item">
+                <img src="https://amicif.fr/images/projects/accueil-paris-2026/les-filles-2026.jpg" alt="Junior et Mathi - Week-end AMICIF Paris">
+              </div>
+              <div class="collage-item">
+                <img src="https://amicif.fr/images/projects/accueil-paris-2026/dejuner-en-equipe-2026.jpg" alt="hanna-serena-enzo-bass- Week-end AMICIF Paris">
+              </div>
+               <div class="collage-item">
+                <img src="https://amicif.fr/images/projects/accueil-paris-2026/presentation-amicif-2026.jpg" alt="hanna-serena-enzo-bass- Week-end AMICIF Paris">
+              </div>
+            </div>
+          </div>
+
+           <div class="featured-image">
+              <img src="https://amicif.fr/images/projects/accueil-paris-2026/hanna-et-groupe.png" alt="Week-end AMICIF 2025 Paris - Photo principale du groupe">
+            </div>
+
+
+    </div>
+      <div class="site-project-single-action">
+        <a href="https://amicif.fr/portfolio/kio-tape-2/">
+          <span class="link-area">
+            <span data-text="Prochain Projet">Prochain Projet</span>
+          </span>
+          <img src="https://amicif.fr/images/to-top.svg" alt="Prochain Projet">
+        </a>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <section class="site-cta" style='background-image: url("https://amicif.fr/images/backgrounds/cta-background.jpg");'>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="site-cta-title">Rejoignez notre réseau francophone mondial !</h1>
+          <ul class="site-cta-buttons">
+            <li>
+              <a href="https://amicif.fr/contact" class="btn btn-secondary">
+                <span class="btn-area">
+                  <span data-text="Contactez-nous">
+                    Contactez-nous
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="https://amicif.fr/portfolio" class="btn btn-primary">
+                <span class="btn-area">
+                  <span data-text="Découvrir nos programmes">
+                    Découvrir nos programmes
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+</main><footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer-logo"><a href="https://amicif.fr/"><img src="https://amicif.fr/images/logo-footer.png" alt="logo-footer"></a></div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Contact</h5>
+          <p class="site-footer-widget-description">
+	    
+              Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse La chaussée du bourg <br>44117 SAINT ANDRE DES EAUX
+	     <br>
+	    
+	    
+              <a href="mailto:contact@amicif.fr">contact@amicif.fr</a>
+	    
+          </p>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Plan du site</h5>
+          <ul class="site-footer-widget-links">
+            
+            <li><a href="https://amicif.fr/about">L’AMICIF</a></li>
+            
+            <li><a href="https://amicif.fr/portfolio">Nos activités</a></li>
+
+            <li><a href=" https://amicif.fr/timeline">Notre histoire</a></li>
+            
+            <li><a href="https://amicif.fr/blog">AMI Blog</a></li>
+            
+           <li><a href="https://amicif.fr/contact">Contactez Nous</a></li>
+
+ <li><a href="https://amicif.fr/newsletter">Newsletter</a></li>
+ 
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Suivez-nous</h5>
+          <ul class="site-footer-widget-links">
+            
+              <li>
+                <a href="https://www.facebook.com/amicif1958/" target="_blank">
+                  <i class="fab fa-facebook-f "></i>&nbsp;Facebook
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/amicif/?hl=fr" target="_blank">
+                  <i class="fab fa-instagram "></i>&nbsp;Instagram
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.tiktok.com/@amicif" target="_blank">
+                  <i class="fab fa-tiktok "></i>&nbsp;TikTok
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://fr.linkedin.com/company/amicif" target="_blank">
+                  <i class="fab fa-linkedin-in "></i>&nbsp;LinkedIn
+                </a>
+              </li>
+            
+              <li>
+                <a href="http://www.youtube.com/@amicifreseaufrancophone1943" target="_blank">
+                  <i class="fab fa-youtube "></i>&nbsp;YouTube
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://t.me/amicif1958" target="_blank">
+                  <i class="fab fa-telegram "></i>&nbsp;Telegram
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">En bref</h5>
+          <p class="site-footer-widget-description">
+            11 000 anciens stagiaires des Centres Internationaux Francophones des Lions Club de France, <br>depuis 1958 et constitue une véritable chaîne d’amitié francophone
+          </p>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-12">
+        <a href="#top" class="site-footer-widget-top">
+          <img src="https://amicif.fr/images/to-top.svg" alt="back-to-top">
+          <p>
+	    Haut <br> de page
+          </p>
+        </a>
+      </div>
+      <div class="col-12">
+        <div class="site-footer-copyright">
+          <p>© Copyright 2025 - All Rights Reserved by <a href="https://ebcreativesolutions.com" target="_blank">EB Creative Solutions LTD</a> </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+<script src="https://amicif.fr/js/vendor.min.js"></script>
+
+<script src="https://amicif.fr/js/script.min.js"></script>
+</body>
+</html>
+        
