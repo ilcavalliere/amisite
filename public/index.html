@@ -41,6 +41,46 @@
   display: inline-block;                   /* keeps each phrase together */
   max-width: 100%;
 }
+
+/* ===== Section Instagram — à coller dans le <style> du <head> (avec .split-title) ===== */
+/* Couleurs du site : rose #eaa4a4 / #e07b7b, marine #00113e, gris #9d9ea5, fond #f7f9ff */
+.site-testimonial.site-instagram { padding: 60px 0; --ig-frame-h: 400px; }
+
+.site-instagram-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+.site-instagram-head .section-title { margin-bottom: 0; }
+.site-instagram-head .section-title h2 { font-size: clamp(1.5rem, 6vw, 2.25rem); margin-bottom: 8px; }
+.site-instagram-head .section-title p { font-size: 18px; margin-bottom: 0; }
+.site-instagram-controls { display: flex; align-items: center; gap: 10px; }
+.site-instagram-controls .site-project-cta { margin: 0 14px 0 0; font-size: 16px; }
+.site-instagram-arrow { width: 44px; height: 44px; border: 0; background: #eaa4a4; color: #fff; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background .3s ease; }
+.site-instagram-arrow:hover { background: #e07b7b; }
+.site-instagram-arrow:focus-visible, .site-instagram-track:focus-visible { outline: 2px solid #00113e; outline-offset: 2px; }
+
+.site-instagram-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #eaa4a4 #f7f9ff; padding-bottom: 12px; }
+.site-instagram-item { flex: 0 0 340px; max-width: calc(100vw - 40px); margin: 0; padding: 0; scroll-snap-align: start; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 17, 62, .06); }
+
+.site-instagram-frame { position: relative; height: var(--ig-frame-h); overflow: hidden; }
+.site-instagram-frame::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 24px; background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff); pointer-events: none; }
+.site-instagram-frame blockquote { width: 100%; margin: 0; padding: 16px; border: 0; background: #fff; }
+.site-instagram-frame blockquote a { color: #00113e; }
+.site-instagram-frame iframe { margin: 0 !important; border: 0 !important; width: 100% !important; max-width: 100% !important; box-shadow: none !important; }
+
+.site-instagram-foot { padding: 12px 16px 16px; }
+.site-instagram-item .btn { display: block; width: 100%; text-align: center; padding: 11px 20px !important; font-size: 15px; }
+
+@media (max-width: 767px) {
+  .site-testimonial.site-instagram { padding: 45px 0; }
+  .site-instagram-head { text-align: center; justify-content: center; }
+  .site-instagram-controls { width: 100%; justify-content: center; }
+}
+
+.site-instagram-head .section-title h2 { display: flex; align-items: center; gap: 12px; }
+.site-instagram-icon { width: 1em; height: 1em; flex: none; color: #eaa4a4; }
+
+@media (max-width: 767px) {
+  .site-instagram-head .section-title h2 { justify-content: center; }
+}
+
   </style>
   
 </head>
@@ -271,7 +311,179 @@
       </div>
     </div>
   </section>
+
+
   
+  <section class="site-testimonial site-instagram">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="site-instagram-head">
+            <div class="section-title">
+             <h2>
+                <svg class="site-instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+              Suivez-nous sur Instagram
+             
+            </h2>
+              <p>Les dernières nouvelles de nos CIF et de notre réseau, directement depuis @amicif.</p>
+            </div>
+            <div class="site-instagram-controls">
+              <a class="site-project-cta" href="https://www.instagram.com/amicif" target="_blank" rel="noopener">Voir tous les posts sur @amicif</a>
+              <button type="button" class="site-instagram-arrow" data-dir="-1" aria-label="Publications précédentes">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+              </button>
+              <button type="button" class="site-instagram-arrow" data-dir="1" aria-label="Publications suivantes">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pour mettre à jour le fil : remplacez les 6 liens (data-instgrm-permalink + les deux <a>) -->
+        <div class="col-12">
+          <div class="site-instagram-track" tabindex="0" aria-label="Dernières publications Instagram">
+
+        <div class="site-testimonial-item site-instagram-item">
+          <div class="site-instagram-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DaSKos3FwXr/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/p/DaSKos3FwXr/" target="_blank" rel="noopener">Voir cette publication sur Instagram</a>
+            </blockquote>
+          </div>
+          <div class="site-instagram-foot">
+            <a href="https://www.instagram.com/p/DaSKos3FwXr/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <span class="btn-area"><span data-text="Voir sur Instagram">Voir sur Instagram</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="site-testimonial-item site-instagram-item">
+          <div class="site-instagram-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DMFxb-2osh9/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/DMFxb-2osh9/" target="_blank" rel="noopener">Voir cette publication sur Instagram</a>
+            </blockquote>
+          </div>
+          <div class="site-instagram-foot">
+            <a href="https://www.instagram.com/reel/DMFxb-2osh9/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <span class="btn-area"><span data-text="Voir sur Instagram">Voir sur Instagram</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="site-testimonial-item site-instagram-item">
+          <div class="site-instagram-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DdUFwUJK7v-/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/DdUFwUJK7v-/" target="_blank" rel="noopener">Voir cette publication sur Instagram</a>
+            </blockquote>
+          </div>
+          <div class="site-instagram-foot">
+            <a href="https://www.instagram.com/reel/DdUFwUJK7v-/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <span class="btn-area"><span data-text="Voir sur Instagram">Voir sur Instagram</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="site-testimonial-item site-instagram-item">
+          <div class="site-instagram-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcdT7pKl9PH/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/p/DcdT7pKl9PH/" target="_blank" rel="noopener">Voir cette publication sur Instagram</a>
+            </blockquote>
+          </div>
+          <div class="site-instagram-foot">
+            <a href="https://www.instagram.com/p/DcdT7pKl9PH/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <span class="btn-area"><span data-text="Voir sur Instagram">Voir sur Instagram</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="site-testimonial-item site-instagram-item">
+          <div class="site-instagram-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcVuZcDF0ph/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/p/DcVuZcDF0ph/" target="_blank" rel="noopener">Voir cette publication sur Instagram</a>
+            </blockquote>
+          </div>
+          <div class="site-instagram-foot">
+            <a href="https://www.instagram.com/p/DcVuZcDF0ph/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <span class="btn-area"><span data-text="Voir sur Instagram">Voir sur Instagram</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="site-testimonial-item site-instagram-item">
+          <div class="site-instagram-frame">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcSv9jpFy3C/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/p/DcSv9jpFy3C/" target="_blank" rel="noopener">Voir cette publication sur Instagram</a>
+            </blockquote>
+          </div>
+          <div class="site-instagram-foot">
+            <a href="https://www.instagram.com/p/DcSv9jpFy3C/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <span class="btn-area"><span data-text="Voir sur Instagram">Voir sur Instagram</span></span>
+            </a>
+          </div>
+        </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- À placer une seule fois, juste avant </body> -->
+<script async src="https://www.instagram.com/embed.js"></script>
+<script>
+  (function () {
+    var track = document.querySelector('.site-instagram-track');
+    if (!track) return;
+
+    var DELAY = 2000; // délai entre deux défilements (ms)
+    var GAP = 20;     // doit correspondre au gap du CSS
+    var paused = false, resumeTimer;
+
+    function step() {
+      var card = track.querySelector('.site-instagram-item');
+      return card.offsetWidth + GAP;
+    }
+
+    function move(dir) {
+      var max = track.scrollWidth - track.clientWidth;
+      if (dir > 0 && track.scrollLeft >= max - 5) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });   // fin atteinte : retour au début
+      } else if (dir < 0 && track.scrollLeft <= 5) {
+        track.scrollTo({ left: max, behavior: 'smooth' }); // début atteint : aller à la fin
+      } else {
+        track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+      }
+    }
+
+    // Flèches
+    document.querySelectorAll('.site-instagram-arrow').forEach(function (btn) {
+      btn.addEventListener('click', function () { move(Number(btn.dataset.dir)); });
+    });
+
+    // Défilement automatique (désactivé si l'utilisateur préfère moins d'animations)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    setInterval(function () {
+      if (!paused && !document.hidden) move(1);
+    }, DELAY);
+
+    // Pause au survol, au focus clavier et au toucher
+    function pause() { paused = true; clearTimeout(resumeTimer); }
+    function resume(delay) { clearTimeout(resumeTimer); resumeTimer = setTimeout(function () { paused = false; }, delay || 0); }
+
+    var zone = track.closest('.site-instagram');
+    zone.addEventListener('mouseenter', pause);
+    zone.addEventListener('mouseleave', function () { resume(0); });
+    zone.addEventListener('focusin', pause);
+    zone.addEventListener('focusout', function () { resume(0); });
+    track.addEventListener('touchstart', pause, { passive: true });
+    track.addEventListener('touchend', function () { resume(4000); }, { passive: true });
+  })();
+</script>
+
 
 
 
