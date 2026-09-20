@@ -28,6 +28,20 @@
   
   <link rel="shortcut icon" href="https://amicif.fr/images/favicon.png" type="image/x-icon" />
   <link rel="icon" href="https://amicif.fr/images/favicon.ico" type="image/x-icon" />
+
+
+  <style>
+    .section-title .split-title {
+  font-size: clamp(1.5rem, 6vw, 2.5rem);  /* scales down on phones */
+  line-height: 1.25;
+  overflow-wrap: break-word;               /* never overflows the screen */
+  text-wrap: balance;                      /* evens out line lengths */
+}
+.section-title .split-title span {
+  display: inline-block;                   /* keeps each phrase together */
+  max-width: 100%;
+}
+  </style>
   
 </head>
 <body><nav class="navbar navbar-expand-lg site-navigation">
@@ -113,7 +127,6 @@
 <main>
 
 
-  
   <!-- Site Hero Start -->
   <section class="site-hero" style="background-image: url('images/backgrounds/hero-background.jpg');">
     <div class="container">
@@ -155,6 +168,65 @@
   <!-- Site Hero End -->
   
 
+
+<!-- Ambassadeur/Animateur Banner Start -->
+<section class="site-banner-rose">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+      <div class="section-title">
+        <h2 class="split-title">
+          Tu veux devenir <span>ambassadeur de ton pays</span> ou
+          <span>animateur/<wbr>directeur d'un centre&nbsp;?</span>
+        </h2>
+      </div>
+    </div>
+
+      <div class="col-12 text-center">
+        <ul class="site-banner-rose-buttons">
+          <li>
+            <a href="/contact-ambassadeur" class="btn btn-secondary">
+              <span class="btn-area">
+                <span data-text="Devenir Ambassadeur">
+                  Devenir Ambassadeur
+                </span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact-animateur" class="btn btn-primary">
+              <span class="btn-area">
+                <span data-text="Devenir Animateur/Directeur">
+                  Devenir Animateur/Directeur
+                </span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Ambassadeur/Animateur Banner End -->
+
+<style>
+  .site-banner-rose {
+    padding: 50px 0;
+  }
+  .site-banner-rose .section-title h2 {
+    margin-bottom: 25px;
+  }
+  .site-banner-rose-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>
 
 
 
@@ -438,10 +510,12 @@
     </div>
   </section>
   
-
-
-
-        </main><footer class="site-footer">
+ </main>
+        
+        
+        
+        
+<footer class="site-footer">
   <div class="container">
     <div class="row">
       <div class="col-12">
