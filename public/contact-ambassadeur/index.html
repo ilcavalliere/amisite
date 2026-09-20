@@ -114,6 +114,8 @@
 
 
 <main>
+
+
 <section class="site-contact">
   <div class="container">
     <div class="row">
@@ -157,6 +159,13 @@
               <div class="col-lg-6">
                 <input type="text" class="form-control" name="availability" id="availability" placeholder="Disponibilité (jours / horaires)" required>
               </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" name="country" id="country" placeholder="Pays" autocomplete="country-name" required>
+              </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" name="city" id="city" placeholder="Ville" autocomplete="address-level2" required>
+              </div>
+              
 
               <div class="col-12">
                 <label class="form-label mt-2">Je suis intéressé(e) pour devenir ambassadeur dans le(s) domaine(s) suivant(s) :</label>
@@ -252,6 +261,10 @@
     </div>
   </div>
 </section>
+
+
+
+
 <script>
 document.getElementById('ambassador-form').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -293,6 +306,9 @@ document.getElementById('ambassador-form').addEventListener('submit', async func
     submitButton.innerHTML = '<span class="btn-area"><span data-text="Envoyer ma candidature">Envoyer ma candidature</span></span>';
 });
 </script>
+
+
+
 </main>
 
 
