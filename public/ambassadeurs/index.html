@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  <title>Contact</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  <meta name="author" content="StaticMania">
+  
+  <meta name="generator" content="Hugo 0.147.8">
+
+  <!-- Bootstrap -->
+  
+  <link rel="stylesheet" href="https://amicif.fr/css/bootstrap.min.css" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Main Stylesheets -->
+  
+  <link href="https://amicif.fr/scss/style.min.css" rel="stylesheet" />
+
+  
+
+  
+  <link rel="shortcut icon" href="https://amicif.fr/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="https://amicif.fr/images/favicon.ico" type="image/x-icon" />
+  <!-- Atlas font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- amCharts 5 is loaded by the script at the bottom (with CDN fallback) -->
+
+<style>
+  :root {
+    --void:#000000; --abyss:#050505; --ocean:#0c0c0d; --landmass:#3a3a3d;
+    --signal:#ffffff; --frost:#f2f2f2; --mist:#8a8a8e;
+  }
+  html, body { margin:0; padding:0; background:var(--void) !important; color:var(--frost);  font-family:"Manrope",system-ui,sans-serif; }
+.stage {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);   /* breaks out of the narrow Bootstrap container */
+  height: 130vh;                   /* globe size: raise it for a bigger globe */
+  min-height: 530px;
+  overflow: hidden;
+  background: radial-gradient(120% 120% at 50% 42%, #161617 0%, var(--void) 46%, var(--abyss) 100%);
+}
+  .stars { position:absolute; inset:0; pointer-events:none; opacity:.8;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 78% 12%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 33% 72%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 90% 66%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 55% 88%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 66% 36%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 6% 52%, #fff 50%, transparent 51%);
+    background-size:420px 380px, 530px 470px, 610px 560px, 350px 410px, 480px 520px, 700px 640px, 390px 450px; }
+  #chartdiv { position:absolute; inset:0; width:100%; height:100%; opacity:0; animation:globeIn 1300ms cubic-bezier(.16,.84,.3,1) 120ms forwards; }
+  @keyframes globeIn { from{opacity:0; transform:scale(.965); filter:blur(6px);} to{opacity:1; transform:none; filter:none;} }
+
+  .hud { position:absolute; pointer-events:none; z-index:5; font-family:"Manrope",sans-serif; }
+  .eyebrow { top:28px; left:32px; display:flex; align-items:center; gap:11px; }
+  .eyebrow .dot { width:9px; height:9px; border-radius:50%; background:var(--signal); animation:pulse 2.6s ease-out infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(255,255,255,.5);} 70%{box-shadow:0 0 0 10px rgba(255,255,255,0);} 100%{box-shadow:0 0 0 0 rgba(255,255,255,0);} }
+  .eyebrow .label { font-weight:800; font-size:12px; letter-spacing:.34em; text-transform:uppercase; color:var(--frost); }
+  .status { top:31px; right:32px; text-align:right; font-weight:600; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--mist); }
+  .status b { color:var(--frost); font-weight:700; }
+  .readout { bottom:30px; left:32px; }
+  .readout .cap { font-weight:800; font-size:10.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--mist); margin-bottom:7px; }
+  .readout .name { display:flex; align-items:baseline; gap:13px; font-weight:200; font-size:34px; line-height:1; color:var(--frost); }
+  .readout .name .tick { width:22px; height:2px; background:var(--mist); transform:translateY(-9px); transition:all .24s; }
+  .readout.is-selected .name .tick { background:var(--signal); width:38px; }
+  .readout .name.empty { color:var(--mist); font-weight:300; }
+
+  /* Modal */
+  .am-overlay { position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center; padding:20px;
+    background:rgba(0,0,0,.7); backdrop-filter:blur(4px); opacity:0; pointer-events:none; transition:opacity .25s; }
+  .am-overlay.open { opacity:1; pointer-events:auto; }
+  .am-card { width:100%; max-width:400px; background:var(--abyss); border:1px solid rgba(255,255,255,.16); border-radius:12px; overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.55); transform:translateY(14px) scale(.97); transition:transform .3s cubic-bezier(.16,.84,.3,1); position:relative; }
+  .am-overlay.open .am-card { transform:none; }
+  .am-photo { width:100%; height:210px; object-fit:cover; display:block; background:var(--ocean); }
+  .am-body { padding:20px 24px 24px; }
+  .am-country { font-size:11px; font-weight:800; letter-spacing:.3em; text-transform:uppercase; color:var(--signal); margin:0 0 6px; }
+  .am-name { font-size:24px; font-weight:300; margin:0 0 10px; color:var(--frost); }
+  .am-desc { font-size:14px; line-height:1.6; color:#bdbdc0; margin:0 0 16px; }
+  .am-foot { border-top:1px solid rgba(255,255,255,.12); padding-top:12px; font-size:11.5px; line-height:1.5; color:var(--mist); }
+  .am-close { position:absolute; top:10px; right:10px; width:34px; height:34px; border-radius:50%; border:0; cursor:pointer;
+    background:rgba(0,0,0,.75); color:var(--frost); font-size:18px; line-height:1; }
+  .am-close:hover { background:#fff; color:#000; }
+
+.site-contact { padding: 0; }
+.site-contact .container { max-width: 100%; padding: 0; }
+
+
+  @media (max-width:560px) {
+    .eyebrow { top:90px; }
+  .status { top:92px; } .readout{bottom:30px;left:18px;} .readout .name{font-size:26px;}
+  }
+  @media (prefers-reduced-motion:reduce) { #chartdiv{animation:none;opacity:1;} .eyebrow .dot{animation:none;} }
+
+.intro { position:absolute; z-index:5; left:32px; top:50%; transform:translateY(-50%); max-width:360px; pointer-events:none; font-family:"Manrope",sans-serif; }
+.intro-kicker { font-size:11px; font-weight:800; letter-spacing:.3em; text-transform:uppercase; color:var(--mist); margin:0 0 14px; }
+.intro-title { font-size:34px; font-weight:300; line-height:1.15; color:var(--frost); margin:0 0 14px; }
+.intro-sub { font-size:16px; font-weight:600; line-height:1.5; color:var(--signal); margin:0 0 18px; }
+.intro-text { font-size:14px; line-height:1.7; color:#bdbdc0; margin:0 0 12px; }
+.intro-stats { list-style:none; display:flex; gap:28px; padding:0; margin:22px 0 0; border-top:1px solid rgba(255,255,255,.14); padding-top:16px; }
+.intro-stats b { display:block; font-size:22px; font-weight:300; color:var(--frost); }
+.intro-stats span { font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--mist); }
+
+@media (max-width:900px) {
+  .intro { position:absolute; top:150px; left:18px; right:18px; transform:none; max-width:none; }
+  .intro-title { font-size:24px; }
+  .intro-text, .intro-stats { display:none; }
+   .stage { height: 110vh; min-height: 640px; }
+}
+
+
+</style>
+
+
+
+
+  
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="https://amicif.fr/">
+      <img src="https://amicif.fr/images/logo.png" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sitenavbar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+         
+         
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/"
+              >Accueil</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/about"
+              >L’AMICIF</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/portfolio"
+              >Nos activités</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/timeline"
+              >Notre histoire</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/blog"
+              >AMI Blog</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-sm btn-primary btn-sm-rounded"
+              href="https://amicif.fr/contact"
+            >
+              <span class="btn-area">
+                <span data-text="Contactez-nous">
+                  Contactez-nous
+                </span>
+              </span>
+            </a>
+          </li>
+           
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="site-contact">
+  <div class="container">
+
+
+
+  
+  <div class="stage">
+    <div class="stars"></div>
+    <div id="chartdiv"></div>
+    <div class="hud eyebrow"><span class="dot"></span><span class="label">AMICIF · Ambassadeurs</span></div>
+    <div class="intro">
+  <p class="intro-kicker">Le réseau AMICIF</p>
+  <h2 class="intro-title">Nos ambassadeurs, partout dans le monde</h2>
+  <p class="intro-sub">Cliquez sur les points lumineux du globe pour découvrir l’ambassadeur ou l’ambassadrice de chaque pays, et entrer en contact avec lui ou elle.</p>
+  <p class="intro-text">L’AMICIF est l’amicale des anciens stagiaires des Centres Internationaux Francophones (CIF) des Lions Clubs de France. Depuis 1958, elle entretient une véritable chaîne d’amitié francophone entre plus de 11 000 anciens stagiaires, répartis sur tous les continents.</p>
+  <p class="intro-text">Dans chaque pays, un ambassadeur ou une ambassadrice fait le lien entre les membres, accueille les nouveaux anciens, organise des rencontres et fait vivre l’esprit des CIF : partage, découverte des cultures et amitié durable.</p>
+  <ul class="intro-stats">
+    <li><b>11 000</b><span>membres</span></li>
+    <li><b>55</b><span>pays</span></li>
+    <li><b>1958</b><span>depuis</span></li>
+  </ul>
+</div>
+    <div class="hud readout" id="readout">
+      <div class="cap">Pays sélectionné</div>
+      <div class="name empty"><span class="tick"></span><span id="selName">Aucun pays</span></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="am-overlay" id="overlay" aria-hidden="true">
+    <div class="am-card" role="dialog" aria-modal="true" aria-labelledby="amName">
+      <button class="am-close" id="amClose" aria-label="Fermer">&times;</button>
+      <img class="am-photo" id="amPhoto" alt="">
+      <div class="am-body">
+        <p class="am-country" id="amCountry"></p>
+        <h2 class="am-name" id="amName"></h2>
+        <p class="am-desc" id="amDesc"></p>
+        <div class="am-foot">L’AMICIF est l’amicale des anciens stagiaires des Centres Internationaux Francophones (CIF) des Lions Clubs de France. Créée dans les années 1960, elle rassemble plus de 11 000 membres à travers le monde.</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ============================================================
+   DONNÉES — modifiez ici : name, photo (URL) et desc par pays.
+   Tant que "photo" est vide, un avatar généré est affiché.
+   Format : [pays, longitude, latitude, nom ambassadeur, photo, description]
+   ============================================================ */
+var DEFAULT_DESC = "Ambassadeur·rice de l’AMICIF dans ce pays : relais du réseau des anciens stagiaires des CIF, il ou elle fait vivre l’amitié francophone née chaque été en France.";
+var AMBASSADORS = [
+  ["France",2.35,48.85],["Belgique",4.35,50.85],["Suisse",7.45,46.95],["Luxembourg",6.13,49.61],
+  ["Canada",-75.7,45.42],["États-Unis",-77.04,38.9],["Mexique",-99.13,19.43],["Haïti",-72.34,18.54],
+  ["Brésil",-47.93,-15.78],["Argentine",-58.38,-34.6],["Royaume-Uni",-0.13,51.51],["Allemagne",13.4,52.52],
+  ["Italie",12.5,41.9],["Espagne",-3.7,40.42],["Portugal",-9.14,38.72],["Pays-Bas",4.9,52.37],
+  ["Suède",18.07,59.33],["Finlande",24.94,60.17],["Pologne",21.01,52.23],["Roumanie",26.1,44.43],
+  ["Grèce",23.73,37.98],["Turquie",32.85,39.93],["Maroc",-6.84,34.02],["Algérie",3.06,36.75],
+  ["Tunisie",10.18,36.81],["Égypte",31.24,30.04],["Mauritanie",-15.98,18.08],["Sénégal",-17.47,14.69],
+  ["Mali",-8.0,12.64],["Burkina Faso",-1.52,12.37],["Niger",2.11,13.51],["Guinée",-13.68,9.64],
+  ["Côte d’Ivoire",-5.28,6.82],["Bénin",2.63,6.5],["Togo",1.22,6.13],["Cameroun",11.52,3.85],
+  ["Gabon",9.45,0.39],["Congo",15.28,-4.27],["RD Congo",15.31,-4.45],["Tchad",15.05,12.13],
+  ["Centrafrique",18.56,4.36],["Rwanda",30.06,-1.95],["Burundi",29.92,-3.43],["Djibouti",43.15,11.59],
+  ["Madagascar",47.51,-18.88],["Maurice",57.5,-20.16],["Seychelles",55.45,-4.62],["Comores",43.26,-11.7],
+  ["Liban",35.5,33.89],["Vietnam",105.85,21.03],["Cambodge",104.92,11.56],["Laos",102.6,17.97],
+  ["Japon",139.69,35.69],["Inde",77.21,28.61],["Australie",149.13,-35.28]
+].map(function (r) {
+  return { country:r[0], lon:r[1], lat:r[2], name:r[3] || "Ambassadeur·rice AMICIF", photo:r[4] || "", desc:r[5] || DEFAULT_DESC };
+});
+
+/* Avatar généré (SVG) quand aucune photo n'est fournie */
+function avatar(country, i) {
+  var hue = (i * 47) % 360;
+  var ini = country.replace(/[^A-Za-zÀ-ÿ ]/g, "").split(" ").map(function (w) { return w[0]; }).join("").slice(0, 2).toUpperCase();
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+    '<stop offset="0" stop-color="hsl(0,0%,' + (22 + (i % 5) * 4) + '%)"/><stop offset="1" stop-color="#000"/></linearGradient></defs>' +
+    '<rect width="800" height="420" fill="url(#g)"/><circle cx="400" cy="170" r="62" fill="rgba(255,255,255,.22)"/>' +
+    '<path d="M260 380c0-78 63-128 140-128s140 50 140 128z" fill="rgba(255,255,255,.22)"/>' +
+    '<text x="400" y="188" font-family="Arial,sans-serif" font-size="52" font-weight="700" fill="#f2f2f2" text-anchor="middle">' + ini + '</text></svg>';
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}
+
+(function () {
+  var readout = document.getElementById("readout"), selName = document.getElementById("selName");
+  var overlay = document.getElementById("overlay");
+  var onClose = function () {};
+
+  function openModal(a, i) {
+    document.getElementById("amPhoto").src = a.photo || avatar(a.country, i);
+    document.getElementById("amPhoto").alt = a.name + " — " + a.country;
+    document.getElementById("amCountry").textContent = a.country;
+    document.getElementById("amName").textContent = a.name;
+    document.getElementById("amDesc").textContent = a.desc;
+    overlay.classList.add("open"); overlay.setAttribute("aria-hidden", "false");
+    selName.textContent = a.country;
+    readout.classList.add("is-selected"); selName.parentElement.classList.remove("empty");
+  }
+  function closeModal() {
+    overlay.classList.remove("open"); overlay.setAttribute("aria-hidden", "true");
+    selName.textContent = "Aucun pays";
+    readout.classList.remove("is-selected"); selName.parentElement.classList.add("empty");
+    onClose();
+  }
+  document.getElementById("amClose").addEventListener("click", closeModal);
+  overlay.addEventListener("click", function (e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+
+  var built = false;
+  function build() {
+    if (built) return; built = true;
+    var root = am5.Root.new("chartdiv");
+    if (root._logo) root._logo.dispose();
+    var COL = {
+      ocean:am5.color(0x0c0c0d), landmass:am5.color(0x3a3a3d), landmassHi:am5.color(0x5e5e62),
+      border:am5.color(0x000000), signal:am5.color(0xffffff), grat:am5.color(0xffffff), frost:am5.color(0xf2f2f2)
+    };
+    var myTheme = am5.Theme.new(root);
+    myTheme.rule("Label").setAll({ fontFamily:"Manrope", fill:COL.frost });
+    root.setThemes([am5themes_Animated.new(root), am5themes_Dark.new(root), myTheme]);
+
+
+    // MOST IMPORTANT CONTROL THE GLOBE //////
+   var isMobile = window.innerWidth <= 900;
+
+var chart = root.container.children.push(am5map.MapChart.new(root, {
+  projection: am5map.geoOrthographic(),
+  panX:"rotateX", panY:"rotateY", rotationX:-10, rotationY:-12,
+  wheelY:"none",
+  paddingTop: isMobile ? 380 : 250,
+  paddingBottom: isMobile ? 120 : 330,
+  paddingLeft: isMobile ? 0 : 380,
+}));
+
+//////////////////////////////////
+
+
+
+    var bg = chart.series.unshift(am5map.MapPolygonSeries.new(root, {}));
+    bg.mapPolygons.template.setAll({ fill:COL.ocean, fillOpacity:0.9, strokeOpacity:0 });
+    bg.data.push({ geometry: am5map.getGeoRectangle(90, 180, -90, -180) });
+
+    var grat = chart.series.push(am5map.GraticuleSeries.new(root, { step:10 }));
+    grat.mapLines.template.setAll({ stroke:COL.grat, strokeOpacity:0.1, strokeWidth:0.5 });
+
+    var polys = chart.series.push(am5map.MapPolygonSeries.new(root, { geoJSON: am5geodata_worldLow }));
+    polys.mapPolygons.template.setAll({ fill:COL.landmass, stroke:COL.border, strokeWidth:0.5, strokeOpacity:0.7, interactive:true });
+    polys.mapPolygons.template.states.create("hover", { fill:COL.landmassHi });
+
+    /* ---- Points ambassadeurs ---- */
+    var points = chart.series.push(am5map.MapPointSeries.new(root, {}));
+    var tooltip = am5.Tooltip.new(root, { labelText:"{country}", pointerOrientation:"vertical" });
+    tooltip.get("background").setAll({ fill:am5.color(0x000000), fillOpacity:0.94, stroke:COL.signal, strokeOpacity:0.45, cornerRadius:5 });
+    tooltip.label.setAll({ fill:COL.frost, fontFamily:"Manrope", fontSize:13, fontWeight:"600" });
+
+    points.bullets.push(function (root, series, dataItem) {
+      var c = am5.Container.new(root, { cursorOverStyle:"pointer", tooltipText:"{country}", tooltip:tooltip });
+      var halo = c.children.push(am5.Circle.new(root, { radius:9, fill:COL.signal, fillOpacity:0.22 }));
+      var dot = c.children.push(am5.Circle.new(root, { radius:4.5, fill:COL.signal, stroke:am5.color(0x000000), strokeWidth:1.5 }));
+      halo.animate({ key:"scale", from:1, to:1.9, duration:1900, loops:Infinity, easing:am5.ease.out(am5.ease.cubic) });
+      halo.animate({ key:"opacity", from:0.6, to:0, duration:1900, loops:Infinity, easing:am5.ease.out(am5.ease.cubic) });
+      c.events.on("click", function () {
+        var ctx = dataItem.dataContext;
+        stopSpin();
+        chart.animate({ key:"rotationX", to:-ctx.lon, duration:900, easing:am5.ease.out(am5.ease.cubic) });
+        chart.animate({ key:"rotationY", to:-ctx.lat, duration:900, easing:am5.ease.out(am5.ease.cubic) });
+        openModal(ctx.a, ctx.i);
+      });
+      return am5.Bullet.new(root, { sprite:c });
+    });
+    AMBASSADORS.forEach(function (a, i) {
+      points.data.push({ geometry:{ type:"Point", coordinates:[a.lon, a.lat] }, country:a.country, lon:a.lon, lat:a.lat, a:a, i:i });
+    });
+
+    // /* ---- Slider position horizontale ---- */
+    // var controls = chart.chartContainer.children.push(am5.Container.new(root, {
+    //   layout:root.verticalLayout, centerX:am5.percent(50), x:am5.percent(50), y:am5.percent(100), centerY:am5.percent(100),
+    //   paddingBottom:22, width:am5.percent(46)
+    // }));
+    // controls.children.push(am5.Label.new(root, {
+    //   text:"POSITION HORIZONTALE", fontFamily:"Manrope", fontWeight:"800", fontSize:10, fill:am5.color(0x8a8a8e),
+    //   centerX:am5.percent(50), x:am5.percent(50), paddingBottom:9
+    // }));
+    // var slider = controls.children.push(am5.Slider.new(root, {
+    //   orientation:"horizontal", start:0.5, width:am5.percent(100), centerX:am5.percent(50), x:am5.percent(50), height:12
+    // }));
+    // try {
+    //   var track = slider.get("background");
+    //   if (track) track.setAll({ fill:COL.landmass, fillOpacity:0.5, cornerRadius:6 });
+    //   if (slider.startGrip) {
+    //     var gb = slider.startGrip.get("background");
+    //     if (gb) gb.setAll({ fill:COL.signal, stroke:COL.frost, strokeOpacity:0.2 });
+    //     var gi = slider.startGrip.get("icon"); if (gi) gi.set("forceHidden", true);
+    //     slider.startGrip.setAll({ width:18, height:18 });
+    //   }
+    // } catch (e) {}
+    // function applyHorizontal(v) {
+    //   var w = chart.getPrivate("width"), h = chart.getPrivate("height");
+    //   if (!w || !h) return;
+    //   var slack = Math.max(0, (w - Math.min(w, h)) / 2) * 0.9;
+    //   chart.seriesContainer.set("dx", (v - 0.5) * 2 * slack);
+    // }
+    // slider.events.on("rangechanged", function (ev) { applyHorizontal(ev.start); });
+    // window.addEventListener("resize", function () { applyHorizontal(slider.get("start")); });
+
+    /* ---- Rotation auto : 30 s / tour ---- */
+    var spin = null, resumeTimer = null;
+    function startSpin() {
+      if (overlay.classList.contains("open")) return;
+      var from = chart.get("rotationX") || 0;
+      spin = chart.animate({ key:"rotationX", from:from, to:from + 360, duration:30000, loops:Infinity, easing:am5.ease.linear });
+    }
+    function stopSpin() {
+      if (spin) { spin.stop(); spin = null; }
+      if (resumeTimer) { clearTimeout(resumeTimer); resumeTimer = null; }
+    }
+    onClose = function () { resumeTimer = setTimeout(startSpin, 1200); };
+    chart.chartContainer.events.on("pointerdown", stopSpin);
+    chart.chartContainer.events.on("globalpointerup", function () {
+      if (overlay.classList.contains("open")) return;
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(startSpin, 2400);
+    });
+
+    chart.appear(1200, 120);
+    startSpin();
+    applyHorizontal(0.5);
+    window.addEventListener("beforeunload", function () { root.dispose(); });
+  }
+  function go() { am5.ready(build); }
+
+  /* Load amCharts files in order, trying amcharts.com first, then jsDelivr */
+  var FILES = ["index.js", "map.js", "geodata/worldLow.js", "themes/Animated.js", "themes/Dark.js"];
+  var BASES = ["https://cdn.amcharts.com/lib/5/", "https://cdn.jsdelivr.net/npm/@amcharts/amcharts5@5/"];
+  function loadScript(src, ok, fail) {
+    var s = document.createElement("script");
+    s.src = src; s.onload = ok; s.onerror = fail;
+    document.head.appendChild(s);
+  }
+  function loadAll(baseIdx, fileIdx) {
+    if (fileIdx >= FILES.length) { start(); return; }
+    loadScript(BASES[baseIdx] + FILES[fileIdx],
+      function () { loadAll(baseIdx, fileIdx + 1); },
+      function () {
+        if (baseIdx + 1 < BASES.length && fileIdx === 0) { loadAll(baseIdx + 1, 0); }
+        else if (baseIdx + 1 < BASES.length) { loadAll(baseIdx + 1, fileIdx); }
+        else { document.getElementById("chartdiv").innerHTML = '<p style="color:#f2f2f2;padding:40px">Impossible de charger amCharts (réseau bloqué ?).</p>'; }
+      });
+  }
+  function start() {
+    if (typeof am5 === "undefined") return;
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(go).catch(go); setTimeout(go, 1200); } else { go(); }
+  }
+  loadAll(0, 0);
+})();
+</script>
+
+  </div>
+</section>
+
+
+
+
+</main>
+
+
+
+
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer-logo"><a href="https://amicif.fr/"><img src="https://amicif.fr/images/logo-footer.png" alt="logo-footer"></a></div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Contact</h5>
+          <p class="site-footer-widget-description">
+	    
+              Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse La chaussée du bourg <br>44117 SAINT ANDRE DES EAUX
+	     <br>
+	    
+	    
+              <a href="mailto:contact@amicif.fr">contact@amicif.fr</a>
+	    
+          </p>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Plan du site</h5>
+          <ul class="site-footer-widget-links">
+            
+            <li><a href="https://amicif.fr/about">L’AMICIF</a></li>
+            
+            <li><a href="https://amicif.fr/portfolio">Nos activités</a></li>
+
+            <li><a href=" https://amicif.fr/timeline">Notre histoire</a></li>
+            
+            <li><a href="https://amicif.fr/blog">AMI Blog</a></li>
+            
+           <li><a href="https://amicif.fr/contact">Contactez Nous</a></li>
+
+ <li><a href="https://amicif.fr/newsletter">Newsletter</a></li>
+ 
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Suivez-nous</h5>
+          <ul class="site-footer-widget-links">
+            
+              <li>
+                <a href="https://www.facebook.com/amicif1958/" target="_blank">
+                  <i class="fab fa-facebook-f "></i>&nbsp;Facebook
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.instagram.com/amicif/?hl=fr" target="_blank">
+                  <i class="fab fa-instagram "></i>&nbsp;Instagram
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://www.tiktok.com/@amicif" target="_blank">
+                  <i class="fab fa-tiktok "></i>&nbsp;TikTok
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://fr.linkedin.com/company/amicif" target="_blank">
+                  <i class="fab fa-linkedin-in "></i>&nbsp;LinkedIn
+                </a>
+              </li>
+            
+              <li>
+                <a href="http://www.youtube.com/@amicifreseaufrancophone1943" target="_blank">
+                  <i class="fab fa-youtube "></i>&nbsp;YouTube
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://t.me/amicif1958" target="_blank">
+                  <i class="fab fa-telegram "></i>&nbsp;Telegram
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">En bref</h5>
+          <p class="site-footer-widget-description">
+            11 000 anciens stagiaires des Centres Internationaux Francophones des Lions Club de France, <br>depuis 1958 et constitue une véritable chaîne d’amitié francophone
+          </p>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-12">
+        <a href="#top" class="site-footer-widget-top">
+          <img src="https://amicif.fr/images/to-top.svg" alt="back-to-top">
+          <p>
+	    Haut <br> de page
+          </p>
+        </a>
+      </div>
+      <div class="col-12">
+        <div class="site-footer-copyright">
+          <p>© Copyright 2025 - All Rights Reserved by <a href="https://ebcreativesolutions.com" target="_blank">EB Creative Solutions LTD</a> </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+<script src="https://amicif.fr/js/vendor.min.js"></script>
+
+<script src="https://amicif.fr/js/script.min.js"></script>
+</body>
+</html>

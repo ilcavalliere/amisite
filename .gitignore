@@ -22,7 +22,7 @@ $RECYCLE.BIN/
 *~
 
 # Hugo generated output
-/public/
+# /public/
 /resources/_gen/
 .hugo_build.lock
 
