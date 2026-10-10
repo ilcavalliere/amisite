@@ -339,6 +339,24 @@
                 </div>
               </div>
 
+              <!-- Cotisation -->
+                  <div class="col-12">
+                    <label class="form-label mt-3">Avez-vous déjà payé votre cotisation cette année ?</label>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="cotisation" value="Oui" id="cotisation-oui" required>
+                      <label class="form-check-label" for="cotisation-oui">Oui</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                   <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cotisation" value="Non" id="cotisation-non"
+                      onchange="if(this.checked){ window.location.href = 'https://www.paypal.com/ncp/payment/Z9R2CWHRX2GDG'; }">
+                    <label class="form-check-label" for="cotisation-non">Non</label>
+                  </div>
+                  </div>
+
               <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
               <div class="col-12">

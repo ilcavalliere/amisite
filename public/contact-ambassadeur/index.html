@@ -216,6 +216,12 @@
                   <label class="form-check-label" for="contact-alliance">L'Alliance française de ma ville</label>
                 </div>
               </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" name="cif-center" id="cif-center" placeholder="Centre où vous avez fait le stage" required>
+              </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" name="cif-year" id="cif-year" placeholder="Année du stage" required>
+              </div>
 
               <div class="col-12">
                 <label class="form-label mt-2">Aimez-vous échanger avec les anciens membres de l'association ?</label>
@@ -236,6 +242,24 @@
               <div class="col-12">
                 <textarea class="form-control mt-3" id="aboutProject" name="message" rows="6" placeholder="Dites-nous en plus sur votre motivation et votre projet en tant qu'ambassadeur" required></textarea>
               </div>
+
+              <!-- Cotisation -->
+                <div class="col-12">
+                  <label class="form-label mt-3">Avez-vous déjà payé votre cotisation cette année ?</label>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="cotisation" value="Oui" id="cotisation-oui" required>
+                    <label class="form-check-label" for="cotisation-oui">Oui</label>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-check">
+                  <input class="form-check-input" type="radio" name="cotisation" value="Non" id="cotisation-non"
+                    onchange="if(this.checked){ window.location.href = 'https://www.paypal.com/ncp/payment/Z9R2CWHRX2GDG'; }">
+                  <label class="form-check-label" for="cotisation-non">Non</label>
+                </div>
+                </div>
 
 
               <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
