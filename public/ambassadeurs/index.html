@@ -380,36 +380,7 @@ var chart = root.container.children.push(am5map.MapChart.new(root, {
       points.data.push({ geometry:{ type:"Point", coordinates:[a.lon, a.lat] }, country:a.country, lon:a.lon, lat:a.lat, a:a, i:i });
     });
 
-    // /* ---- Slider position horizontale ---- */
-    // var controls = chart.chartContainer.children.push(am5.Container.new(root, {
-    //   layout:root.verticalLayout, centerX:am5.percent(50), x:am5.percent(50), y:am5.percent(100), centerY:am5.percent(100),
-    //   paddingBottom:22, width:am5.percent(46)
-    // }));
-    // controls.children.push(am5.Label.new(root, {
-    //   text:"POSITION HORIZONTALE", fontFamily:"Manrope", fontWeight:"800", fontSize:10, fill:am5.color(0x8a8a8e),
-    //   centerX:am5.percent(50), x:am5.percent(50), paddingBottom:9
-    // }));
-    // var slider = controls.children.push(am5.Slider.new(root, {
-    //   orientation:"horizontal", start:0.5, width:am5.percent(100), centerX:am5.percent(50), x:am5.percent(50), height:12
-    // }));
-    // try {
-    //   var track = slider.get("background");
-    //   if (track) track.setAll({ fill:COL.landmass, fillOpacity:0.5, cornerRadius:6 });
-    //   if (slider.startGrip) {
-    //     var gb = slider.startGrip.get("background");
-    //     if (gb) gb.setAll({ fill:COL.signal, stroke:COL.frost, strokeOpacity:0.2 });
-    //     var gi = slider.startGrip.get("icon"); if (gi) gi.set("forceHidden", true);
-    //     slider.startGrip.setAll({ width:18, height:18 });
-    //   }
-    // } catch (e) {}
-    // function applyHorizontal(v) {
-    //   var w = chart.getPrivate("width"), h = chart.getPrivate("height");
-    //   if (!w || !h) return;
-    //   var slack = Math.max(0, (w - Math.min(w, h)) / 2) * 0.9;
-    //   chart.seriesContainer.set("dx", (v - 0.5) * 2 * slack);
-    // }
-    // slider.events.on("rangechanged", function (ev) { applyHorizontal(ev.start); });
-    // window.addEventListener("resize", function () { applyHorizontal(slider.get("start")); });
+
 
     /* ---- Rotation auto : 30 s / tour ---- */
     var spin = null, resumeTimer = null;
