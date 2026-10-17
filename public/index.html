@@ -112,10 +112,71 @@
   .site-linkedin-controls { width: 100%; justify-content: center; }
 }
 
+
+/* ===== Bannière AG (discrète, uniquement sur cette page) ===== */
+.site-event-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 2147483000; background: #fdf1f1; border-bottom: 1px solid #eaa4a4; color: #00113e; }
+.site-event-banner-inner { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; padding: 8px 44px 8px 16px; font-size: 14px; line-height: 1.4; text-align: center; }
+.site-event-banner-badge { background: #eaa4a4; color: #fff; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; padding: 3px 8px; white-space: nowrap; }
+.site-event-banner-text { margin: 0; color: #00113e; }
+.site-event-banner-link { color: #e07b7b !important; font-weight: 700; text-decoration: underline; white-space: nowrap; }
+.site-event-banner-link:hover { color: #00113e !important; }
+.site-event-banner-close { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 28px; height: 28px; border: 0; background: transparent; color: #9d9ea5; font-size: 20px; line-height: 1; cursor: pointer; }
+.site-event-banner-close:hover { color: #e07b7b; }
+
+/* Décalage de la page et du menu (activé par le script) */
+body.ag-on { padding-top: var(--ag-h, 0px); }
+body.ag-on.ag-nav-offset .site-navigation { top: var(--ag-h, 0px) !important; }
+
+@media (max-width: 767px) {
+  .site-event-banner-inner { font-size: 13px; gap: 6px; padding: 8px 40px 8px 12px; }
+}
+
+
+
+
   </style>
   
 </head>
-<body><nav class="navbar navbar-expand-lg site-navigation">
+<body>
+<div class="site-event-banner" id="agBanner" role="region" aria-label="Annonce : Assemblée Générale AMICIF">
+  <div class="site-event-banner-inner">
+    <span class="site-event-banner-badge">Retrouvailles AMICIF</span>
+    <p class="site-event-banner-text">
+      Assemblée Générale en ligne le <strong>24 octobre à 16h</strong> (heure française) 😍
+    </p>
+    <a class="site-event-banner-link" href="https://11jxl.mjt.lu/lnk/BAAACZIiTjoAAc5qpyIAA_f8JrQAAYKJPfIAoP2QADNgFwBq0fu6bVLXQZXkT5GUkzpl7Ig_4gAuwqE/2/qTxKBUwbhlo4hLPsttrgNw/aHR0cHM6Ly91czAyd2ViLnpvb20udXMvai84MjcwMjkwOTkyMj9wd2Q9R2lKWmtiVW1rY2M2blZVUng3bnppYURvZ25hTWNoLjE" target="_blank" rel="noopener">Rejoindre →</a>
+  </div>
+  <button type="button" class="site-event-banner-close" id="agBannerClose" aria-label="Fermer l'annonce">&times;</button>
+</div>
+
+<script>
+  (function () {
+    var b = document.getElementById('agBanner');
+    if (!b) return;
+    try { if (sessionStorage.getItem('agBannerClosed') === '1') { b.style.display = 'none'; return; } } catch (e) {}
+
+    var nav = document.querySelector('.site-navigation');
+    var pos = nav ? getComputedStyle(nav).position : 'static';
+    document.body.classList.add('ag-on');
+    if (pos === 'fixed' || pos === 'absolute' || pos === 'sticky') document.body.classList.add('ag-nav-offset');
+
+    function size() { document.documentElement.style.setProperty('--ag-h', b.offsetHeight + 'px'); }
+    size();
+    window.addEventListener('resize', size);
+    window.addEventListener('load', size);
+
+    document.getElementById('agBannerClose').addEventListener('click', function () {
+      b.style.display = 'none';
+      document.body.classList.remove('ag-on', 'ag-nav-offset');
+      try { sessionStorage.setItem('agBannerClosed', '1'); } catch (e) {}
+    });
+  })();
+</script>
+  
+  
+  
+
+  <nav class="navbar navbar-expand-lg site-navigation">
   <div class="container">
     <a class="navbar-brand" href="https://amicif.fr/">
       <img src="https://amicif.fr/images/logo.png" alt="logo" />

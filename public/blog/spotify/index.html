@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+  <meta charset="utf-8" />
+  <title>La playlist Spotify de l’AMICIF | AMICIF Association Anciens CIF</title>
+  <meta name="description" content="Écoutez et suivez la playlist Spotify publique de l’AMICIF, la bande-son du réseau francophone des anciens des CIF." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="StaticMania">
+
+  <link rel="stylesheet" href="https://amicif.fr/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://amicif.fr/scss/style.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="https://amicif.fr/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="https://amicif.fr/images/favicon.ico" type="image/x-icon" />
+ <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231DB954' d='M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z'/%3E%3C/svg%3E" />
+  <style>
+    /* ===== Page Playlist Spotify — couleurs du site : rose #eaa4a4 / #e07b7b, marine #00113e, gris #9d9ea5, fond #f7f9ff ===== */
+    .playlist-hero { background: #f7f9ff; padding: 150px 0 70px; text-align: center; }
+    .playlist-hero h1 { font-size: clamp(1.9rem, 6vw, 3.25rem); line-height: 1.2; color: #00113e; margin-bottom: 18px; text-wrap: balance; overflow-wrap: break-word; }
+    .playlist-hero p { max-width: 640px; margin: 0 auto 28px; font-size: 18px; color: #9d9ea5; }
+    .playlist-hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; list-style: none; padding: 0; margin: 0; }
+
+    .playlist-player { padding: 70px 0; }
+    .playlist-player-grid { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+    .playlist-player-embed { flex: 1 1 520px; min-width: 0; box-shadow: 0 10px 30px rgba(0, 17, 62, .08); }
+    .playlist-player-embed iframe { display: block; width: 100%; height: 480px; border: 0; }
+    .playlist-player-side { flex: 1 1 300px; min-width: 0; }
+    .playlist-player-side h2 { font-size: clamp(1.4rem, 5vw, 2rem); color: #00113e; margin-bottom: 16px; }
+    .playlist-player-side p { font-size: 17px; color: #9d9ea5; margin-bottom: 14px; }
+
+    .playlist-steps { padding: 20px 0 70px; }
+    .playlist-step { background: #fff; padding: 28px; height: 100%; margin-bottom: 30px; border-top: 3px solid #eaa4a4; box-shadow: 0 10px 30px rgba(0, 17, 62, .06); }
+    .playlist-step h3 { font-size: 22px; color: #00113e; margin-bottom: 10px; }
+    .playlist-step p { margin: 0; color: #9d9ea5; }
+    .playlist-step a { color: #e07b7b; font-weight: 700; }
+    .playlist-step a:hover { color: #00113e; }
+
+    @media (max-width: 767px) {
+      .playlist-hero { padding: 120px 0 50px; }
+      .playlist-player { padding: 45px 0; }
+      .playlist-player-embed iframe { height: 420px; }
+    }
+    .playlist-hero-icon { display: block; width: 56px; height: 56px; margin: 0 auto 16px; color: #1DB954; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="https://amicif.fr/">
+      <img src="https://amicif.fr/images/logo.png" alt="logo" />
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#sitenavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/about">L’AMICIF</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/portfolio">Nos activités</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/timeline">Notre histoire</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://amicif.fr/blog">AMI Blog</a></li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href="https://amicif.fr/contact">
+            <span class="btn-area"><span data-text="Contactez-nous">Contactez-nous</span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- Hero -->
+  <section class="playlist-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1>
+            <svg class="playlist-hero-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+            La playlist Spotify de l’AMICIF est en ligne&nbsp;!
+          </h1>
+          <p>Une playlist publique, faite de morceaux venus des quatre coins de la francophonie. Écoutez-la, suivez-la et partagez-la avec votre réseau.</p>
+          <ul class="playlist-hero-buttons">
+            <li>
+              <a href="https://open.spotify.com/playlist/2d20FWuCG4ZjT9ltvnxdo6?si=E2lj2ekeSLqWkE0Zj6MHgw" target="_blank" rel="noopener" class="btn btn-primary">
+                <span class="btn-area"><span data-text="Écouter sur Spotify">Écouter sur Spotify</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="#proposer" class="btn btn-secondary">
+                <span class="btn-area"><span data-text="Proposer un titre">Proposer un titre</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lecteur -->
+  <section class="playlist-player">
+    <div class="container">
+      <div class="playlist-player-grid">
+        <div class="playlist-player-embed">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/2d20FWuCG4ZjT9ltvnxdo6?si=E2lj2ekeSLqWkE0Zj6MHgw?utm_source=generator"
+            title="Playlist Spotify de l’AMICIF"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <div class="playlist-player-side">
+          <h2>La bande-son de notre réseau</h2>
+          <p>L’AMICIF réunit des anciens stagiaires de plus de 125 pays. Cette playlist est pensée comme un lieu de rencontre de plus&nbsp;: de la musique qui voyage, comme nous.</p>
+          <p>Elle est publique&nbsp;: pas besoin d’être adhérent pour l’écouter. Un compte Spotify, gratuit ou premium, suffit pour la suivre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comment faire -->
+  <section class="playlist-steps" id="proposer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title">
+            <h2>Comment participer&nbsp;?</h2>
+            <p>Trois façons simples de faire vivre la playlist.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="playlist-step">
+            <h3>Suivre la playlist</h3>
+            <p>Ouvrez-la dans Spotify et touchez «&nbsp;Suivre&nbsp;». Les nouveaux titres arriveront directement dans votre bibliothèque.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="playlist-step">
+            <h3>Proposer un titre</h3>
+            <p>Un morceau de votre pays, de votre CIF ou de votre année&nbsp;? Envoyez-nous le lien à <a href="mailto:contact@amicif.fr?subject=Proposition%20pour%20la%20playlist%20AMICIF">contact@amicif.fr</a>.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="playlist-step">
+            <h3>Partager autour de vous</h3>
+            <p>Envoyez le lien à vos amis du CIF et partagez-le sur nos réseaux, <a href="https://www.instagram.com/amicif/?hl=fr" target="_blank" rel="noopener">Instagram</a> et <a href="https://fr.linkedin.com/company/amicif" target="_blank" rel="noopener">LinkedIn</a> en tête.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appel final -->
+  <section class="site-cta" style='background-image: url("https://amicif.fr/images/backgrounds/cta-background.jpg");'>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="site-cta-title">Rejoignez notre réseau francophone mondial&nbsp;!</h1>
+          <ul class="site-cta-buttons">
+            <li>
+              <a href="https://amicif.fr/contact" class="btn btn-secondary">
+                <span class="btn-area"><span data-text="Contactez-nous">Contactez-nous</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://amicif.fr/portfolio" class="btn btn-primary">
+                <span class="btn-area"><span data-text="Découvrir nos programmes">Découvrir nos programmes</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer-logo"><a href="https://amicif.fr/"><img src="https://amicif.fr/images/logo-footer.png" alt="logo-footer"></a></div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Contact</h5>
+          <p class="site-footer-widget-description">
+            Amicale des anciens des Centres Internationaux Francophones - Siège social : 2 impasse La chaussée du bourg <br>44117 SAINT ANDRE DES EAUX
+            <br>
+            <a href="mailto:contact@amicif.fr">contact@amicif.fr</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Plan du site</h5>
+          <ul class="site-footer-widget-links">
+            <li><a href="https://amicif.fr/about">L’AMICIF</a></li>
+            <li><a href="https://amicif.fr/portfolio">Nos activités</a></li>
+            <li><a href="https://amicif.fr/timeline">Notre histoire</a></li>
+            <li><a href="https://amicif.fr/blog">AMI Blog</a></li>
+            <li><a href="https://amicif.fr/contact">Contactez Nous</a></li>
+            <li><a href="https://amicif.fr/newsletter"> Newsletter </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Suivez-nous</h5>
+          <ul class="site-footer-widget-links">
+            <li><a href="https://www.facebook.com/amicif1958/" target="_blank"><i class="fab fa-facebook-f"></i>&nbsp;Facebook</a></li>
+            <li><a href="https://www.instagram.com/amicif/?hl=fr" target="_blank"><i class="fab fa-instagram"></i>&nbsp;Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@amicif" target="_blank"><i class="fab fa-tiktok"></i>&nbsp;TikTok</a></li>
+            <li><a href="https://fr.linkedin.com/company/amicif" target="_blank"><i class="fab fa-linkedin-in"></i>&nbsp;LinkedIn</a></li>
+            <li><a href="http://www.youtube.com/@amicifreseaufrancophone1943" target="_blank"><i class="fab fa-youtube"></i>&nbsp;YouTube</a></li>
+            <li><a href="https://t.me/amicif1958" target="_blank"><i class="fab fa-telegram"></i>&nbsp;Telegram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">En bref</h5>
+          <p class="site-footer-widget-description">
+            11 000 anciens stagiaires des Centres Internationaux Francophones des Lions Club de France, <br>depuis 1958 et constitue une véritable chaîne d’amitié francophone
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-12">
+        <a href="#top" class="site-footer-widget-top">
+          <img src="https://amicif.fr/images/to-top.svg" alt="back-to-top">
+          <p>Haut <br> de page</p>
+        </a>
+      </div>
+      <div class="col-12">
+        <div class="site-footer-copyright">
+          <p>© Copyright 2025 - All Rights Reserved by <a href="https://ebcreativesolutions.com" target="_blank">EB Creative Solutions LTD</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://amicif.fr/js/vendor.min.js"></script>
+<script src="https://amicif.fr/js/script.min.js"></script>
+</body>
+</html>
