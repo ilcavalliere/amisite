@@ -165,13 +165,17 @@
            
          
           
-          <li class="nav-item">
+         <li class="nav-item">
             <a class="nav-link" href="https://amicif.fr/portfolio"
               >Nos activités</a
             >
           </li>
            
-         
+           <li class="nav-item">
+            <a class="nav-link" href="https://amicif.fr/ambassadeurs"
+              >Ambassadeurs</a
+            >
+          </li>
           
           <li class="nav-item">
             <a class="nav-link" href="https://amicif.fr/timeline"
@@ -251,31 +255,89 @@
     </div>
   </div>
 
-<script>
+
+
+
+
+  <script>
 /* ============================================================
-   DONNÉES — modifiez ici : name, photo (URL) et desc par pays.
-   Tant que "photo" est vide, un avatar généré est affiché.
-   Format : [pays, longitude, latitude, nom ambassadeur, photo, description]
+   DONNÉES — chargées depuis Google Sheets (onglet "Public", publié en CSV).
+   Colonnes attendues : PAYS, AMBASSADEURS, LON, LAT, PHOTO, DESCRIPTION
    ============================================================ */
 var DEFAULT_DESC = "Ambassadeur·rice de l’AMICIF dans ce pays : relais du réseau des anciens stagiaires des CIF, il ou elle fait vivre l’amitié francophone née chaque été en France.";
-var AMBASSADORS = [
-  ["France",2.35,48.85],["Belgique",4.35,50.85],["Suisse",7.45,46.95],["Luxembourg",6.13,49.61],
-  ["Canada",-75.7,45.42],["États-Unis",-77.04,38.9],["Mexique",-99.13,19.43],["Haïti",-72.34,18.54],
-  ["Brésil",-47.93,-15.78],["Argentine",-58.38,-34.6],["Royaume-Uni",-0.13,51.51],["Allemagne",13.4,52.52],
-  ["Italie",12.5,41.9],["Espagne",-3.7,40.42],["Portugal",-9.14,38.72],["Pays-Bas",4.9,52.37],
-  ["Suède",18.07,59.33],["Finlande",24.94,60.17],["Pologne",21.01,52.23],["Roumanie",26.1,44.43],
-  ["Grèce",23.73,37.98],["Turquie",32.85,39.93],["Maroc",-6.84,34.02],["Algérie",3.06,36.75],
-  ["Tunisie",10.18,36.81],["Égypte",31.24,30.04],["Mauritanie",-15.98,18.08],["Sénégal",-17.47,14.69],
-  ["Mali",-8.0,12.64],["Burkina Faso",-1.52,12.37],["Niger",2.11,13.51],["Guinée",-13.68,9.64],
-  ["Côte d’Ivoire",-5.28,6.82],["Bénin",2.63,6.5],["Togo",1.22,6.13],["Cameroun",11.52,3.85],
-  ["Gabon",9.45,0.39],["Congo",15.28,-4.27],["RD Congo",15.31,-4.45],["Tchad",15.05,12.13],
-  ["Centrafrique",18.56,4.36],["Rwanda",30.06,-1.95],["Burundi",29.92,-3.43],["Djibouti",43.15,11.59],
-  ["Madagascar",47.51,-18.88],["Maurice",57.5,-20.16],["Seychelles",55.45,-4.62],["Comores",43.26,-11.7],
-  ["Liban",35.5,33.89],["Vietnam",105.85,21.03],["Cambodge",104.92,11.56],["Laos",102.6,17.97],
-  ["Japon",139.69,35.69],["Inde",77.21,28.61],["Australie",149.13,-35.28]
-].map(function (r) {
-  return { country:r[0], lon:r[1], lat:r[2], name:r[3] || "Ambassadeur·rice AMICIF", photo:r[4] || "", desc:r[5] || DEFAULT_DESC };
-});
+
+// >>> Collez ici le lien CSV publié de votre Google Sheet <<<
+var SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTLG6COo1a_zKzoLlJygUAb7i2llpFxIOTzEOt4oR1WvsfxQ3I0LWyLqjwQIdhofT-PmN9emmLkp_ku/pub?gid=0&single=true&output=csv";
+
+var AMBASSADORS = [];
+
+/* Lit un texte CSV (gère les guillemets, virgules et retours à la ligne dans les cellules) */
+function parseCSV(text) {
+  var rows = [], row = [], field = "", inQuotes = false;
+  text = text.replace(/^\uFEFF/, "");
+  for (var i = 0; i < text.length; i++) {
+    var c = text[i];
+    if (inQuotes) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') { inQuotes = false; }
+      else { field += c; }
+    } else if (c === '"') {
+      inQuotes = true;
+    } else if (c === ",") {
+      row.push(field); field = "";
+    } else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(field); rows.push(row); row = []; field = "";
+    } else {
+      field += c;
+    }
+  }
+  if (field !== "" || row.length) { row.push(field); rows.push(row); }
+  return rows;
+}
+
+/* Accepte 2.35 ou 2,35 */
+function toNumber(v) {
+  return parseFloat(String(v || "").trim().replace(",", "."));
+}
+
+/* N'accepte que les liens d'images en https */
+function safePhoto(url) {
+  url = (url || "").trim();
+  return /^https:\/\//i.test(url) ? url : "";
+}
+
+function loadAmbassadors(url) {
+  return fetch(url)
+    .then(function (response) {
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      return response.text();
+    })
+        .then(function (text) {
+      var all = parseCSV(text);
+      var head = all[0].map(function (h) { return h.trim().toUpperCase(); });
+      function col(name) { return head.indexOf(name); }
+      var iC = col("PAYS"), iN = head.findIndex(function (h) { return h.indexOf("AMBASSADEUR") === 0; }),
+          iLon = col("LON"), iLat = col("LAT"), iP = col("PHOTO"), iD = col("DESCRIPTION");
+      var list = [];
+      all.slice(1).forEach(function (r) {
+        var country = (r[iC] || "").trim();
+        var lon = toNumber(r[iLon]), lat = toNumber(r[iLat]);
+        if (!country) return;
+        if (isNaN(lon) || isNaN(lat)) { console.warn("Coordonnées manquantes pour :", country); return; }
+        var names = (r[iN] || "").split(/\n|\s\/\s|;|\s{2,}/)
+          .map(function (n) { return n.replace(/\?/g, "").trim(); }).filter(Boolean);
+        list.push({
+          country: country, lon: lon, lat: lat,
+          name: names.length ? names.join(" & ") : "Ambassadeur·rice AMICIF",
+          photo: iP > -1 ? safePhoto(r[iP]) : "",
+          desc: (iD > -1 && (r[iD] || "").trim()) || DEFAULT_DESC
+        });
+      });
+      console.log("Ambassadeurs chargés :", list.length);
+      return list;
+    });
+}
 
 /* Avatar généré (SVG) quand aucune photo n'est fournie */
 function avatar(country, i) {
@@ -329,19 +391,18 @@ function avatar(country, i) {
 
 
     // MOST IMPORTANT CONTROL THE GLOBE //////
-   var isMobile = window.innerWidth <= 900;
+    var isMobile = window.innerWidth <= 900;
 
-var chart = root.container.children.push(am5map.MapChart.new(root, {
-  projection: am5map.geoOrthographic(),
-  panX:"rotateX", panY:"rotateY", rotationX:-10, rotationY:-12,
-  wheelY:"none",
-  paddingTop: isMobile ? 380 : 250,
-  paddingBottom: isMobile ? 120 : 330,
-  paddingLeft: isMobile ? 0 : 380,
-}));
+    var chart = root.container.children.push(am5map.MapChart.new(root, {
+      projection: am5map.geoOrthographic(),
+      panX:"rotateX", panY:"rotateY", rotationX:-10, rotationY:-12,
+      wheelY:"none",
+      paddingTop: isMobile ? 380 : 250,
+      paddingBottom: isMobile ? 120 : 330,
+      paddingLeft: isMobile ? 0 : 380,
+    }));
 
-//////////////////////////////////
-
+    //////////////////////////////////
 
 
     var bg = chart.series.unshift(am5map.MapPolygonSeries.new(root, {}));
@@ -408,7 +469,20 @@ var chart = root.container.children.push(am5map.MapChart.new(root, {
   }
   function go() { am5.ready(build); }
 
-  /* Load amCharts files in order, trying amcharts.com first, then jsDelivr */
+  /* Le globe démarre quand amCharts ET les données du Sheet sont prêts */
+  var pending = 2;
+  function oneReady() {
+    pending--;
+    if (pending === 0) start();
+  }
+
+  /* 1) Données : Google Sheet (si erreur, le globe s'affiche quand même, sans points) */
+  loadAmbassadors(SHEET_CSV_URL)
+    .then(function (list) { AMBASSADORS = list; })
+    .catch(function (e) { console.error("Impossible de charger les ambassadeurs :", e); })
+    .then(oneReady);
+
+  /* 2) amCharts : essaie amcharts.com d'abord, puis jsDelivr */
   var FILES = ["index.js", "map.js", "geodata/worldLow.js", "themes/Animated.js", "themes/Dark.js"];
   var BASES = ["https://cdn.amcharts.com/lib/5/", "https://cdn.jsdelivr.net/npm/@amcharts/amcharts5@5/"];
   function loadScript(src, ok, fail) {
@@ -417,7 +491,7 @@ var chart = root.container.children.push(am5map.MapChart.new(root, {
     document.head.appendChild(s);
   }
   function loadAll(baseIdx, fileIdx) {
-    if (fileIdx >= FILES.length) { start(); return; }
+    if (fileIdx >= FILES.length) { oneReady(); return; }
     loadScript(BASES[baseIdx] + FILES[fileIdx],
       function () { loadAll(baseIdx, fileIdx + 1); },
       function () {
@@ -433,6 +507,11 @@ var chart = root.container.children.push(am5map.MapChart.new(root, {
   loadAll(0, 0);
 })();
 </script>
+
+
+
+
+
 
   </div>
 </section>
