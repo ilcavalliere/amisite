@@ -343,6 +343,124 @@
     padding: 25px;
   }
 }
+
+
+
+
+.org{--pink:#E9A4A9;--pink-d:#df8a90;--teal:#AED6D2;--teal-d:#98c5bf;--ink:#2c3e50;--line:#d5dcde;padding:90px 0;background:linear-gradient(135deg,#f5f7fa 0%,rgba(233,164,169,.1) 100%)}
+.org *{box-sizing:border-box}
+.org-head{text-align:center;margin-bottom:56px}
+.org-head p{color:#6c757d;max-width:600px;margin:10px auto 0}
+.org-root{display:flex;flex-direction:column;align-items:center}
+.stem{width:2px;height:36px;background:var(--line)}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--pink);margin-top:-2px}
+/* bureau */
+.bureau{position:relative;max-width:980px;margin:0 auto;padding:44px 28px 28px;border-radius:30px;background:#fff;box-shadow:0 15px 35px rgba(0,0,0,.08);border-top:3px solid var(--teal)}
+.bureau-title{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--ink);font-weight:600;padding:5px 22px;border-radius:20px}
+.bureau-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.bc{position:relative;text-align:center;border-radius:25px;overflow:hidden;background:#fff;padding:0 16px 24px;box-shadow:0 8px 24px rgba(0,0,0,.07);transition:transform .3s}
+.bc:hover{transform:translateY(-6px)}
+.bc-top{height:88px;margin:0 -16px;background:linear-gradient(135deg,var(--pink) 0%,var(--pink-d) 100%)}
+.bc:nth-child(2) .bc-top{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-d) 100%)}
+.bc img{width:130px;height:130px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.15);margin-top:-65px;position:relative}
+.bc h3{font-size:1.15rem;margin:12px 0 2px;color:var(--ink)}
+.bc p{margin:0 0 10px;color:#6c757d}
+.badge-r{display:inline-block;font-size:.8rem;padding:3px 12px;border-radius:14px;background:rgba(233,164,169,.18);color:#b5565d}
+.bc:nth-child(2) .badge-r{background:rgba(174,214,210,.35);color:#3f7a74}
+/* poles */
+.poles{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.pole{--c1:var(--pink);--c2:var(--pink-d);--tx:#fff;background:#fff;border-radius:25px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,.08)}
+.pole.wide{grid-column:1/-1}
+.pole.tech{--c1:var(--teal);--c2:var(--teal-d);--tx:var(--ink)}
+.pole.data{--c1:var(--ink);--c2:#3e566e}
+.pole.event{--c1:var(--pink-d);--c2:#cf7279}
+.pole summary{display:flex;align-items:center;gap:16px;padding:22px 28px;background:linear-gradient(135deg,var(--c1) 0%,var(--c2) 100%);color:var(--tx)}
+.pole summary h3{margin:0;font-size:1.4rem;color:var(--tx)}
+.pole summary p{display:inline-block;margin:6px 0 0;padding:3px 14px;border-radius:20px;background:rgba(255,255,255,.22);color:var(--tx)!important;font-size:.88rem;line-height:1.5}
+.pole summary p b{color:var(--tx)!important;font-weight:700}
+.pole.tech>header p{background:rgba(255,255,255,.55)}
+.ph-ic{width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.25);display:grid;place-items:center;font-size:1.4rem;flex:none}
+.stack{margin-left:auto;display:flex}
+.stack img,.stack .ini{width:46px;height:46px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-left:-12px}
+.tms{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding:24px}
+.tm{background:#fafbfb;border:1px solid rgba(0,0,0,.06);border-top:3px solid var(--c1);border-radius:16px;padding:16px 18px;transition:box-shadow .3s}
+.tm:hover{box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.tm h4{font-size:1rem;margin:0 0 12px;color:var(--ink);font-weight:600}
+.tm ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.who{display:flex;align-items:center;gap:11px}
+.who img,.who .ini{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;border:2px solid #fff;box-shadow:0 0 0 2px rgba(0,0,0,.08)}
+.who.lead img,.who.lead .ini{box-shadow:0 0 0 2px var(--pink)}
+.who b{display:block;font-size:.92rem;color:var(--ink);line-height:1.2;font-weight:600}
+.who small{color:#8a949c;font-size:.78rem}
+.who.lead small{color:#b5565d;font-weight:600}
+.ini{display:grid;place-items:center;font-style:normal;font-weight:700;color:#fff}
+.ini.c0{background:linear-gradient(135deg,var(--pink),var(--pink-d))}
+.ini.c1{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:var(--ink)}
+.tm h4,.who b{overflow-wrap:anywhere}
+.who span{min-width:0}
+.org{-webkit-text-size-adjust:100%;overflow-x:clip}
+@media(max-width:991px){
+ .org{padding:64px 0}
+ .poles{grid-template-columns:1fr}
+ .bureau{padding:40px 18px 20px}
+ .bureau-grid{gap:14px}
+ .bc img{width:100px;height:100px;margin-top:-50px}
+ .bc-top{height:70px}
+ .bc h3{font-size:1rem}
+ .tms{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+}
+@media(max-width:767px){
+ .org{padding:48px 0}
+ .org-head{margin-bottom:32px}
+   .bureau{border-radius:22px}
+ .bureau-grid{grid-template-columns:1fr;max-width:none}
+ /* bureau cards become compact horizontal rows */
+ .bc{display:grid;grid-template-columns:84px 1fr;column-gap:16px;align-items:center;text-align:left;padding:14px 16px;border-left:5px solid var(--pink);border-radius:18px}
+ .bc:nth-child(2){border-left-color:var(--teal)}
+ .bc-top{display:none}
+ .bc img{grid-row:1/4;width:84px;height:84px;margin:0;border-width:3px}
+ .bc h3{margin:0 0 2px;font-size:1.02rem}
+ .bc p{margin:0 0 6px}
+ .badge-r{justify-self:start;font-size:.76rem}
+ .bc:hover{transform:none}
+ /* pole headers */
+ .pole{border-radius:20px}
+ .pole summary{display:grid;grid-template-columns:48px 1fr;gap:6px 14px;align-items:center;padding:18px}
+ .ph-ic{width:48px;height:48px;font-size:1.25rem}
+ .pole summary h3{font-size:1.15rem;line-height:1.25}
+ .stack{grid-column:1/-1;margin:4px 0 0 12px}
+ .stack img,.stack .ini{width:40px;height:40px}
+ .tms{grid-template-columns:1fr;padding:14px;gap:12px}
+ .tm{padding:14px 16px}
+ .who img,.who .ini{width:44px;height:44px}
+}
+@media(max-width:380px){
+ .bc{grid-template-columns:68px 1fr;column-gap:12px}
+ .bc img{width:68px;height:68px}
+ .pole summary p{font-size:.82rem}
+}
+@media(prefers-reduced-motion:reduce){.bc,.tm{transition:none}.bc:hover{transform:none}}
+
+/* ---- mobile-first extras ---- */
+.pole{scroll-margin-top:90px}
+.pole summary{list-style:none;cursor:default;-webkit-tap-highlight-color:transparent}
+.pole summary::-webkit-details-marker{display:none}
+.chev,.chips{display:none}
+@media(max-width:767px){
+ .chips{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -15px 18px;padding:2px 15px 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .chips::-webkit-scrollbar{display:none}
+ .chips a{flex:none;scroll-snap-align:start;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:30px;background:#fff;border:2px solid var(--teal);color:var(--ink);font-weight:600;font-size:.9rem;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+ .chips a i{color:var(--pink-d)}
+ .chips a:active{background:var(--pink);border-color:var(--pink);color:#fff}
+ .chips a:active i{color:#fff}
+ .pole summary{cursor:pointer;min-height:72px;grid-template-columns:48px 1fr 32px}
+ .chev{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.28);font-size:.85rem;transition:transform .3s}
+ .pole details[open] .chev{transform:rotate(180deg)}
+ .stack{grid-column:1/-1;grid-row:2}
+ .tms{animation:orgfade .3s ease}
+ @keyframes orgfade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+ .org .container{padding-left:15px;padding-right:15px}
+}
 </style>
 
 
@@ -690,215 +808,32 @@
 
 
 
+<!-- /* Team section - Organigramme */
+/* Section Organigramme */ -->
 
-  
-  <section class="site-team">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title">
-            <h2>
-              Une équipe francophone bénévole
-            </h2>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-one.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>EL Caballero 🇨🇺  </h3>
-              <p>Président</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/in/enzo-lopez-caballero/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-              <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-two.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Mathilde Heitz 🇫🇷</h3>
-              <p>Trésorière</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-three.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Hanna Astrouskaya 🇧🇾</h3>
-              <p>Secrétaire</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-four.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Serena Tenea 🇷🇴</h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-five.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Omar Rahmouni 🇹🇳</h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-six.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Ricky Arias 🇨🇺  </h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-seven.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Lucie Bonsergent 🇫🇷</h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-eight.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Kayla Telhiard 🇺🇸</h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-nine.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Nino Lopez 🇨🇺 </h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-ten.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Thanh Van 🇻🇳</h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-         <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-eleven.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Khumoyun Boboev 🇺🇿</h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="site-team-member">
-            <div class="site-team-member-image">
-              <img src="https://amicif.fr/images/team/team-member-twelve.jpg" alt="team-member">
-            </div>
-            <div class="site-team-member-content">
-              <h3>Clarisa Donet 🇦🇷</h3>
-              <p>Membre du Conseil d’Administration</p>
-              <ul class="site-team-member-social">
-                <li><a href="https://www.linkedin.com/"> <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg></a></li>
-                <li><a href="https://www.instagram.com/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
-
-      </div>
-    </div>
-  </section>
-  
+<section class="org site-team">
+ <div class="container">
+  <div class="org-head">
+   <h2 class="section-title">Une équipe francophone bénévole</h2>
+   <p>Le bureau pilote quatre pôles. Chaque projet a un responsable, une équipe et, si besoin, un référent.</p>
+  </div>
+  <div class="bureau"><span class="bureau-title">Le bureau</span><div class="bureau-grid"><div class="bc"><div class="bc-top"></div><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"><h3>Enzo 🇨🇺</h3><p>Président</p><span class="badge-r">Tech &amp; Numérique</span></div><div class="bc"><div class="bc-top"></div><img src="https://amicif.fr/images/team/team-member-two.jpg" alt="Mathilde Heitz" loading="lazy"><h3>Mathilde Heitz 🇫🇷</h3><p>Trésorière</p><span class="badge-r">Cotisations &amp; Mailjet</span></div><div class="bc"><div class="bc-top"></div><img src="https://amicif.fr/images/team/team-member-three.jpg" alt="Hanna Astrouskaya" loading="lazy"><h3>Hanna Astrouskaya 🇧🇾</h3><p>Secrétaire</p><span class="badge-r">Communication réseaux sociaux</span></div></div></div>
+  <div class="org-root"><div class="stem"></div><div class="dot"></div></div>
+  <nav class="chips" aria-label="Aller à un pôle"><a href="#pole-comm"><i class="fas fa-bullhorn"></i>Communication</a><a href="#pole-tech"><i class="fas fa-laptop-code"></i>Tech</a><a href="#pole-data"><i class="fas fa-database"></i>Données</a><a href="#pole-event"><i class="fas fa-calendar-days"></i>Événements</a></nav>
+  <div class="poles"><article class="pole comm wide" id="pole-comm"><details open><summary><div class="ph-ic"><i class="fas fa-bullhorn"></i></div><div><h3>Communication &amp; Réseaux sociaux</h3><p>Pilotage : <b>Hanna</b></p></div><span class="stack"><img src="https://amicif.fr/images/team/team-member-three.jpg" alt="Hanna" loading="lazy"></span><i class="fas fa-chevron-down chev" aria-hidden="true"></i></summary><div class="tms"><div class="tm"><h4>LinkedIn</h4><ul><li class="who lead"><i class="ini c0">A</i><span><b>Astghik</b><small>Responsable</small></span></li><li class="who"><i class="ini c1">K</i><span><b>Kristine</b><small>Équipe</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-two.jpg" alt="Mathilde" loading="lazy"><span><b>Mathilde</b><small>Référente</small></span></li></ul></div><div class="tm"><h4>Instagram / Facebook</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-three.jpg" alt="Hanna" loading="lazy"><span><b>Hanna</b><small>Responsable</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-two.jpg" alt="Mathilde" loading="lazy"><span><b>Mathilde</b><small>Équipe</small></span></li></ul></div><div class="tm"><h4>TikTok / YouTube</h4><ul><li class="who lead"><i class="ini c0">S</i><span><b>Sheroz</b><small>Responsable</small></span></li><li class="who"><i class="ini c1">S</i><span><b>Shreya</b><small>Équipe</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-three.jpg" alt="Hanna" loading="lazy"><span><b>Hanna</b><small>Référente</small></span></li></ul></div><div class="tm"><h4>Telegram</h4><ul><li class="who lead"><i class="ini c0">K</i><span><b>Kristine</b><small>Responsable</small></span></li><li class="who"><i class="ini c1">A</i><span><b>Astghik</b><small>Équipe</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-three.jpg" alt="Hanna" loading="lazy"><span><b>Hanna</b><small>Référente</small></span></li></ul></div><div class="tm"><h4>Atelier de création de contenu</h4><ul><li class="who lead"><i class="ini c0">V</i><span><b>Volha</b><small>Responsable</small></span></li><li class="who"><i class="ini c1">J</i><span><b>Jigar</b><small>Équipe</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-eight.jpg" alt="Kayla" loading="lazy"><span><b>Kayla</b><small>Équipe</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-six.jpg" alt="Ricky" loading="lazy"><span><b>Ricky</b><small>Équipe</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-three.jpg" alt="Hanna" loading="lazy"><span><b>Hanna</b><small>Réf. qualité</small></span></li></ul></div></div></details></article><article class="pole tech wide" id="pole-tech"><details open><summary><div class="ph-ic"><i class="fas fa-laptop-code"></i></div><div><h3>Tech &amp; Numérique</h3><p>Pilotage : <b>Mathilde et Enzo</b></p></div><span class="stack"><img src="https://amicif.fr/images/team/team-member-two.jpg" alt="Mathilde" loading="lazy"><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"></span><i class="fas fa-chevron-down chev" aria-hidden="true"></i></summary><div class="tms"><div class="tm"><h4>Campagnes Mailjet</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-two.jpg" alt="Mathilde" loading="lazy"><span><b>Mathilde</b><small>Responsable</small></span></li><li class="who"><i class="ini c1">T</i><span><b>Temur</b><small>Équipe</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"><span><b>Enzo</b><small>Équipe</small></span></li><li class="who"><i class="ini c1">P</i><span><b>Polina</b><small>Équipe</small></span></li></ul></div><div class="tm"><h4>Site web AMICIF</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"><span><b>Enzo</b><small>Responsable</small></span></li></ul></div><div class="tm"><h4>Site web CIF</h4><ul><li class="who"><i class="ini c0">S</i><span><b>Stéphanie</b><small>Propriétaire</small></span></li><li class="who lead"><img src="https://amicif.fr/images/team/team-member-two.jpg" alt="Mathilde" loading="lazy"><span><b>Mathilde</b><small>Responsable</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"><span><b>Enzo</b><small>Équipe</small></span></li></ul></div><div class="tm"><h4>Webmail contact@amicif.fr</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"><span><b>Enzo</b><small>Responsable</small></span></li><li class="who"><i class="ini c1">P</i><span><b>Polina</b><small>Équipe</small></span></li></ul></div></div></details></article><article class="pole data" id="pole-data"><details open><summary><div class="ph-ic"><i class="fas fa-database"></i></div><div><h3>Bases de données</h3><p>Pilotage : <b>Enzo</b></p></div><span class="stack"><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"></span><i class="fas fa-chevron-down chev" aria-hidden="true"></i></summary><div class="tms"><div class="tm"><h4>Base de données des anciens</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-five.jpg" alt="Omar" loading="lazy"><span><b>Omar</b><small>Responsable</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"><span><b>Enzo</b><small>Équipe</small></span></li></ul></div><div class="tm"><h4>Base officielle des cotisations</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-two.jpg" alt="Mathilde" loading="lazy"><span><b>Mathilde</b><small>Responsable</small></span></li></ul></div></div></details></article><article class="pole event" id="pole-event"><details open><summary><div class="ph-ic"><i class="fas fa-calendar-days"></i></div><div><h3>Réseau &amp; Événements</h3><p>Pilotage : <b>Hanna et Mathilde</b></p></div><span class="stack"><img src="https://amicif.fr/images/team/team-member-three.jpg" alt="Hanna" loading="lazy"><img src="https://amicif.fr/images/team/team-member-two.jpg" alt="Mathilde" loading="lazy"></span><i class="fas fa-chevron-down chev" aria-hidden="true"></i></summary><div class="tms"><div class="tm"><h4>Événements</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-four.jpg" alt="Serena" loading="lazy"><span><b>Serena</b><small>Responsable</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-eleven.jpg" alt="Khoumuyn" loading="lazy"><span><b>Khoumuyn</b><small>Équipe</small></span></li><li class="who"><i class="ini c0">B</i><span><b>Bach</b><small>Équipe</small></span></li></ul></div><div class="tm"><h4>Ambassadeurs</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-eight.jpg" alt="Kayla" loading="lazy"><span><b>Kayla</b><small>Responsable</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-three.jpg" alt="Hanna" loading="lazy"><span><b>Hanna</b><small>Référente</small></span></li><li class="who"><i class="ini c0">A</i><span><b>Abdel</b><small>Équipe</small></span></li><li class="who"><i class="ini c1">T</i><span><b>Temur</b><small>Équipe</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-seven.jpg" alt="Lucie" loading="lazy"><span><b>Lucie</b><small>Équipe</small></span></li></ul></div><div class="tm"><h4>Gestion des candidats animateurs</h4><ul><li class="who lead"><img src="https://amicif.fr/images/team/team-member-nine.jpg" alt="Nino" loading="lazy"><span><b>Nino</b><small>Responsable</small></span></li><li class="who"><img src="https://amicif.fr/images/team/team-member-one.jpg" alt="Enzo" loading="lazy"><span><b>Enzo</b><small>Référent</small></span></li></ul></div></div></details></article></div>
+ </div>
+</section>
+<script>
+(function(){
+  var mq=window.matchMedia('(min-width:768px)'),
+      ds=[].slice.call(document.querySelectorAll('.org .pole details'));
+  function sync(){ds.forEach(function(d,i){if(mq.matches){d.open=true}else if(!d.hasAttribute('data-init')){d.open=(i===0)}d.setAttribute('data-init','1')})}
+  sync();
+  (mq.addEventListener?mq.addEventListener('change',sync):mq.addListener(sync));
+  ds.forEach(function(d){d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault()})});
+  [].slice.call(document.querySelectorAll('.org .chips a')).forEach(function(a){a.addEventListener('click',function(){var t=document.querySelector(a.getAttribute('href'));if(t)t.querySelector('details').open=true})});
+})();
+</script>
 
 
 
